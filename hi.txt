@@ -1,1 +1,2 @@
 i am git
+add git log aaaaaaaaaaaaaaaaa
