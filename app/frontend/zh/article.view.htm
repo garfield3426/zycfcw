@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+<title><?php echo $v['item']['title']?></title>
+<meta name="keywords" content="<?php echo $v['item']['keyword']?>" />
+<meta name="description" content="<?php echo $v['item']['describes']?>" />
+<?php include('inc/pub_head.php')?>
+<link rel="Bookmark" href="/favicon.ico" >
+<link rel="Shortcut Icon" href="/favicon.ico" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/html5.js"></script>
+<script type="text/javascript" src="js/respond.min.js"></script>
+<script type="text/javascript" src="js/PIE_IE678.js"></script
+<![endif]-->
+<link href="css/H-ui.css" rel="stylesheet" type="text/css" />
+<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<!--[if IE 7]>
+<link href="static/h-ui/css/font-awesome-ie7.min.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+<!--[if IE 6]>
+<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('.pngfix,.icon');</script>
+<![endif]-->
+</head>
+
+<body>
+<?php include('inc/banner.php')?>
+
+<div class="main">
+    <div class="wp fluidgrid">
+        <?php include('inc/top.php')?>
+        <div class="col-12 mt-0 mr-0 breadcrumb clear">
+            	您的位置：<a href="/">首页</a>&gt<a href="">房产资讯</a>&gt<?php echo $v['item']['title']?>
+        </div>
+        <div class="col-9 mt-0 mr-0  main-l bd0">
+                <div class="fckx-details">
+                	<h1><?php echo $v['item']['title']?></h1>
+                	<div class="fb"><span class="time">时间：<?php echo $v['item']['put_time']?></span><span class="source">来源：<?php echo $v['item']['author']?></span></div>
+                	<div class="fckx-dsummary">
+                		<strong>[摘要]</strong><?php echo $v['item']['describes']?>
+                	</div>
+                    <?php echo $v['item']['content']?>
+                </div>
+                <h2 class="maintitle pt-15">
+                	 <span class="text-c">热门推荐</span>
+                </h2>
+                <div class="hots">
+                	<ul class="newlist l">
+						<?php $art=ext('article_list',5,1,true,false,2)?>
+						<?php foreach($art['list'] as $key=>$value):?>
+						<li><b></b><a href="<?php echo $value['viewLink']?>" title="<?php echo $value['title']?>" target="_blank"><?php echo $value['title']?></a></li>
+						<?php endforeach;?>
+                	</ul>
+                	<ul class="newlist r">
+                		<?php $art=ext('article_list',5,1,true,false,2,null,null,4)?>
+						<?php foreach($art['list'] as $key=>$value):?>
+						<li><b></b><a href="<?php echo $value['viewLink']?>" title="<?php echo $value['title']?>" target="_blank"><?php echo $value['title']?></a></li>
+						<?php endforeach;?>
+                	</ul>
+                </div>
+        </div>
+        <div class="f-r">
+				<?php $adversite=ext('adversite','right_article')?>
+                <?php if($adversite):?>	
+				<a href="<?php echo $adversite['url']?>" target="_blank"><img width="285" height="190" src="<?php echo $adversite['logo']?>" alt="<?php echo $adversite['title']?>"/></a>
+				<?php endif;?>
+		</div>
+        <div class="toplist f-r mt-15">
+        		<dl>
+        			<dt class="pl-10">资讯排行榜</dt>
+					<?php $art=ext('article_list',10,1,false,true,2)?>
+					<?php foreach($art['list'] as $key=>$value):?>
+					<dd><span <?php if($key<'3') echo 'class="red"';?> ><?php echo $key+1?></span><a href="<?php echo $value['viewLink']?>" title="<?php echo $value['title']?>" target="_blank"><?php echo $value['title']?></a></dd>
+					<?php endforeach;?>
+        		
+        		</dl>
+        </div>
+        <?php include('inc/leftarticle.php')?>
+    </div>
+   <div class="clear"></div>
+   <div class="wp flinkbox">
+            <h1 class=" clear f-title"> 友情链接</h1>
+            <div class="flink row-1180-24 mr-0 ml-0">
+                  <?php include('inc/links.php')?>
+            </div>
+    </div>
+	</div>
+</div>
+<?php include('inc/footer.php')?>
+</body>
+</html>

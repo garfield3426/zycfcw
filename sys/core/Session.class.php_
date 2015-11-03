@@ -1,0 +1,116 @@
+<?php
+
+class Session extends Object {
+    var $sessionPath;
+    
+    function __construct(){
+        $this->sessionPath = VAR_DIR.'/session/'.SESSION_PATH;
+        if(!file_exists($this->sessionPath)){
+            Io::mkdir($this->sessionPath.'/.');
+        }
+        session_save_path($this->sessionPath);
+        session_cache_limiter('private, must-revalidate');
+        session_start();
+        if(!isset($_SESSION['access_time'])){
+            $_SESSION['access_time']= time();
+        }
+    }
+
+    
+    function & singleton(){
+        static $instance;
+        if(!isset($instance)){
+            $class= __CLASS__;
+            $instance= new $class();
+        }
+        return $instance;
+    }
+
+    
+    function getGroupId(){
+        return (int)$_SESSION['user']['gid'];
+    }
+
+    
+    function setGroupId($id){
+        $_SESSION['user']['gid']=(int)$id;
+    }
+
+    
+    function getUserId(){
+        return (int)$_SESSION['user']['uid'];
+    }
+
+    
+    function setUserId($id){
+        $_SESSION['login_time']= time();
+        $_SESSION['user']['uid']=(int)$id;
+    }
+
+    
+    function setQueryData($data){
+        $_SESSION['query_data']= $data;
+    }
+
+    
+    function getNextTo(){
+        return $_SESSION['login_to_here'];
+    }
+
+    
+    function setNextTo($url){
+        $_SESSION['login_to_here']= $url;
+    }
+
+    
+    function updateLastActTime(){
+        $_SESSION['user']['last_action_time']= time();
+    }
+
+    
+    function getLastActTime(){
+        return $_SESSION['user']['last_action_time'];
+    }
+
+    
+    function & get($key){
+        return $_SESSION['data'][$key];
+    }
+
+    
+    function set($key, $val= null){
+        if(empty($val)){
+            unset($_SESSION['data'][$key]);
+            return;
+        }
+        $_SESSION['data'][$key]= $val;
+    }
+
+    
+    function end(){
+        unset($_SESSION);
+        session_destroy();
+    }
+
+    
+    function gc(){
+        if(!is_dir($this->sessionPath)){
+            return false;
+        }
+        if(!$dh = opendir($this->sessionPath)){
+            return false;
+        }
+        clearstatcache();
+        while(($f = readdir($dh)) !== false){
+            $f = $this->sessionPath.'/'.$f;
+            if(is_dir($f)) continue;
+
+            //将最后修改时间超过一天的Session删除
+            if(filemtime($f) + 24 * 3600 < time()){
+                unlink($f);
+            }
+        }
+        closedir($dh);
+    }
+}
+?>

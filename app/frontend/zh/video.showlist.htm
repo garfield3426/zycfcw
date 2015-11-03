@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>普瑞眼科_视频列表页</title>
+<meta name="chinaz-site-verification" content="82195aa6-b475-4833-8324-6980c9fe60a2" />
+<?php include('inc/pub_head.php')?>
+<link href="css/style_Public.css" rel="stylesheet" type="text/css" />
+<link href="css/style_Video.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<?php include('inc/banner.php')?>
+
+
+<div id="content">
+    <!------top map------>
+	<div class="map">
+  	<img src="images/top_map1.jpg" >
+    <img src="images/top_map2.jpg" >
+    <img src="images/top_map3.jpg" >
+    <img src="images/top_map4.jpg" >
+    <img src="images/top_map5.jpg" >
+    <img src="images/top_map6.jpg" >
+    <img src="images/top_map7.jpg" >
+    </div>
+    <!------mainContent------>
+    <div class="main">
+	    <!------LeftLink------>
+        	<?php include('inc/leftvideo.php')?>
+        <!------End of LeftLink------>
+        
+        <!------Right------>
+        	<div class="right">
+            	<div class="AboutTop">
+                <div class="VideoListTT"></div>
+                <div class="back"><a href="/" target="_parent">返回首页</a></div></div>
+            <!------begin of VideoList ------>
+            	<div class="VideoListT">
+                    <img src="images/VideoList_map1.jpg" />
+                    <img src="images/VideoList_map2.jpg" />
+                    <img src="images/VideoList_map3.jpg"/>             
+                </div>
+                <div class="VideoListC">
+					<?php foreach($v['list'] as $value):?>
+                	<div class="VideoList1">
+               	    <a href="<?php echo $value['viewLink']?>" target="_blank"><img src="<?php echo $value['logo']?>" alt="<?php echo $value['title']?>" width="237" height="173" /></a>
+                    <a href="<?php echo $value['viewLink']?>" title="<?php echo $value['title']?>" target="_blank"><div class="VideoList1span"><?php echo $value['title']?></div></a>
+                    </div>
+					<?php endforeach;?>
+                </div>
+                <div class="VideoListFGX"></div>
+                <div class="VideoListB">
+                	<?php include('inc/pager.php')?>
+                </div>
+            <!------end of VideoList------>
+              
+            
+                
+  </div>         
+        
+        <!------End of Right------>
+        	
+    </div>
+    <div class="mainFooter"><img src="images/footBg112.jpg" width="980" height="11" /></div>
+  <!------End of mainContent------>
+</div>
+<?php include('inc/footer.php')?>
+</body>
+</html>

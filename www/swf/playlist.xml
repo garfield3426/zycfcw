@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<playlist version="1" xmlns="http://xspf.org/ns/0/">
+	<trackList>
+		<track>
+			<title>成渝近视网</title>
+			<creator>近视手术介绍</creator>
+			<location>10.flv</location>
+			<info>/</info>
+		</track>
+		<track>
+			<title>成渝近视网</title>
+			<creator>激光治疗近视动画</creator>
+			<location>2.flv</location>
+			<info>/</info>
+		</track>
+		<track>
+			<title>成渝近视网</title>
+			<creator>飞秒激光短片-1</creator>
+			<location>4.flv</location>
+			<info>/</info>
+		</track>
+		<track>
+			<title>成渝近视网</title>
+			<creator>飞秒激光短片-2</creator>
+			<location>5.flv</location>
+			<info>/</info>
+		</track>
+		<track>
+			<title>成渝近视网</title>
+			<creator>飞秒激光短片-3</creator>
+			<location>6.flv</location>
+			<info>/</info>
+		</track>
+
+	</trackList>
+</playlist>

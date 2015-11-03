@@ -1,0 +1,577 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+<title>房源发布</title>
+<meta name="keywords" content="关键词,5个左右,单个8汉字以内">
+<meta name="description" content="网站描述，字数尽量空制在80个汉字，160个字符以内！">
+<link rel="Bookmark" href="/favicon.ico" >
+<link rel="Shortcut Icon" href="/favicon.ico" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/html5.js"></script>
+<script type="text/javascript" src="js/respond.min.js"></script>
+<script type="text/javascript" src="js/PIE_IE678.js"></script
+<![endif]-->
+<link href="css/H-ui.css" rel="stylesheet" type="text/css" />
+<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<!--[if IE 7]>
+<link href="static/h-ui/css/font-awesome-ie7.min.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<link href="js/icheck/icheck.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+<!--[if IE 6]>
+<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('.pngfix,.icon');</script>
+<![endif]-->
+</head>
+
+<body>
+<div class="header">
+	<div class="wp fluidgrid">
+	     <div class="row">
+	          <div class="col-5 mt-0">
+	              <img alt="" src="images/logo.jpg"  />
+	          </div>
+	          <div class="col-3 mt-0">
+	              <img alt="" src="images/head1.jpg"  />
+	          </div>
+	          <div class="col-4 text-r  mt-0">
+	              <img alt="" src="images/phone.jpg"  />
+	          </div>
+	     </div>
+	</div>
+</div>
+<div class="clear"></div>
+<div class="navbg">
+      <nav class="mainnav cl wp">
+          <ul class="cl">
+                <li class="current"><a href="#">首页</a></li>
+                <li><a href="#">二手房</a></li>
+                <li><a href="#">租房</a></li>
+                <li><a href="#">写字楼</a></li>
+                <li><a href="#">新房</a></li>
+                <li><a href="#">商铺</a></li>
+                <li><a href="#">房价查询</a></li>
+                <li><a href="#">房产快讯</a></li>
+                <li><a href="#">手机找房</a></li>
+          </ul>
+     </nav>
+</div>
+<div class="searchbg">
+	<div class="wp fluidgrid search">
+	     <div class="col-5 searchbox mt-10">
+	          <div class="searchBar">
+	              <form class="form-search" method="post" action="">
+	                <input id="searchKeyword" name="searchKeyword" value="请输入搜索关键词" class="searchTxt" autocomplete="off" onfocus="if(this.value=='请输入搜索关键词')this.value=''" onblur="if(this.value=='')this.value='请输入搜索关键词'">
+	                <input id="searchBtn" name="searchBtn" type="submit" value="搜索" class="searchBtn" onclick="b_onclick()">
+	              </form>
+	          </div>
+	     </div>
+	     <div class="col-7 mt-10 mb-10">
+	          <a>学区房</a>
+	          <a>二手房税表</a>
+	          <a>交房流程</a>
+	     </div>
+	</div>
+</div>
+<div class="clear"></div>
+<div class="main">
+   <form>
+	<div class="wp fluidgrid">
+	     <div class="row">
+	        <div class="col-12 tips mt-15">
+	              为了方便自己出租和他人求租，请真实填写房源信息，如果发现填写虚假房源信息，此手机号码将永远被冻结。
+	              <span class="icon-remove"></span>
+	        </div>
+	        <div class="col-12 write-info mt-15 mr-0">
+	             <ul class="w-infohead">
+	             	  <li  class="first red"><strong>填写联系方式</strong><i></i></li>
+	             	  <li><strong>填写发布类型</strong><span></span><i></i></li>
+	             	  <li><strong>填写基本信息</strong><span></span><i></i></li>
+	             	  <li class="secuss"><strong>发布成功</strong><span></span><i></i></li>
+	             </ul> 
+	             <div class="clear"></div>
+	             <div class="write-content">
+		            <form action="" method="post" class="form form-horizontal responsive" id="demoform-1">
+				        <div class="row cl">
+				            <label class="form-label col-2 t">联系人：</label>
+				            <div class="formControls col-6">
+				              <input type="text" class="input-text" autocomplete="off" placeholder="">
+				            </div>
+				        </div>
+				        <div class="row cl">
+				            <label class="form-label col-2 t">手机号码：</label>
+				            <div class="formControls col-6">
+				              <input type="text" class="input-text" autocomplete="off" placeholder="">
+				            </div>
+				        </div>
+				        <div class="row cl">
+				            <label class="form-label col-2 t">验证码：</label>
+				            <div class="formControls skin-minimal col-3">
+				                <input type="text" class="input-text" autocomplete="off" placeholder=""> 
+				            </div>
+				            <div class="formControls skin-minimal col-2">
+				                 
+				            </div>
+				        </div>
+				        <div class="row cl">
+				            <div class="col-10 col-offset-2">
+				              <input class="btn btn-danger sub-btn" type="submit" value="下 一 步">
+				            </div>
+				        </div>
+				    </form>
+			    </div>
+			</div>
+			<div class="col-12 write-info mt-15 mr-0">
+	             <ul class="w-infohead">
+	             	  <li class="first red"><strong>填写联系方式</strong><i></i></li>
+	             	  <li class="red"><strong>填写发布类型</strong><span></span><i></i></li>
+	             	  <li><strong>填写基本信息</strong><span></span><i></i></li>
+	             	  <li class="secuss"><strong>发布成功</strong><span></span><i></i></li>
+	             </ul> 
+	             <div class="clear"></div>
+	             <div class="write-content">
+		            <form action="" method="post" class="form form-horizontal responsive" id="demoform-1">
+				        <div class="row cl">
+				            <label class="form-label col-2 t">发布类型：</label>
+				            <div class="formControls col-3"> 
+					            <div id="selectbox1" class="selectbox">
+							        <div class="select-wrp">
+							          <div id="select-inp1" class="select-inp" onclick="custom_select('#select-text1','#select-drop1','#select-value1')">站长素材</div>
+							          <input name="b" id="select-value1" class="select-text" type="text"  />
+							          <a class="select-tri" onclick="custom_select('#select-text1','#select-drop1','#select-value1')"></a>
+							        </div>
+							        <div id="select-drop1" class="select-drop" style="display:none">
+							          <ul>
+							            <li><b>0</b><span>焦点图特效</span></li>
+							            <li><b>1</b><span>菜单导航</span></li>
+							            <li><b>2</b><span>flash素材</span></li>
+							            <li><b>3</b><span>jquery特效</span></li>
+							            <li><b>4</b><span>jquery特效11</span></li>
+							          </ul>
+							        </div>
+							    </div>
+					        </div>
+				        </div>
+				        <div class="row cl">
+				            <label class="form-label col-2 t">标题：</label>
+				            <div class="formControls col-6">
+				              <input type="text" class="input-text" autocomplete="off" placeholder="">
+				            </div>
+				        </div>
+				        <div class="row cl">
+				            <label class="form-label col-2 t">楼盘名称：</label>
+				            <div class="formControls skin-minimal col-6">
+				                <input type="text" class="input-text" autocomplete="off" placeholder=""> 
+				            </div>
+				        </div>
+				        <div class="row cl">
+				            <label class="form-label col-2 t">楼盘地址：</label>
+				            <div class="formControls col-6">
+				              <input type="text" class="input-text" autocomplete="off" placeholder="">
+				            </div>
+				        </div>
+				        <div class="row cl">
+				            <label class="form-label col-2 t">区域：</label>
+				            <div class="formControls col-3">
+					            <div id="selectbox2" class="selectbox">
+							        <div class="select-wrp">
+							          <div id="select-inp2" class="select-inp" onclick="custom_select('#select-text2','#select-drop2','#select-inp2')">站长素材</div>
+							          <input id="select-text2" class="select-text" type="text"  />
+							          <a class="select-tri" onclick="custom_select('#select-text2','#select-drop2','#select-inp2')"></a>
+							        </div>
+							        <div id="select-drop2" class="select-drop" style="display:none">
+							          <ul>
+							            <li>焦点图特效</li>
+							            <li>菜单导航</li>
+							            <li>flash素材</li>
+							            <li>jquery特效</li>
+							            <li>jquery特效11</li>
+							          </ul>
+							        </div>
+							    </div>
+				            </div>
+				            <div class="formControls col-3">
+                                <div id="selectbox3" class="selectbox">
+							        <div class="select-wrp">
+							          <div id="select-inp3" class="select-inp" onclick="custom_select('#select-text3','#select-drop3','#select-inp3')">站长素材</div>
+							          <input id="select-text3" class="select-text" type="text"  />
+							          <a class="select-tri" onclick="custom_select('#select-text3','#select-drop3','#select-inp3')"></a>
+							        </div>
+							        <div id="select-drop3" class="select-drop" style="display:none">
+							          <ul>
+							            <li>焦点图特效</li>
+							            <li>菜单导航</li>
+							            <li>flash素材</li>
+							            <li>jquery特效</li>
+							            <li>jquery特效11</li>
+							          </ul>
+							        </div>
+							    </div>
+				            </div>
+				        </div>
+				        <div class="row cl">
+				            <label class="form-label col-2 t lh-31">学区学校：</label>
+				            <div class="formControls skin-minimal col-2">
+				               <input type="text" class="input-text" autocomplete="off" placeholder="">
+				            </div>
+				            <label class="formControls skin-minimal col-1 lh-31">元/平方</label>
+				            <label class="formControls skin-minimal col-1 lh-31">总价</label>
+				            <div class="formControls skin-minimal col-2">
+				                 <input type="text" class="input-text" autocomplete="off" placeholder="">
+				            </div>
+				            <label class="formControls skin-minimal col-1 lh-31">万元</label>
+				        </div>
+				        <div class="row cl">
+				            <label class="form-label col-2 t">楼层：</label>
+				            <div class="formControls col-2">
+				              <input type="text" class="input-text" autocomplete="off" placeholder="">
+				            </div>
+				            <label class="formControls skin-minimal col-1 lh-31">层，共</label>
+				            <label class="formControls skin-minimal col-1 lh-31">总价</label>
+				            <div class="formControls skin-minimal col-2">
+				                 <input type="text" class="input-text" autocomplete="off" placeholder="">
+				            </div>
+				            <label class="formControls skin-minimal col-1">层</label>
+				        </div>
+				        <div class="row cl">
+				            <label class="form-label col-2 t">面积：</label>
+				            <label class="formControls skin-minimal col-1 lh-31">建筑面积</label>
+				            <div class="formControls col-1">
+				              <input type="text" class="input-text" autocomplete="off" placeholder="">
+				            </div>
+				            <label class="formControls skin-minimal col-1 lh-31">平方米</label>
+				            <label class="formControls skin-minimal col-1 lh-31">使用面积</label>
+				            <div class="formControls skin-minimal col-1">
+				                 <input type="text" class="input-text" autocomplete="off" placeholder="">
+				            </div>
+				            <label class="formControls skin-minimal col-1 lh-31">平方米</label>
+				        </div>
+				        <div class="row cl">
+				            <label class="form-label col-2 t">建筑年代：</label>
+				            <div class="formControls skin-minimal col-2">
+				                <input type="text" class="input-text" autocomplete="off" placeholder=""> 
+				            </div>
+				            <div class="formControls skin-minimal col-2">
+				                 
+				            </div>
+				        </div>
+				        <div class="row cl">
+				            <label class="form-label col-2 t">物业费：</label>
+				            <div class="formControls col-5">
+				              <input type="text" class="input-text" autocomplete="off" placeholder="">
+				            </div>
+				        </div>
+				        <div class="row cl">
+				            <label class="form-label col-2 t">物业公司：</label>
+				            <div class="formControls col-2">
+				              <input type="text" class="input-text" autocomplete="off" placeholder="">
+				            </div>
+				            <label class="formControls skin-minimal col-2 lh-31">元/平米一月</label>
+				        </div>
+				        <div class="row cl">
+				            <label class="form-label col-2 t">学区学校：</label>
+				            <div class="formControls skin-minimal col-5">
+				                <input type="text" class="input-text" autocomplete="off" placeholder=""> 
+				            </div>
+				            
+				        </div>
+				        <div class="row cl">
+				            <div class="col-10 col-offset-2">
+				              <input class="btn btn-danger sub-btn" type="submit" value="下 一 步">
+				            </div>
+				        </div>
+				    </form>
+			    </div>
+			</div>
+
+
+
+
+			<div class="col-12 write-info mt-15 mr-0">
+	             <ul class="w-infohead">
+	             	  <li class="first red"><strong>填写联系方式</strong><i></i></li>
+	             	  <li class="red"><strong>填写发布类型</strong><span></span><i></i></li>
+	             	  <li class="red"><strong>填写基本信息</strong><span></span><i></i></li>
+	             	  <li class="secuss"><strong>发布成功</strong><span></span><i></i></li>
+	             </ul> 
+	             <div class="clear"></div>
+	             <div class="write-content">
+		            <form action="" method="post" class="form form-horizontal responsive" id="demoform-1">
+				        <div class="row cl">
+				            <label class="form-label col-2 t">可否分割：</label>
+				            <div class="formControls col-3"> 
+					            <div id="selectbox4" class="selectbox">
+							        <div class="select-wrp">
+							          <div id="select-inp4" class="select-inp" onclick="custom_select('#select-text4','#select-drop4','#select-inp4')">站长素材</div>
+							          <input id="select-text4" class="select-text" type="text"  />
+							          <a class="select-tri" onclick="custom_select('#select-text4','#select-drop4','#select-inp4')"></a>
+							        </div>
+							        <div id="select-drop4" class="select-drop" style="display:none">
+							          <ul>
+							            <li>焦点图特效</li>
+							            <li>菜单导航</li>
+							            <li>flash素材</li>
+							            <li>jquery特效</li>
+							            <li>jquery特效11</li>
+							          </ul>
+							        </div>
+							    </div>
+					        </div>
+				        </div>
+				        <div class="row cl">
+				            <label class="form-label col-2 t">装修程度：</label>
+				            <div class="formControls col-3">
+					            <div id="selectbox5" class="selectbox">
+							        <div class="select-wrp">
+							          <div id="select-inp5" class="select-inp" onclick="custom_select('#select-text5','#select-drop5','#select-inp5')">站长素材</div>
+							          <input id="select-text5" class="select-text" type="text"  />
+							          <a class="select-tri" onclick="custom_select('#select-text5','#select-drop5','#select-inp5')"></a>
+							        </div>
+							        <div id="select-drop5" class="select-drop" style="display:none">
+							          <ul>
+							            <li>焦点图特效</li>
+							            <li>菜单导航</li>
+							            <li>flash素材</li>
+							            <li>jquery特效</li>
+							            <li>jquery特效11</li>
+							          </ul>
+							        </div>
+							    </div> 
+				            </div>
+				        </div>
+				        <div class="row cl">
+				            <label class="form-label col-2 t">房屋配套：</label>
+				            <div class="formControls skin-minimal col-7">
+				              <div class="check-box">
+				                 <input type="checkbox" id="checkbox-1" name="checkbox2">
+				                 <label for="checkbox-5" class="">客梯</label>
+				              </div>
+				              <div class="check-box">
+				                 <input type="checkbox" id="checkbox-2" name="checkbox2">
+				                 <label for="checkbox-6" class="">货梯</label>
+				              </div>
+				              <div class="check-box">
+				                 <input type="checkbox" id="checkbox-3" name="checkbox2">
+				                 <label for="checkbox-6" class="">停车位</label>
+				              </div>
+				              <div class="check-box">
+				                 <input type="checkbox" id="checkbox-4" name="checkbox2">
+				                 <label for="checkbox-6" class="">暖气</label>
+				              </div>
+				              <div class="check-box">
+				                 <input type="checkbox" id="checkbox-5" name="checkbox2">
+				                 <label for="checkbox-6" class="">空调</label>
+				              </div>
+				          </div>
+				        </div>
+				        <div class="row cl">
+				            <label class="form-label col-2 t">有效期：</label>
+				            <div class="formControls col-3"> 
+					            <div id="selectbox6" class="selectbox">
+							        <div class="select-wrp">
+							          <div id="select-inp6" class="select-inp" onclick="custom_select('#select-text6','#select-drop6','#select-inp6')">站长素材</div>
+							          <input id="select-text6" class="select-text" type="text"  />
+							          <a class="select-tri" onclick="custom_select('#select-text6','#select-drop6','#select-inp6')"></a>
+							        </div>
+							        <div id="select-drop6" class="select-drop" style="display:none">
+							          <ul>
+							            <li>焦点图特效</li>
+							            <li>菜单导航</li>
+							            <li>flash素材</li>
+							            <li>jquery特效</li>
+							            <li>jquery特效11</li>
+							          </ul>
+							        </div>
+							    </div>
+					        </div>
+				        </div>
+				        <div class="row cl">
+				            <label class="form-label col-2 t">交通状况：</label>
+				            <div class="formControls col-3">
+					            <div id="selectbox7" class="selectbox">
+							        <div class="select-wrp">
+							          <div id="select-inp7" class="select-inp" onclick="custom_select('#select-text7','#select-drop7','#select-inp7')">站长素材</div>
+							          <input id="select-text7" class="select-text" type="text"  />
+							          <a class="select-tri" onclick="custom_select('#select-text7','#select-drop7','#select-inp7')"></a>
+							        </div>
+							        <div id="select-drop7" class="select-drop" style="display:none">
+							          <ul>
+							            <li>焦点图特效</li>
+							            <li>菜单导航</li>
+							            <li>flash素材</li>
+							            <li>jquery特效</li>
+							            <li>jquery特效11</li>
+							          </ul>
+							        </div>
+							    </div>
+				            </div>
+				            <div class="formControls col-3">
+					            <div id="selectbox8" class="selectbox">
+							        <div class="select-wrp">
+							          <div id="select-inp8" class="select-inp" onclick="custom_select('#select-text8','#select-drop8','#select-inp8')">站长素材</div>
+							          <input id="select-text8" class="select-text" type="text"  />
+							          <a class="select-tri" onclick="custom_select('#select-text8','#select-drop8','#select-inp8')"></a>
+							        </div>
+							        <div id="select-drop8" class="select-drop" style="display:none">
+							          <ul>
+							            <li>焦点图特效</li>
+							            <li>菜单导航</li>
+							            <li>flash素材</li>
+							            <li>jquery特效</li>
+							            <li>jquery特效11</li>
+							          </ul>
+							        </div>
+							    </div> 
+				            </div>
+				        </div>
+				        <div class="row cl">
+				            <label class="form-label col-2 t">周边配套：</label>
+				            <div class="formControls col-8">
+				               <textarea class="textarea" placeholder="学校，医院，超市等" rows="" cols="" name=""></textarea>
+				            </div>
+				        </div>
+				        <div class="row cl">
+				            <label class="form-label col-2 t">楼盘描述：</label>
+				            <div class="formControls col-8">
+				                 <textarea class="textarea" placeholder="" rows="" cols="" name=""></textarea>
+				            </div>
+				        </div>
+				        <div class="row cl">
+				            <label class="form-label col-2 t">上传图片：</label>
+				            <div class="formControls col-2 mr-10">
+				                 <span class="btn-upload"> <a href="javascript:void();" class="btn btn-primary upload=btn up-btn">浏览文件</a>
+						         	<input type="file" multiple="" name="file_0" class="input-file">
+						        </span>
+				            </div>
+				            <div class="formControls col-2 mr-10">
+				                 <span class="btn-upload"> <a href="javascript:void();" class="btn btn-primary upload=btn up-btn">浏览文件</a>
+						         	<input type="file" multiple="" name="file_0" class="input-file">
+						        </span>
+				            </div>
+				            <div class="formControls col-2 mr-10">
+				                 <span class="btn-upload"> <a href="javascript:void();" class="btn btn-primary upload=btn up-btn">浏览文件</a>
+						         	<input type="file" multiple="" name="file_0" class="input-file">
+						        </span>
+				            </div>
+				        </div>
+				        <div class="row cl">
+				            <label class="form-label col-2 t">视频看房：</label>
+				            <div class="formControls col-2 mr-10">
+				                 <span class="btn-upload"> <a href="javascript:void();" class="btn  upload=btn up-btn">上传视频</a>
+						         	<input type="file" multiple="" name="file_0" class="input-file">
+						        </span>
+				            </div>
+				            <div class="formControls col-2 mr-10">
+				                 <span class="btn-upload"> <a href="javascript:void();" class="btn  upload=btn up-btn">引诱视频</a>
+						         	<input type="file" multiple="" name="file_0" class="input-file">
+						        </span>
+				            </div>
+				            <div class="formControls col-2 mr-10">
+				                 <span class="btn-upload"> <a href="javascript:void();" class="btn  upload=btn up-btn">随手拍视频</a>
+						         	<input type="file" multiple="" name="file_0" class="input-file">
+						        </span>
+				            </div>
+				        </div>
+				        
+				        <div class="row cl">
+				            <div class="col-10 col-offset-2">
+				              <input class="btn btn-danger sub-btn" type="submit" value="发   布">
+				            </div>
+				        </div>
+				    </form>
+			    </div>
+			</div>
+
+	    </div>
+	    <div class="col-12 write-info mt-15 mr-0">
+	             <ul class="w-infohead">
+	             	  <li class="first red"><strong>填写联系方式</strong><i></i></li>
+	             	  <li class="red"><strong>填写发布类型</strong><span></span><i></i></li>
+	             	  <li class="red"><strong>填写基本信息</strong><span></span><i></i></li>
+	             	  <li class="secuss red"><strong>发布成功</strong><span></span><i></i></li>
+	             </ul> 
+	             <div class="clear"></div>
+	             <div class="write-content text-c">
+	                  <img src="images/icon2.png" alt="" />
+	                  <h1>恭喜您，已发布成功！</h1>
+	                  <a class="btn border-red">预览查看</a>
+	             </div>
+	    </div>
+
+    </div>
+    </form>
+    <div class="clear"></div>
+    <div class="wp flinkbox">
+        <h1 class=" clear f-title"> 友情链接</h1>
+	    <div class="flink row-1180-24 mr-0 ml-0">
+	         <a class="col-2" href="">扬州二手房111</a>
+			 <a class="col-2" href="">扬州二手房1</a>
+			 <a class="col-2" href="">扬州二手房111</a>
+			 <a class="col-2" href="">扬州二手房1</a>
+			 <a class="col-2" href="">扬州二手房111</a>
+			 <a class="col-2" href="">扬州二手房1</a>
+			 <a class="col-2" href="">扬州二手房111</a>
+			 <a class="col-2" href="">扬州二手房1</a>
+			 <a class="col-2" href="">扬州二手房111</a>
+			 <a class="col-2" href="">扬州二手房1</a>
+			 <a class="col-2" href="">扬州二手房111</a>
+			 <a class="col-2" href="">扬州二手房1</a>
+			 <a class="col-2" href="">扬州二手房111</a>
+			 <a class="col-2" href="">扬州二手房1</a>
+			 <a class="col-2" href="">扬州二手房111</a>
+			 <a class="col-2" href="">扬州二手房1</a>
+	    </div>
+	</div>
+</div>
+<div class="footer">
+	<div class="foot">
+		<a href="#">关于我们</a>
+		<a href="#">网站合作</a>
+		<a href="#">联系我们</a>
+		<a href="#">招聘信息</a>
+		<a href="#">中介加盟</a>
+		<a href="#">网站地图</a>
+		<a href="#">意见反馈</a>
+		<a href="#" class="last">服务声明</a>
+	</div>
+	<p>Copyright &copy 2015 Soufun ******,All Rights Reserved 苏州忠业诚房产经纪有限公司 版权所有</p>
+</div>
+<script type="text/javascript" src="js/icheck/jquery.icheck.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+	   $('.skin-minimal input').iCheck({
+		checkboxClass: 'icheckbox-blue',
+			radioClass: 'iradio-blue',
+			increaseArea: '20%'
+		});
+    });
+
+    function custom_select(a,b,c,d){
+		  var $selecttext = $(a),
+			  $drop = $(b),
+			  $inp = $(c);
+			  $value = $(d);
+
+			  if($drop.css("display")=="none")
+				{
+					$drop.css({'display':'block'});
+				}
+			  else
+				{
+					$drop.css({'display':'none'});
+				}
+				
+			   $drop.find("li").click(function(){
+			        $inp.text($drop.find("li").eq($(this).index()).text());
+					$value.val($drop.find("li").eq($(this).index()).find("b").text());
+					$drop.css({'display':'none'});
+		       });
+		}
+		
+</script>
+</body>
+</html>

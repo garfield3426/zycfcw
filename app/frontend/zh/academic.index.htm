@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>普瑞眼科_学术建设</title>
+<meta name="chinaz-site-verification" content="82195aa6-b475-4833-8324-6980c9fe60a2" />
+<?php include('inc/pub_head.php')?>
+<link href="css/style_Public.css" rel="stylesheet" type="text/css" />
+<link href="css/academic.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<?php include('inc/banner.php')?>
+<div class="main">
+	<div class="top">
+		<div class="top_img"><img src="images/xueshujsh/top_1.gif" /></div>
+		<div class="top_img"><img src="images/xueshujsh/top_2.gif" /></div>
+		<div class="top_img"><img src="images/xueshujsh/top_3.gif" /></div>
+		<div class="top_img"><img src="images/xueshujsh/top_4.gif" /></div>
+	</div>
+	
+	<div class="center">
+		<div class="c_top">
+			<div class="top_left">
+				<div class="t_f_title"><a href="/index-article-showlist-cate-87.html"></a></div>
+				<div class="doc_list">
+					<div class="doc_one">
+						<div class="doc_img">
+						<?php foreach($v[doc1] as $value):?>
+							<a href="/index-doctor-view-id-<?php echo $value['id']?>.html" title="<?php echo $value['name']?>"><img width="78" height="97" src="<?php echo $value['img']?>" /></a>
+							<div class="name"><?php echo $value['name']?></div>
+						<?php endforeach?>
+						</div>
+						<div class="doc_art">
+						<?php foreach($v[aca1] as $value):?>
+							<div class="d_li"><img src="images/xueshujsh/li_bg_3.gif"/><a href="/index-article-view-id-<?php echo $value['id']?>.html" title="<?php echo $value['title']?>" target="_blank"><?php echo $value['title']?></a></div>
+						<?php endforeach?>
+							
+						</div>
+					</div>
+					
+					<div class="doc_one">
+						<div class="doc_img">
+						<?php foreach($v[doc2] as $value):?>
+							<a href="/index-doctor-view-id-<?php echo $value['id']?>.html" title="<?php echo $value['name']?>"><img width="78" height="97" src="<?php echo $value['img']?>" /></a>
+							<div class="name"><?php echo $value['name']?></div>
+						<?php endforeach?>
+						</div>
+						<div class="doc_art">
+						<?php foreach($v[aca2] as $value):?>
+							<div class="d_li"><img src="images/xueshujsh/li_bg_3.gif"/><a href="/index-article-view-id-<?php echo $value['id']?>.html" title="<?php echo $value['title']?>" target="_blank"><?php echo $value['title']?></a></div>
+						<?php endforeach?>
+							
+						</div>
+					</div>
+					
+					<div class="doc_one">
+						<div class="doc_img">
+						<?php foreach($v[doc3] as $value):?>
+							<a href="/index-doctor-view-id-<?php echo $value['id']?>.html" title="<?php echo $value['name']?>"><img width="78" height="97" src="<?php echo $value['img']?>" /></a>
+							<div class="name"><?php echo $value['name']?></div>
+						<?php endforeach?>
+						</div>
+						<div class="doc_art">
+						<?php foreach($v[aca3] as $value):?>
+							<div class="d_li"><img src="images/xueshujsh/li_bg_3.gif"/><a href="/index-article-view-id-<?php echo $value['id']?>.html" title="<?php echo $value['title']?>" target="_blank"><?php echo $value['title']?></a></div>
+						<?php endforeach?>
+							
+						</div>
+					</div>
+					
+					<div class="doc_one">
+						<div class="doc_img">
+						<?php foreach($v[doc4] as $value):?>
+							<a href="/index-doctor-view-id-<?php echo $value['id']?>.html" title="<?php echo $value['name']?>"><img width="78" height="97" src="<?php echo $value['img']?>" /></a>
+							<div class="name"><?php echo $value['name']?></div>
+						<?php endforeach?>
+						</div>
+						<div class="doc_art">
+						<?php foreach($v[aca4] as $value):?>
+							<div class="d_li"><img src="images/xueshujsh/li_bg_3.gif"/><a href="/index-article-view-id-<?php echo $value['id']?>.html" title="<?php echo $value['title']?>" target="_blank"><?php echo $value['title']?></a></div>
+						<?php endforeach?>
+							
+						</div>
+					</div>
+					
+					
+				</div>
+			</div>
+			<div class="top_right">
+				<div class="t_r_title"><a href="/index-article-showlist-cate-87.html"></a></div>
+				<div class="t_r_list">
+					<?php $art=ext('article_list',9,1,false,false,87)?>
+					<?php foreach($art['list'] as $value):?>
+						<div class="t_d_li"><img src="images/xueshujsh/li_bg_3.gif"/><a href="<?php echo $value['viewLink']?>" title="<?php echo $value['title']?>" target="_blank"><?php echo $value['title']?></a></div>
+					<?php endforeach;?>
+					
+				</div>
+			</div>
+			<div class="kong"></div>
+		</div>
+		<div class="download">
+			<div class="download_title"><a href="#"></a></div>
+			<div class="download_ul">
+				<div class="download_li"><a href="/purui/uploads/academic/vol_6.exe" title="普瑞电子期刊第六期"><img src="/purui/uploads/academic/vol_6.jpg" width="125" height="165" /></a><a class="down_bottom" href="/purui/uploads/academic/vol_6.exe" title="普瑞电子期刊第六期"></a></div>
+				<div class="download_li"><a href="/purui/uploads/academic/vol_5.exe" title="普瑞电子期刊第五期"><img src="/purui/uploads/academic/vol_5.jpg" width="125" height="165" /></a><a class="down_bottom" href="/purui/uploads/academic/vol_5.exe" title="普瑞电子期刊第五期"></a></div>
+				<div class="download_li"><a href="/purui/uploads/academic/vol_4.exe" title="普瑞电子期刊第四期"><img src="/purui/uploads/academic/vol_4.jpg" width="125" height="165" /></a><a class="down_bottom" href="/purui/uploads/academic/vol_4.exe" title="普瑞电子期刊第四期"></a></div>
+				<div class="download_li"><a href="/purui/uploads/academic/vol_3.exe" title="普瑞电子期刊第三期"><img src="/purui/uploads/academic/vol_3.jpg" width="125" height="165" /></a><a class="down_bottom" href="/purui/uploads/academic/vol_3.exe" title="普瑞电子期刊第三期"></a></div>
+				<div class="download_li"><a href="/purui/uploads/academic/vol_2.exe" title="普瑞电子期刊第二期"><img src="/purui/uploads/academic/vol_2.jpg" width="125" height="165" /></a><a class="down_bottom" href="/purui/uploads/academic/vol_2.exe" title="普瑞电子期刊第二期"></a></div>
+				<div class="download_li"><a href="/purui/uploads/academic/vol_1.exe" title="普瑞电子期刊第一期"><img src="/purui/uploads/academic/vol_1.jpg" width="125" height="165" /></a><a class="down_bottom" href="/purui/uploads/academic/vol_1.exe" title="普瑞电子期刊第一期"></a></div>
+			</div>
+		</div>
+	</div>
+	
+</div>
+<?php include('inc/footer.php')?>
+</body>
+</html>

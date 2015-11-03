@@ -1,0 +1,867 @@
+<!DOCTYPE >
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+
+<title>发布求购信息</title>
+
+<meta name="keywords" content="关键词,5个左右,单个8汉字以内">
+
+<meta name="description" content="网站描述，字数尽量空制在80个汉字，160个字符以内！">
+
+<link rel="Bookmark" href="/favicon.ico" >
+
+<link rel="Shortcut Icon" href="/favicon.ico" />
+
+<script src="js/ckeditor_basic/ckeditor.js"></script>
+
+<!--[if lt IE 9]>
+
+<script type="text/javascript" src="js/html5.js"></script>
+
+<script type="text/javascript" src="js/respond.min.js"></script>
+
+<script type="text/javascript" src="js/PIE_IE678.js"></script
+
+<![endif]-->
+
+<link href="css/H-ui.css" rel="stylesheet" type="text/css" />
+
+<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<!--[if IE 7]>
+
+<link href="static/h-ui/css/font-awesome-ie7.min.css" rel="stylesheet" type="text/css" />
+
+<![endif]-->
+
+<link href="js/icheck/icheck.css" rel="stylesheet" type="text/css" />
+
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+
+<link href="css/uploadimg/uploadify.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+
+<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+
+<script type="text/javascript" src="js/uploadimg/jquery.uploadify-3.1.min.js"></script>
+
+<script type="text/javascript" src="js/uploadimg/uploadimg.js"></script>
+
+<!--[if IE 6]>
+
+<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js" ></script>
+
+<script>DD_belatedPNG.fix('.pngfix,.icon');</script>
+
+<![endif]-->
+
+</head>
+
+<body>
+
+<?php include('inc/banner.php')?>
+
+<div class="main">
+
+	<div class="wp fluidgrid">
+
+	<form action="<?php echo $v['formAct']?>" method="post" class="form form-horizontal responsive" id="mainForm" name="form1">
+
+		<input type="hidden" name="item[id]" value="<?php echo $v['item']['id']?>" />
+
+		<div class="row">
+
+		         <?php include('inc/top.php')?>
+
+		        <?php include('inc/left_login.php')?>
+
+				<div class="col-10 useradmin-content fabu mt-15 mr-0">
+
+	                <h1><?php echo $v['title'];?></h1>
+
+	                <div class="useradmin-con">
+
+						<input type="hidden" name="item[id]" value="<?php echo $v['item']['id']?>" />
+
+						<div class="write-info mr-0">
+
+				             <div class="write-content">
+
+							        <div class="row cl"><!--请选择发布类型：-->
+
+							            <label class="form-label col-2 t"><b>*</b>请选择发布类型：</label>
+
+							            <div class="formControls col-8 fwtype">
+
+												<?php foreach($v[ 'jsonData']['item[fytype]']['list'] as $key=>$value):?>
+
+												<?php if($key==243 || $key==245 || $key==246):?>
+
+													<div class="f-l mr-20 mt-5">
+
+														<label><input <?php if($key==243){ echo ' class="mr-5 myong zz" ';} elseif($key==244){ echo ' class="mr-5 myong bs" ';} elseif($key==245){ echo ' class="mr-5 syong xzl" ';} elseif($key==246){ echo ' class="mr-5 syong sp" ';}?>type="radio" name="item[fytype]" value="<?php echo $key;?>" <?php if($v['item']['fytype']){
+
+															if( $v['item']['fytype']==$key){
+
+																echo 'checked="checked"';
+
+															}
+
+														}elseif($key==243){
+
+															echo 'checked="checked"';
+
+														}?> ><?php echo $value;?></label>
+
+													</div>
+
+													<?php endif;?>
+
+												<?php endforeach;?>
+
+										</div>
+
+							        </div>
+
+									<div class="row cl"><!--目标区域 zhu_zhai shang_pu  xiezi_lou-->
+
+							            <label class="form-label col-2 t zhu_z"><b>*</b>目标区域：</label>
+
+										<label class="form-label col-2 t sp_xzl"><b>*</b>目标区域：</label>
+
+							            <div class="formControls col-2">
+
+											<select  name="item[qy]" id="quyu" class="selectbox" onChange="changeselect1(this.value)"  datatype="*" errormsg="区域选择错误！" nullmsg="请选择区域！" sucmsg=" ">
+
+												<option value=" ">请选择区域</option>
+
+												<?php foreach($v[ 'jsonData']['item[qy]'] as $value):?>
+
+												<option  value="<?php echo $value['id'];?>"  <?php if( $v['item']['qy']==$value['id']) echo 'selected="selected"'?>><?php echo $value['title_zh'];?></option>
+
+												<?php endforeach;?>
+
+											</select>
+
+							            </div>
+
+										<div class="formControls col-3">
+
+											<select  name="s2" id="shangquan" class="selectbox"   datatype="*" errormsg="街道选择错误！" nullmsg="请选择街道！" sucmsg=" ">
+
+												<option>==请选择==</option>
+
+												<?php if($v['value_sq']):?>
+
+												<?php foreach($v['value_sq'] as $value):?>
+
+													<option  value="<?php echo $value['id'];?>"  <?php if( $v['item']['sq']==$value['id']) echo 'selected="selected"'?>><?php echo $value['title_zh'];?></option>
+
+												<?php endforeach;?>
+
+												<?php endif;?>
+
+											</select>
+
+							            </div>
+
+										<div class="col-4 pt-5 Validmsg"><span class="Validform_checktip"></span></div>
+
+							        </div>
+
+									<div class="row cl xiezi_l" style="display:none;"><!--写字楼级别 xiezi_lou-->
+
+							            <label class="form-label col-2 t"><b>*</b>写字楼类型：</label>
+
+							            <div class="formControls col-7"> 
+
+										<?php foreach($v[ 'lx_xzl'] as $key=>$value):?>
+
+											<div class="f-l mr-20 mt-5">
+
+												 <label><input class="mr-5" type="radio" name="item[lx_xzl]" value="<?php echo $key;?>" <?php if( $v['item']['lx_xzl']==$key):?> checked="checked"<?php endif?> datatype="*" errormsg=" " nullmsg="请选择写字楼类型！" sucmsg=" "><?php echo $value;?></label>
+
+											</div>
+
+											<?php endforeach;?>
+
+										</div>
+
+										<div class="col-3 pt-5 Validmsg"><span class="Validform_checktip"></span></div>
+
+							        </div>
+
+									<div class="row cl xiezi_l" style="display:none;"><!--写字楼类型 xiezi_lou-->
+
+							            <label class="form-label col-2 t">写字楼级别：</label>
+
+							            <div class="formControls col-7"> 
+
+										<?php foreach($v[ 'jb_xzl'] as $key=>$value):?>
+
+											<div class="f-l mr-20 mt-5">
+
+												 <label><input class="mr-5" type="radio" name="item[jb_xzl]" value="<?php echo $key;?>" <?php if( $v['item']['jb_xzl']==$key):?> checked="checked"<?php endif?>><?php echo $value;?></label>
+
+											</div>
+
+											<?php endforeach;?>
+
+										</div>
+
+							        </div>
+
+									<div class="row cl shang_pu"><!--商铺类型 shang_pu-->
+
+							            <label class="form-label col-2 t"><b>*</b>商铺类型：</label>
+
+							            <div class="formControls col-7"> 
+
+										<?php foreach($v[ 'splx_sp'] as $key=>$value):?>
+
+											<div class="f-l mr-20 mt-5">
+
+												 <label><input class="mr-5" type="radio" name="item[splx_sp]" value="<?php echo $key;?>" <?php if( $v['item']['splx_sp']==$key):?> checked="checked"<?php endif?>  datatype="*" errormsg=" " nullmsg="请选择商铺类型！" sucmsg=" "><?php echo $value;?></label>
+
+											</div>
+
+											<?php endforeach;?>
+
+										</div>
+
+										<div class="col-3 pt-5 Validmsg"><span class="Validform_checktip"></span></div>
+
+							        </div>
+
+									<div class="row cl shang_p" style="display:none;"><!--适合行业 shang_pu-->
+
+							            <label class="form-label col-2 t"><b>*</b>适合行业：</label>
+
+							            <div class="formControls col-7"> 
+
+										<?php foreach($v[ 'kjylb_sp'] as $key=>$value):?>
+
+											<div class="f-l mr-20 mt-5">
+
+												 <label><input class="mr-5" type="radio" name="item[kjylb_sp]" value="<?php echo $key;?>" <?php if( $v['item']['kjylb_sp']==$key):?> checked="checked"<?php endif?>  datatype="*" errormsg="适合行业选择错误！" nullmsg="请选择适合行业！" sucmsg=" "><?php echo $value;?></label>
+
+											</div>
+
+											<?php endforeach;?>
+
+										</div>
+
+										<div class="col-3 pt-5 Validmsg"><span class="Validform_checktip"></span></div>
+
+							        </div>
+
+									<div class="row cl xiezi_lou"><!--楼层 shang_pu  xiezi_lou-->
+
+							            <label class="form-label col-2 t">楼层：</label>
+
+							            <div class="formControls col-3">
+
+								            <select  name="item[lc_qg_xzl]" id="lc_qg_xzl" class="selectbox text-c" >
+
+											<option>==请选择楼层==</option>  
+
+											<?php if($v[ 'lc_qg_xzl']):?>
+
+											<?php foreach($v[ 'lc_qg_xzl'] as $key=>$value):?>
+
+												<option  value="<?php echo $key;?>"  <?php if( $v['item']['lc_qg_xzl']==$key) echo 'selected="selected"'?>><?php echo $value;?></option>
+
+											<?php endforeach;?>
+
+											<?php endif;?>
+
+										    </select>
+
+										</div>
+
+							        </div>
+
+									<div class="row cl zhuzhai"><!--户型-->
+
+							            <label class="form-label col-2 t"><b>*</b>户型：</label>
+
+										<div class="formControls col-1">
+
+											<input type="text" class="input-text" autocomplete="off" name="item[fx_s]" placeholder="" value="<?php echo $v['item']['fx_s']?>"  datatype="n" errormsg="几室填写错误，请填写整数数字！" nullmsg="几室填写不能为空！" sucmsg=" ">
+
+										</div>
+
+										<label class="formControls skin-minimal lh-31 f-l">室</label>
+
+										<div class="formControls col-1">
+
+											<input type="text" class="input-text" autocomplete="off" name="item[fx_t]" placeholder="" value="<?php echo $v['item']['fx_t']?>"   datatype="n" errormsg="几厅填写错误，请填写整数数字！" nullmsg="几厅填写不能为空！" sucmsg=" ">
+
+										</div>
+
+										<label class="formControls skin-minimal lh-31 f-l">厅</label>
+
+										<div class="formControls skin-minimal col-1">
+
+											<input type="text" class="input-text" autocomplete="off" name="item[fx_w]" placeholder="" value="<?php echo $v['item']['fx_w']?>" datatype="n" errormsg="几卫填写错误，请填写整数数字！" nullmsg="几卫填写不能为空！" sucmsg=" ">
+
+									    </div>
+
+										<label class="formControls skin-minimal lh-31 f-l">卫</label>
+
+										<div class="col-4 pt-5 Validmsg"><span class="Validform_checktip"></span></div>
+
+							        </div>
+
+									<div class="row cl"><!--售价-->
+
+										<label class="form-label col-2 t zhu_z"><b>*</b>售价：</label>
+
+										<label class="form-label col-2 t sp_xzl"><b>*</b>总价：</label>
+
+										<label class="formControls skin-minimal lh-31 f-l">不超过</label>
+
+										<div class="formControls skin-minimal col-2">
+
+												 <input type="text" name="item[zj]" class="input-text" autocomplete="off" placeholder="" value="<?php echo $v['item']['zj']?>"  datatype="*,n|*,f" errormsg="价格填写错误，请填写整数数字或带小数数字！" nullmsg="价格填写不能为空！" sucmsg=" ">
+
+										</div>
+
+										<label class="formControls skin-minimal lh-31 f-l">万元</label>
+
+										<div class="col-5 pt-5 Validmsg"><span class="Validform_checktip"></span></div>
+
+									</div>
+
+							        <div class="row cl"><!--面积 shang_pu xiezi_lou-->
+
+							            <label class="form-label col-2 t zhu_z"><b>*</b>建筑面积：</label>
+
+										<label class="form-label col-2 t sp_xzl"><b>*</b>面积：</label>
+
+							            <label class="formControls skin-minimal lh-31 f-l">不少于</label>
+
+							            <div class="formControls skin-minimal col-2">
+
+							                 <input type="text" name="item[jzmj]" class="input-text" autocomplete="off" placeholder="" value="<?php echo $v['item']['jzmj']?>"  datatype="*,n|*,f" errormsg="面积填写错误，请填写整数数字或带小数数字！" nullmsg="面积填写不能为空！" sucmsg=" ">
+
+							            </div>
+
+							            <label class="formControls skin-minimal lh-31 f-l">平方米</label>
+
+							            <div class="col-5 pt-5 Validmsg"><span class="Validform_checktip"></span></div>
+
+							        </div>	
+
+									<div class="row cl sp_xzl"><!--装修程度 zhu_zhai shang_pu xiezi_lou-->
+
+							            <label class="form-label col-2 t">装修程度：</label>
+
+							            <div class="formControls col-7"> 
+
+										<?php foreach($v[ 'jsonData']['item[zxcd]']['list'] as $key=>$value):?>
+
+											<div class="f-l mr-20 mt-5">
+
+												 <label><input class="mr-5" type="radio" name="item[zxcd]" value="<?php echo $key;?>" <?php if( $v['item']['zxcd']==$key):?> checked="checked"<?php endif?>><?php echo $value;?></label>
+
+											</div>
+
+											<?php endforeach;?>
+
+										</div>
+
+							        </div>
+
+									<div class="row cl zhu_z"><!--房屋需求 zhu_zhai-->
+
+							            <label class="form-label col-2 t">房屋需求：</label>
+
+							            <div class="formControls col-2">
+
+								            <select  name="item[zxcd_zz]" id="zxcd_zz" class="selectbox text-c" >
+
+											<option>==装修需求==</option>  
+
+											<?php if($v[ 'jsonData']['item[zxcd]']['list']):?>
+
+											<?php foreach($v[ 'jsonData']['item[zxcd]']['list'] as $key=>$value):?>
+
+												<option  value="<?php echo $key;?>"  <?php if( $v['item']['zxcd_zz']==$key) echo 'selected="selected"'?>><?php echo $value;?></option>
+
+											<?php endforeach;?>
+
+											<?php endif;?>
+
+										    </select>
+
+										</div>
+
+										<div class="formControls col-2">
+
+								            <select  name="item[cx]" id="cx" class="selectbox text-c" >
+
+											<option>==朝向需求==</option>  
+
+											<?php if($v[ 'jsonData']['item[cx]']['list']):?>
+
+											<?php foreach($v[ 'jsonData']['item[cx]']['list'] as $key=>$value):?>
+
+												<option  value="<?php echo $key;?>"  <?php if( $v['item']['cx']==$key) echo 'selected="selected"'?>><?php echo $value;?></option>
+
+											<?php endforeach;?>
+
+											<?php endif;?>
+
+										    </select>
+
+										</div>
+
+										<div class="formControls col-2">
+
+								            <select  name="item[lc_qg_zz]" id="lc_qg_zz" class="selectbox text-c" >
+
+											<option>==期待楼层==</option>  
+
+											<?php if($v[ 'lc_qg_zz']):?>
+
+											<?php foreach($v[ 'lc_qg_zz'] as $key=>$value):?>
+
+												<option  value="<?php echo $key;?>"  <?php if( $v['item']['lc_qg_zz']==$key) echo 'selected="selected"'?>><?php echo $value;?></option>
+
+											<?php endforeach;?>
+
+											<?php endif;?>
+
+										    </select>
+
+										</div>
+
+										<div class="formControls col-2">
+
+								            <select  name="item[fl_qg_zz]" id="fl_qg_zz" class="selectbox text-c" >
+
+											<option>==期待房龄==</option>  
+
+											<?php if($v[ 'fl_qg_zz']):?>
+
+											<?php foreach($v[ 'fl_qg_zz'] as $key=>$value):?>
+
+												<option  value="<?php echo $key;?>"  <?php if( $v['item']['fl_qg_zz']==$key) echo 'selected="selected"'?>><?php echo $value;?></option>
+
+											<?php endforeach;?>
+
+											<?php endif;?>
+
+										    </select>
+
+										</div>
+
+							        </div>
+
+									<div class="row cl"><!--配套设施zhuzhai-->
+
+									    <label class="form-label col-2 t">配套设施：</label>
+
+										<div class="formControls skin-minimal col-7">
+
+										    <div class="zhu_zhai">
+
+												<?php foreach($v[ 'ptss_zz']as $key=>$value):?>   
+
+													<div class="check-box  mt-5">
+
+														<input type="checkbox" id="checkbox-1" name="item[ptss_zz][]" value="<?php echo $key;?>"
+
+														 <?php if(is_array($v['item']['ptss_zz'])):?>
+
+														 <?php if(in_array($key,$v['item']['ptss_zz'])):?>
+
+														 checked="checked"
+
+														 <?php endif; endif;?> >
+
+														<label for="checkbox-5" class="mt-10"><?php echo $value;?></label>
+
+													</div>
+
+												<?php endforeach;?>
+
+											</div>
+
+											<div class="bie_shu" style="display:none">
+
+												<?php foreach($v[ 'ptss_bs'] as $key=>$value):?>   
+
+													<div class="check-box  mt-5">
+
+														<input type="checkbox" id="checkbox-1" name="item[ptss_bs][]" value="<?php echo $key;?>"
+
+														 <?php if(is_array($v['item']['ptss_bs'])):?>
+
+														 <?php if(in_array($key,$v['item']['ptss_bs'])):?>
+
+														 checked="checked"
+
+														 <?php endif; endif;?> >
+
+														<label for="checkbox-5" class="mt-10"><?php echo $value;?></label>
+
+													</div>
+
+												<?php endforeach;?>
+
+											</div>
+
+									    </div>
+
+							        </div>
+
+									<div class="row cl sp_xzl_zz"><!--房源标题-->
+
+										<label class="form-label col-2 t"><b>*</b>房源标题：</label>
+
+										<div class="formControls skin-minimal col-6">
+
+												 <input type="text" name="item[title]" class="input-text" autocomplete="off" placeholder="" value="<?php echo $v['item']['title']?>"   datatype="*" errormsg="房源标题填写错误！" nullmsg="房源标题填写不能为空！" sucmsg=" ">
+
+										</div>
+
+										<div class="col-4 pt-5 Validmsg"><span class="Validform_checktip"></span></div>
+
+									</div>
+
+									<div class="row cl sp_xzl_zz"><!--房源描述-->
+
+										<label class="form-label col-2 t">房源描述：</label>
+
+										<div class="formControls col-8">
+
+										   <textarea class="textarea" placeholder="公交" rows="" cols="" name="item[content]"><?php echo $v['item']['content']?></textarea><script type="text/javascript">CKEDITOR.replace('item[content]');</script>
+
+										</div>
+
+									</div>
+
+									<div class="row cl">
+
+										<div class="col-10 col-offset-2">
+
+										  <input class="btn btn-danger sub-btn" type="submit" name="submit" value="发   布">
+
+										</div>
+
+									</div>
+
+			                </div>
+
+						</div>
+
+                      
+
+						
+
+					</div>
+
+				</div>
+
+		</form>	    
+
+    </div>
+
+	
+
+    <div class="clear"></div>
+
+    <div class="wp flinkbox">
+
+        <h1 class=" clear f-title"> 友情链接</h1>
+
+	    <div class="flink row-1180-24 mr-0 ml-0">
+
+	         <?php include('inc/links.php')?>
+
+	    </div>
+
+	</div>
+
+</div>
+
+<?php include('inc/footer.php')?>
+
+<script type="text/javascript" src="js/icheck/jquery.icheck.min.js"></script>
+
+<script type="text/javascript">
+
+	$(function(){
+
+	   $('.skin-minimal input').iCheck({
+
+		checkboxClass: 'icheckbox-blue',
+
+			radioClass: 'iradio-blue',
+
+			increaseArea: '20%'
+
+		});
+
+    });
+
+	
+
+	
+
+	$('.fwtype').find("input.zz").click(function(){
+
+	  $('.zhu_z').css({'display':'block'});
+
+	  $('.zhuzhai').css({'display':'block'});
+
+	  $('.zhu_zhai').css({'display':'block'});
+
+	  $('.zz_bs').css({'display':'block'});
+
+	  $('.bie_shu').css({'display':'none'});
+
+	  $('.shang_pu').css({'display':'none'});
+
+	  $('.xiezi_lou').css({'display':'none'});
+
+	  $('.shang_p').css({'display':'none'});
+
+	  $('.xiezi_l').css({'display':'none'});
+
+	  $('.sp_xzl').css({'display':'none'});
+
+	});
+
+	
+
+	
+
+	$('.fwtype').find("input.xzl").click(function(){
+
+	  $('.xiezi_lou').css({'display':'block'});
+
+	  $('.xiezi_l').css({'display':'block'});
+
+	  $('.sp_xzl').css({'display':'block'});
+
+	  $('.zhu_z').css({'display':'none'});
+
+	  $('.shang_p').css({'display':'none'});
+
+	  $('.zhuzhai').css({'display':'none'});
+
+	  $('.shang_pu').css({'display':'none'});
+
+	  $('.zz_bs').css({'display':'none'});
+
+	  
+
+	});
+
+	
+
+	$('.fwtype').find("input.sp").click(function(){
+
+	  $('.shang_pu').css({'display':'block'});
+
+	  $('.shang_p').css({'display':'block'});
+
+	  $('.sp_xzl').css({'display':'block'});
+
+	  $('.xiezi_l').css({'display':'none'});
+
+	  $('.zhu_z').css({'display':'none'});
+
+	  $('.xiezi_l').css({'display':'none'});
+
+	  $('.zhuzhai').css({'display':'none'});
+
+	  $('.xiezi_lou').css({'display':'none'});
+
+	   $('.zz_bs').css({'display':'none'});
+
+	});
+
+	$('.fwtype input[name="item[fytype]"]').each(function(i,value)
+
+	{
+
+		if($('.fwtype input').eq(i).attr("checked")=="checked")
+
+		{
+
+			switch (i) {
+
+				case 0:
+
+				  $('.zhu_z').css({'display':'block'});
+
+				  $('.zhuzhai').css({'display':'block'});
+
+				  $('.zhu_zhai').css({'display':'block'});
+
+				  $('.zz_bs').css({'display':'block'});
+
+				  $('.bie_shu').css({'display':'none'});
+
+				  $('.shang_pu').css({'display':'none'});
+
+				  $('.xiezi_lou').css({'display':'none'});
+
+				  $('.shang_p').css({'display':'none'});
+
+				  $('.xiezi_l').css({'display':'none'});
+
+				  $('.sp_xzl').css({'display':'none'});
+
+				break;
+
+				case 1:
+
+				  $('.xiezi_lou').css({'display':'block'});
+
+				  $('.xiezi_l').css({'display':'block'});
+
+				  $('.sp_xzl').css({'display':'block'});
+
+				  $('.zhu_z').css({'display':'none'});
+
+				  $('.shang_p').css({'display':'none'});
+
+				  $('.zhuzhai').css({'display':'none'});
+
+				  $('.shang_pu').css({'display':'none'});
+
+				  $('.zz_bs').css({'display':'none'});
+
+				break;
+
+				case 2:
+
+				  $('.shang_pu').css({'display':'block'});
+
+				  $('.shang_p').css({'display':'block'});
+
+				  $('.sp_xzl').css({'display':'block'});
+
+				  $('.xiezi_l').css({'display':'none'});
+
+				  $('.zhu_z').css({'display':'none'});
+
+				  $('.xiezi_l').css({'display':'none'});
+
+				  $('.zhuzhai').css({'display':'none'});
+
+				  $('.xiezi_lou').css({'display':'none'});
+
+				  $('.zz_bs').css({'display':'none'});
+
+				break;
+
+			}
+
+		}
+
+   })
+
+	
+
+</script>
+
+<script type="text/javascript" src="js/img_datadeal.js"></script>
+
+<script   language="JavaScript">     
+
+     var subcat = new Array();
+
+	<?php if ($v['list']): ?>
+
+	<?php foreach ($v['list'] as $key=>$v_sq ): ?>
+
+    subcat[<?php echo $key?>]=new Array("<?php echo $v_sq['0']?>","<?php echo $v_sq['1']?>","<?php echo $v_sq['2']?>"); 
+
+	<?php endforeach;?>
+
+	<?php endif;?>
+
+  function   changeselect1(locationid){     
+
+	document.form1.s2.length   =   0;   //初始化下拉列表   清空下拉数据     
+
+	document.form1.s2.options[0]   =   new   Option('==请选择商圈==','');   //给第一个值     
+
+	for   (i=0;   i<subcat.length;   i++)   //legth=20     
+
+	{     
+
+	  if   (subcat[i][0]   ==   locationid)   //[0]   [1]   第一列   第二列     
+
+	  {document.form1.s2.options[document.form1.s2.length]   =   new   Option(subcat[i][1],   subcat[i][2]);}   //建立option 
+
+	} 
+
+  }     
+
+</script> 
+
+  <script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+
+  <script type="text/javascript" src="js/Validform_v5.3.2.js"></script>     
+
+  <script>
+
+	 $(function(){
+
+		var demo=$("#mainForm").Validform({
+
+			ignoreHidden:true,
+
+			tiptype:function(msg,o,cssctl){
+
+				if(!o.obj.is("form")){
+
+					var objtip=o.obj.parents().nextAll(".Validmsg").find(".Validform_checktip");
+
+					cssctl(objtip,o.type);
+
+					objtip.text(msg);
+
+				}else{
+
+					var objtip=o.obj.find("#msgdemo");
+
+					cssctl(objtip,o.type);
+
+					objtip.text(msg);
+
+				}
+
+		    },
+
+		    datatype:{"f":/^(-?\d+)(\.\d+)?$/,
+
+		             "hanzi":/^[\u4e00-\u9fa5]+$/
+
+		    },
+
+			label:".yz-label"
+
+		});
+
+     })
+
+  </script>
+
+</body>
+
+</html>

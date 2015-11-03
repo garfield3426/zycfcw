@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>网站管理后台</title>
+        <link rel="stylesheet" type="text/css" href="backend/main.css" />
+        <!-- 加载JS -->
+        <script type="text/javascript" src="js/base.js"></script>
+        <script type="text/javascript" src="backend/main.js"></script>
+        <!-- 自定义加载 -->
+        <script type="text/javascript" src="backend/lib/gridview.js"></script>
+        <!-- UI -->
+        <link rel="stylesheet" type="text/css" href="js/ui.css" />
+        <script src="js/ui.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            var headerUrl = '<?php echo Core::getUrl('header','default')?>';
+            var mainnavUrl = '<?php echo Core::getUrl('mainnav','default')?>';
+            var jsonData = <?php echo json_encode($v['jsonData']); ?>;
+            $(function(){
+                GridView.init('grid');
+                ui.init();
+            });
+        </script>
+		<script type="text/javascript" charset="utf-8">
+		   		function changeorder(toid){
+					var order = $("#order"+toid).val();
+					if(!/[1-9][0-9]*/.test(order)){
+						alert('输入不正确,只能输入数字');
+						return false;
+					}else{
+					$.post('admin-doctor-order.html',{ toorder:order,toid:toid },
+					  function(data){
+					    
+					  }
+					)
+				}
+		   		}
+		</script>
+        <style text"text/css">
+        #list img.logo { height:60px; width:120px; margin:5px; border:1px solid #ddd; }
+        </style>
+    </head>
+    <body>
+        <!-- 页头 -->
+        <div id="header"></div>
+        <!-- 侧栏 -->
+        <div id="sideBar"></div>
+        <!-- 主内容 -->
+        <div id="content">
+            <form id="mainForm" action="<?php echo $v['formAct']?>" method="post">
+                <div id="titleBar"><strong><?php echo $v['title']?></strong></div>
+                <!--搜索条-->
+                <div id="filterBar">
+                    
+                    <span>状态：<select name="kw_state" class="auto"><option value=""></option></select></span>
+					<span>所属医院：<select name="kw_h_id" class="auto">
+                    		<option value=""></option>
+                        	<?php foreach($v['hospital'] as $i):?>
+                        		<option value="<?php echo $i['id']?>"  <?php if($v['item']['h_id']&($v['item']['h_id']==$i['id'])) echo selected; ?>><?php echo $i['name']?></option>
+                        	<?php endforeach;?></select></span>
+                    <span>科室：<select name="kw_b_id" class="auto">
+                    		<option value=""></option>
+                        	<?php foreach($v['branch'] as $i):?>
+                        		<option value="<?php echo $i['id']?>"  <?php if($v['item']['b_id']&($v['item']['b_id']==$i['id'])) echo selected; ?>><?php echo $i['name']?></option>
+                        	<?php endforeach;?></select></span>
+                   <span>职位：<input name="kw_duty" type="text" size="15" value="<?php echo $v['kw']['kw_duty']?>" /></span>
+                   <span>职称：<input name="kw_rank" type="text" size="15" value="<?php echo $v['kw']['kw_rank']?>" /></span>
+                    
+                    <br />
+                    
+                    <span>医生姓名：<input name="kw_title" type="text" size="40" value="<?php echo $v['kw']['kw_title']?>" /></span>
+                    <span>编辑：<input name="kw_editor" type="text" size="15" value="<?php echo $v['kw']['kw_editor']?>" /></span>
+                    <input type="submit" value="按条件搜索" />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><strong>[<a href="admin-doctor-create.html">添加医生信息</a>]</strong></span>
+                </div>
+                <!--列表区-->
+                <div id="list">
+                    <table id="grid" width="99%" align="center" border="0" cellpadding="2" cellspacing="1" bgcolor="#FFFFFF">
+                        <thead>
+                            <tr bgcolor="#dbeaf5">
+                                <td width="1%">&nbsp;</td>
+								<td width="1%">&nbsp;</td>
+                                <td width="10%">Photo</td>
+								<td width="15%">医生姓名</td>
+                                <td width="15%">科室</td>
+								<td>职位</td>
+								<td width="15%">职称</td>
+								<td width="5%">排序</td>
+                                <td width="15%">所属医院</td>
+                                <td width="10%">操作</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach($v['list'] as $i):?>
+                            <tr>
+                                <td><input name="id[]" type="checkbox" value="<?php echo $i['id']?>" /></td>
+								<td><img src="<?php echo $i['state']?>" class="state auto" /></td>
+                                <td><img src="<?php echo $i['img']?>" width="30 px" height="40 px"></td>
+								<td><?php echo $i['name']?></td>
+                                <td><?php echo $i['b_name']?></td>
+								<td><?php echo $i['duty']?></td>
+								<td><?php echo $i['rank']?></td>
+								<td><input type="text" id="<?php echo "order".$i['id']?>" name="order" value="<?php echo $i['is_order']?>" size="3" onBlur="changeorder(<?php echo $i['id']?>)"/></td>
+                                <td><?php echo $i['hospital_name']?></td>
+                                <td><a class="auto"  href="/admin-doctor-edit-id-<?php echo $i['id']?>.html">修改</a>
+                                    <a class="auto" title="deleteLink" href="<?php echo $i['id']?>">删除</a></td>
+                            </tr>
+                            <?php endforeach;?>
+                        </tbody>
+                        <tfoot>
+                            <tr bgcolor="#f0f8fe">
+                                <td colspan="1">↑</td>
+                                <td colspan="8">
+                                    <input type="button" class="btnCheck" value="反选" />
+                                    <input type="button" class="btnUncheck" value="取消选中" />
+                                    选中项：<select name="mulop" class="auto"><option value=""></option></select>
+                                </td>
+                            </tr>
+                            <tr bgcolor="#f0f8fe">
+                                <td colspan="7">
+                                    <div class="auto pagination"></div>
+                                </td>
+                                <td colspan="2" align="center">
+                                    显示：<select name="row" class="auto"><option value=""></option></select>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

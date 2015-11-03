@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>网站管理后台</title>
+        <link rel="stylesheet" type="text/css" href="backend/main.css" />
+        <script type="text/javascript" src="js/base.js"></script>
+        <script type="text/javascript" src="backend/main.js"></script>
+        <link rel="stylesheet" type="text/css" href="js/ui.css" />
+        <script src="js/ui.js" type="text/javascript"></script>
+        <script type="text/javascript" src="js/fckeditor/fckeditor.js"></script>
+        <style type="text/css">
+            #mainForm label {display:block; width:200px; float:left;}
+            #mainForm li {padding:2px; border-bottom:1px solid #eaeaea;}
+            #mainForm p{clear:right;}
+            #mainForm h1 {margin:5px 0; background:#dde; border-bottom:1px solid #ccc; text-align:center; font:bold 12px/22px arial,'宋体'; color:#333;}
+        </style>
+        <script type="text/javascript">
+            var jsonData = <?php echo json_encode($jsonData); ?>;
+            var headerUrl = '<?php echo Core::getUrl('header','default')?>';
+            var mainnavUrl = '<?php echo Core::getUrl('mainnav','default')?>';
+            $(function(){
+                ui.init();
+            });
+        </script>
+    </head>
+    <body>
+        <!-- 页头 -->
+        <div id="header"></div>
+        <!-- 侧栏 -->
+        <div id="sideBar"></div>
+        <!-- 主内容 -->
+        <div id="content">
+            <div id="titleBar"><strong><?php echo $title; ?></strong></div>
+            <!--文章信息-->
+            <div id="editForm">
+                <form id="mainForm" action="<?php echo $v['formAct']?>" method="post">
+                    <h1>基本设置</h1>
+                    <p><label>网站名称</label><input type="text" name="item[site_name]" value="<?php echo $item['site_name']; ?>" style="width:260px;"  disabled="disabled"/></p>
+                    <p><label>URL修正</label><input type="text" name="item[url_fix]" value="<?php echo $item['url_fix']; ?>" style="width:200px;"  disabled="disabled"/></p>
+                    <p><label>gzip页面压缩</label><select name="item[ob_gzhandler]" class="auto" disabled="disabled"></select></p>
+                    <!--<p><label>搜索引擎优化</label><select name="item[core_sef_query_string]" class="auto"></select></p>-->
+                    <p><label>默认语言</label><select name="item[language_default]" class="auto" disabled="disabled"></select></p>
+                    <p><label>日期格式</label><input type="text" name="item[dateFormat]" value="<?php echo $item['dateFormat']; ?>" style="width:200px;"  disabled="disabled"/></p>
+                    <p><label>会话失效时间</label><input type="text" name="item[idel_timeout]" value="<?php echo $item['idel_timeout']; ?>" style="width:100px;"  disabled="disabled"/></p>
+                    <h1>默认操作设置</h1>
+                    <p><label>默认模块</label><input type="text" name="item[module_default]" value="<?php echo $item['module_default']; ?>" style="width:200px;" disabled="disabled" /></p>
+                    <p><label>默认动作</label><input type="text" name="item[action_default]" value="<?php echo $item['action_default']; ?>" style="width:200px;"  disabled="disabled"/></p>
+                    <p><label>默认验证模块</label><input type="text" name="item[module_login]" value="<?php echo $item['module_login']; ?>" style="width:200px;"  disabled="disabled"/></p>
+                    <p><label>默认验证动作</label><input type="text" name="item[action_login]" value="<?php echo $item['action_login']; ?>" style="width:200px;"  disabled="disabled"/></p>
+                    <h1>附件相关设置</h1>
+                    <p><label>上传目录</label><input type="text" name="item[upload_dir]" value="<?php echo $item['upload_dir']; ?>" style="width:200px;"  disabled="disabled"/></p>
+                    <h1>数据库相关设置</h1>
+                    <p><label>数据库类型</label><select name="item[database][driver]" class="auto" disabled="disabled"></select></p>
+                    <p><label>服务器地址</label><input type="text" name="item[database][host]" value="<?php echo $item['database']['host']; ?>" style="width:500px;"  disabled="disabled"/></p>
+                    <p><label>用户名</label><input type="text" name="item[database][user]" value="<?php echo $item['database']['user']; ?>" style="width:200px;"  disabled="disabled"/></p>
+                    <p><label>密码</label><input type="text" name="item[database][pass]" style="width:200px;" /> (密码默认已隐藏)</p>
+                    <p><label>数据库名称</label><input type="text" name="item[database][db]" value="<?php echo $item['database']['db']; ?>" style="width:200px;"  disabled="disabled"/></p>
+                    <p><label>表名前缀</label><input type="text" name="item[table_prefix]" value="<?php echo $item['table_prefix']; ?>" style="width:200px;"  disabled="disabled"/></p>
+                    <p><label>默认编码</label><input type="text" name="item[database][encoding]" value="<?php echo $item['database']['encoding']; ?>" style="width:200px;"  disabled="disabled"/></p>
+                   <!-- <h1>邮件相关设置</h1>
+                    <p><label>服务器地址</label><input type"text" name="item[mail_server][host]" value="<?php echo $item['mail_server']['host']?>" /></p>
+                    <p><label>协议</label><input type"text" name="item[mail_server][mailer]" value="<?php echo $item['mail_server']['mailer']?>" /></p>
+                    <p><label>来自</label><input type"text" name="item[mail_server][from]" value="<?php echo $item['mail_server']['from']?>" /></p>
+                    <p><label>用户名</label><input type"text" name="item[mail_server][username]" value="<?php echo $item['mail_server']['username']?>" /></p>
+                    <p><label>密码</label><input type"text" name="item[mail_server][password]" /> (密码默认已隐藏)</p>
+                    <h1>支付宝接口相关设置</h1>
+                    <p><label>合作伙伴ID</label><input type"text" name="item[alipay][partner]" value="<?php echo $item['alipay']['partner']?>" /></p>
+                    <p><label>安全检验码</label><input type"text" name="item[alipay][security_code]" value="<?php echo $item['alipay']['security_code']?>" /></p>
+                    <p><label>卖家邮箱</label><input type"text" name="item[alipay][seller_email]" value="<?php echo $item['alipay']['seller_email']?>" /></p>
+                    <p><label>默认物流配送费用付款方式</label><select name="item[alipay][logistics_payment]" class="auto"></select></p>
+                    <p><label>默认物流配送方式：</label><select name="item[alipay][logistics_type]" class="auto"></select></p>-->
+                    <div style="text-align:center;">
+                        <input name="submit" type="submit" value="提交" disabled="disabled" />
+                        <input type="button" title="goBackLink" class="auto" value="返回" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

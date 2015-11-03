@@ -1,0 +1,53 @@
+
+/* --------------------------------------- ArticleList -------------------------------------- */
+.lTopArticle{width:220px; height:72px; background-image: url(../images/L_topArticle.jpg); }
+
+.ArticleListTT{width:117px; height:30px; background-image: url(../images/news_title.jpg); margin:12px 0 0 0;}
+.ArticleList{760px; height:auto;}
+.ArticleListT{width:760px; height:auto;}
+.ArticleListT img{ float:left; border:0;}
+.ArticleListC{width:690px; height:auto; padding:0 30px 0 40px;}
+.ArticleListCT{width:690px; height:27px; margin-bottom:5px;}
+.ArticleListCTl{width:550px; height:23px; line-height:23px; padding:4px 0 0 0; color: #6f9718; font-weight:bold;text-indent:3em;}
+.ArticleListCTr{width:140px; height:23px; line-height:23px; padding:4px 0 0 0;color:#6f9718; font-weight:bold; text-align:center;}
+.ArticleListCB{width:690px; height:auto; background-image:url(../images/Newslist__bg.jpg);}
+.ArticleListCB ul{width:690px; height:auto; margin:0; padding:0; }
+.ArticleListCB li{width:690px; height:27px; margin:0; padding:0; float:left; list-style:none;}
+.ArticleListCLIl{width:550px; height:27px; line-height:27px; padding:0;  background-image: url(../images/li_newsList.gif); background-repeat:no-repeat; text-indent:3em;}
+.ArticleListCLIr{width:140px;height:27px; line-height:27px; padding:0; text-align:center; float:right; }
+.ArticleListFGX{width:760px; height:25px; background-image:url(../images/VideoList_FGX.gif); margin:15px 0 0 0;}
+
+.ArticleListB{width:760px; height:80px;}
+
+/* --------------------------------------- Article -------------------------------------- */
+
+.ArticleC{width:760px; height:auto; padding:10px 0 0px 0;}
+.ArticleCTitle{width:760px; height: auto; font-size:20px; line-height:20px;  padding:5px 0 5px 0; }
+.ArticleCTitle h1{width:760px; text-align:center;font-size:20px; padding:5px 0 10px 0; margin:0 ; color: #F60; }
+.ArticleCTitle h2{width:760px; text-align:center;font-size:13px;padding:5px 0 10px 0; margin:0 ; color:#666;  }
+.ArticleCfgx{width:680px; background-image:url(../images/hospital_FGX.jpg); background-position:center; background-repeat:no-repeat; padding:0 40px;}
+.ArticleCcom{width:660px; height:20px; line-height:20px; padding:0 50px;}
+.ArticleCcom span{width:auto; margin:0 40px 0 10px;}
+.ArticleCtext{width:640px; height:auto; line-height:28px; font-size:14px; padding:20px ; margin:0 40px; display:inline; color:#000;}
+
+.ArticleClink{width:640px; height:20px; line-height:20px; padding:10px 60px 0;}
+.ArticleClink a:hover{ color:#F60;}
+.ArticleClinkL{width:320px; height:20px; line-height:20px;}
+.ArticleClinkR{width:320px; height:20px; line-height:20px; text-align:right;}
+
+.ArticleB{width:760px; height: auto;}
+.ArticleBlist{width:760px; height:221px;}
+.ArticleBlistT{width:760px; height:48px; background-image:url(../images/videoB_T.jpg); background-position:right; background-repeat:no-repeat;}
+.ArticleBlistTtext{width:auto; height:30px; padding:0 0 18px 40px; line-height:30px; color:#F60; font-size:14px; font-weight:bold;}
+.ArticleBlistL{width:53px; height:157px; background-image:url(../images/videoB_L.jpg); }
+.ArticleBlistC{width:658px; height:157px; background-image:url(../images/VIdeoBlistC1BG.jpg);}
+.ArticleBlistC ul{width:630px; height:150px; padding:3px 14px; margin:0;}
+.ArticleBlistC li{width:300px; height:30px; line-height:30px; background-image:url(../images/li_newsList.gif); background-repeat:no-repeat; list-style:none; text-indent:2em; float:left;}
+.ArticleBlistC li a{ width:auto;color: #666;  padding:0 15px 0 0; text-decoration:none; cursor:pointer;}
+.ArticleBlistC li a:hover{ width:auto;color: #F60; font-weight:bold; padding:0 15px 0 0; text-decoration:underline; cursor:pointer;}
+.ArticleBlistC1{width:210px; height:157px; background-image:url(../images/videoBlist_bg.jpg); padding:0 8px 0 0; display:inline;}
+.ArticleBlistC1 img{ width:210px; height:130px; border:0; float:left;}
+.ArticleBlistC1Span{width:210px; height:22px; text-indent:2em; padding:5px 0 0 0; line-height:22px; overflow:hidden;}
+
+.ArticleBlistR{width:49px; height:157px; background-image:url(../images/videoB_R.jpg); background-position:right;}
+.ArticleBlistB{width:760px; height:16px; background-image:url(../images/videoB_B1.jpg); background-position:right;}

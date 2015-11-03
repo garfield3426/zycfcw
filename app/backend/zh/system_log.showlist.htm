@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>网站管理后台</title>
+        <link rel="stylesheet" type="text/css" href="backend/main.css" />
+        <!-- 加载JS -->
+        <script type="text/javascript" src="js/base.js"></script>
+        <script type="text/javascript" src="backend/main.js"></script>
+        <!-- 自定义加载 -->
+        <script type="text/javascript" src="backend/lib/gridview.js"></script>
+        <!-- UI -->
+        <link rel="stylesheet" type="text/css" href="js/ui.css" />
+        <script src="js/ui.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            var jsonData = <?php echo json_encode($v['jsonData']); ?>;
+            var headerUrl = '<?php echo Core::getUrl('header','default')?>';
+            var mainnavUrl = '<?php echo Core::getUrl('mainnav','default')?>';
+            $(function(){
+                GridView.init('grid');
+                ui.init();
+            });
+        </script>
+    </head>
+    <body>
+        <!-- 页头 -->
+        <div id="header"></div>
+        <!-- 侧栏 -->
+        <div id="sideBar"></div>
+        <!-- 主内容 -->
+        <div id="content">
+            <form id="mainForm" action="<?php echo $v['formAct']?>" method="post">
+                <div id="titleBar"><strong><?php echo $v['title']?></strong></div>
+                <!--搜索条-->
+                <div id="filterBar">
+                    <span>等级：<select name="kw_level" class="auto"><option value=""></option></select></span>
+                    <span>开始时间：<input name="kw_bTime" type="text" class="auto" /></span>
+                    <span>结束时间：<input name="kw_eTime" type="text" class="auto" /></span>
+                    <br />
+                    <span>操作者：<input name="kw_user" type="text" size="10" value="<?php echo $v['kw']['kw_user']?>" /></span>
+                    <span>应用：<input name="kw_appid" type="text" size="10" value="<?php echo $v['kw']['kw_appid']?>" /></span>
+                    <span>模块：<input name="kw_module" type="text" size="10" value="<?php echo $v['kw']['kw_module']?>" /></span>
+                    <span>动作：<input name="kw_action" type="text" size="10" value="<?php echo $v['kw']['kw_action']?>" /></span>
+                    <span>日志信息：<input name="kw_msg" type="text" size="30" value="<?php echo $v['kw']['kw_msg']?>" /></span>
+                    <input type="submit" value="按条件搜索" />
+                </div>
+                <!--列表区-->
+                <div id="list">
+                    <table id="grid" width="99%" align="center" border="0" cellpadding="2" cellspacing="1" bgcolor="#FFFFFF">
+                        <thead>
+                            <tr bgcolor="#dbeaf5">
+                                <td>&nbsp;</td>
+                                <td>等级</td>
+                                <td>操作者</td>
+                                <td>应用</td>
+                                <td>模块</td>
+                                <td>动作</td>
+                                <td>日志信息</td>
+                                <td>记录时间</td>
+                                <td width="5%">操作</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach($v['list'] as $i):?>
+                            <tr>
+                                <td><input name="id[]" type="checkbox" value="<?php echo $i['id']?>" /></td>
+                                <td><?php echo $i['lev']?></td>
+                                <td><?php echo $i['userid']?></td>
+                                <td><?php echo $i['app']?></td>
+                                <td><?php echo $i['module']?></td>
+                                <td><?php echo $i['act']?></td>
+                                <td><?php echo $i['msg']?></td>
+                                <td><?php echo $i['put_time']?></td>
+                                <td><a class="auto"  href="/admin-system_log-delete-id-<?php echo $i['id']?>.html">删除</a></td>
+                            </tr>
+                            <?php endforeach;?>
+                        </tbody>
+                        <tfoot>
+                            <tr bgcolor="#f0f8fe">
+                                <td colspan="1">↑</td>
+                                <td colspan="8">
+                                    <input type="button" class="btnCheck" value="反选" />
+                                    <input type="button" class="btnUncheck" value="取消选中" />
+                                    选中项：<select name="mulop" class="auto"><option value=""></option></select>
+                                    <input type="button" title="clearLink" ext="all" class="auto" value="清空日志记录" />
+                                </td>
+                            </tr>
+                            <tr bgcolor="#f0f8fe">
+                                <td colspan="7">
+                                    <div class="auto pagination"></div>
+                                </td>
+                                <td colspan="2" align="right">
+                                    显示：<select name="row" class="auto"><option value=""></option></select>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

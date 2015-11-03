@@ -1,0 +1,1 @@
+<link href="http://www.p028.com/view/common/image/favicon.ico" rel="SHORTCUT ICON">

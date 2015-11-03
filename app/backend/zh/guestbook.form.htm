@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>网站管理后台</title>
+        <link rel="stylesheet" type="text/css" href="backend/main.css" />
+        <script type="text/javascript" src="js/base.js"></script>
+        <script type="text/javascript" src="backend/main.js"></script>
+        <link rel="stylesheet" type="text/css" href="js/ui.css" />
+        <script src="js/ui.js" type="text/javascript"></script>
+        <script type="text/javascript" src="js/fckeditor/fckeditor.js"></script>
+        <style type="text/css">
+            #mainForm label {display:block; width:50px; float:left;}
+            #mainForm li {padding:2px; border-bottom:1px solid #eaeaea;}
+            .formEditor {height:100px; width:450px;}
+        </style>
+        <script type="text/javascript">
+            var jsonData = <?php echo json_encode($v['jsonData']); ?>;
+            var headerUrl = '<?php echo Core::getUrl('header','default')?>';
+            var mainnavUrl = '<?php echo Core::getUrl('mainnav','default')?>';
+            $(function(){
+                ui.init();
+            });
+        </script>
+    </head>
+    <body>
+        <!-- 页头 -->
+        <div id="header"></div>
+        <!-- 侧栏 -->
+        <div id="sideBar"></div>
+        <!-- 主内容 -->
+        <div id="content">
+            <div id="titleBar"><strong><?php echo $v['title']?></strong></div>
+            <!--商品信息-->
+            <div id="editForm">
+                <form id="mainForm" action="<?php echo $v['formAct']?>" method="post">
+                    <input type="hidden" name="item[id]" value="<?php echo $v['item']['id']?>" />
+                    <ul>
+                        <li><label>状态：</label><select name="item[state]" class="auto"><option value=""></option></select></li>
+                        <li><label>语言：</label><select name="item[lang]" class="auto"><option value=""></option></select></li>
+                        <li><label>主题：</label><input name="item[title]" type="text" style="width:350px" value="<?php echo $v['item']['title']?>" /></li>
+                        <li><label>留言：</label><textarea name="item[content]" class="formEditor"><?php echo $v['item']['content']?></textarea></li>
+                        <li><label>名称：</label><input name="item[name]" type="text" style="width:150px" value="<?php echo $v['item']['name']?>" /></li>
+                        <li><label>电话：</label><input name="item[phone]" type="text" style="width:80px" value="<?php echo $v['item']['phone']?>" /></li>
+                        <li><label>地区：</label><select name="item[area]" class="auto"><option value=""></option></select></li>
+                        <li><label>地址：</label><input name="item[addr]" type="text" style="width:380px" value="<?php echo $v['item']['addr']?>" /></li>
+                        <li><label>回复：</label><textarea name="item[reply]" class="formEditor"><?php echo $v['item']['reply']?></textarea></li>
+                    </ul>
+                    <div style="text-align:center;"><input name="submit" type="submit" value="提交" />
+                    <input type="button" title="goBackLink" class="auto" value="返回" /></div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

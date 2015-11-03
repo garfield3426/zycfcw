@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+<title>关于我们</title>
+<meta name="keywords" content="关键词,5个左右,单个8汉字以内">
+<meta name="description" content="网站描述，字数尽量空制在80个汉字，160个字符以内！">
+<link rel="Bookmark" href="/favicon.ico" >
+<link rel="Shortcut Icon" href="/favicon.ico" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/html5.js"></script>
+<script type="text/javascript" src="js/respond.min.js"></script>
+<script type="text/javascript" src="js/PIE_IE678.js"></script
+<![endif]-->
+<link href="css/H-ui.css" rel="stylesheet" type="text/css" />
+<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<!--[if IE 7]>
+<link href="static/h-ui/css/font-awesome-ie7.min.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<link href="js/icheck/icheck.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+<!--[if IE 6]>
+<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('.pngfix,.icon');</script>
+<![endif]-->
+</head>
+
+<body>
+<?php include('inc/banner.php')?>
+<div class="clear"></div>
+<div class="main">
+	<div class="wp fluidgrid">
+	     <div class="row">
+	         <?php include('inc/top.php')?>
+	        <div class="col-2 navmenu mt-15 mr-0">
+                 <?php include('inc/left_page.php')?>
+			</div>
+			<div class="col-10 cp-content mt-15 mr-0">
+                <h1>关于我们</h1>
+					<P>　　苏州忠业诚房产经纪有限公司创办2014年，公司发展至今，已成为苏州市区具有一定影响力的房产经纪公司。公司创办全国首家互联网上能通过视频直接看房，不需要业务员带看，网上完成初级交易，同时为客户过户交易提供一整套服务。全国首家不收中介费的房产经纪公司，客户租房，买房，卖房产生的中介费全部免除，为苏州老百姓购房，卖房，租房提供了非常大的便利，也为老百姓购房节省非常多成本。公司于2014年首度涉足苏州房地产市场，正准备向苏州周边市场快速扩张。苏州忠业诚房产经纪有限公司以房地产公司提供专业化服务为依托，业务类型涉及房地产市场研究与分析、房地产前期顾问、房地产销营策划、广告设计、项目代理、房产中介等。</P>
+<P>　　苏州忠业诚经纪有限公司成立至今，凭借其专业的队伍、良好的信誉、优质的服务得到了苏州众多开发商一致的好评。分设住宅部、商铺部、商业楼宇部、三级市场部四大业务部门，业务范围涵盖一手住宅、写字楼项目的可行性研究分析、项目推广、策划销售，二手住宅、写字楼的买卖及租赁代理等业务，通过一段时间的发展，苏州忠业诚房产经纪有限公司已发展成为苏州具有一定规模及影响力的专业性房地产综合代理服务机构，物业种类从写字楼、酒店、商铺、别墅、各种档次的住宅及公寓，分布于苏州各大区域。</P>
+			</div>
+	    </div>
+	    
+    </div>
+    <div class="clear"></div>
+    <div class="wp flinkbox">
+        <h1 class=" clear f-title"> 友情链接</h1>
+	    <div class="flink row-1180-24 mr-0 ml-0">
+	         <?php include('inc/links.php')?>
+	    </div>
+	</div>
+</div>
+<?php include('inc/footer.php')?>
+<script type="text/javascript" src="js/icheck/jquery.icheck.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+	   $('.skin-minimal input').iCheck({
+		checkboxClass: 'icheckbox-blue',
+			radioClass: 'iradio-blue',
+			increaseArea: '20%'
+		});
+    });
+
+     function custom_select(a,b,c,d){
+		  var $selecttext = $(a),
+			  $drop = $(b),
+			   $inp = $(c);
+			   
+			  if($drop.css("display")=="none")
+				{
+					$drop.css({'display':'block'});
+				}
+			  else
+				{
+					$drop.css({'display':'none'});
+				}
+				
+			   $drop.find("li").click(function(){
+			        $inp.text($drop.find("li").eq($(this).index()).text());
+					$selecttext.val($drop.find("li").eq($(this).index()).text());
+					$drop.css({'display':'none'});
+		       });
+		}
+		
+</script>
+</body>
+</html>

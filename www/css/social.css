@@ -1,0 +1,31 @@
+@charset "utf-8";
+/* CSS Document */
+img{ border:0px;}
+a{ text-decoration:none; color:#333333;}
+.main{ width:980px; height:auto; margin:0px auto;}
+	.top{ width:980px; height:380px;}
+		.top_img{ width:980px; height:95px;}
+.center{ width:940px; height:auto; padding-left:40px; background:#f8f9fb; padding-top:38px;}
+	.c_left{ width:270px; height:auto; margin-right:58px; float:left; display:inline;}
+		.c_l_title{ width:270px; height:18px; background:url("../images/title_1.png") no-repeat; margin-bottom:30px; padding-top:4px;}
+			.c_l_title a{ width:34px; height:11px; display:block; margin-left:228px;}
+		.c_1_img{ width:256px; height:386px; background:url("../images/left_img.gif") no-repeat; margin-left:7px;}
+		.c_l_ul{ width:256px; height:auto; margin-left:7px;}
+			.l_li{ width:253px; height:26px; border-bottom:1px dashed #b5be96; overflow:hidden;white-space:nowrap;}
+				.l_li img{ margin:9px 6px 0px 5px;}
+	.c_right{ width:600px; height:auto; float:left;}
+		.video{ width:560px; height:241px; padding-bottom:43px; border-bottom:1px dashed #999999; margin-bottom:35px;}
+			.video_title,.article_title{ width:550px; height:18px; background:url("../images/title_2.png") no-repeat; margin-bottom:30px; padding-top:4px;}
+			.video_title a{ width:34px; height:11px; display:block; margin-left:510px;}
+			.video_content{ width:560px; height:189px;}
+				.v_left{ width:281px; height:189px; float:left; margin-right:16px;}
+				.v_right{ width:263px; height:186px; float:left;}
+		.article_list{ width:610px; height:auto;}
+			.article_title{ width:456px; background:url("../images/title_3.png") no-repeat;height:18px; margin-bottom:20px; padding-top:4px;}
+			.article_title a{ width:34px; height:11px; display:block; margin-left:416px;}
+			.a_list{ width:600px; height:180px; background:url("../images/bottom_bg.png") no-repeat right bottom;}
+				.a_ul{ width:440px; height:auto;}
+					.a_l_li{ width:440px; height:26px; border-bottom:1px dashed #b5be96;overflow:hidden;white-space:nowrap;}
+						.a_l_li img{ float:left; margin:9px 6px 0px 5px;}
+						.art_title{ width:300px; height:26px; line-height:26px; float:left;}
+						.art_time{ width:100px; height:26px; line-height:26px; float:left;}

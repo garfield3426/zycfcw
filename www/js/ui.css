@@ -1,0 +1,96 @@
+/*分页按钮*/
+.pagination {font:12px/20px arial,'宋体'; padding:3px 0; text-align:center;}
+.pagination span{border:1px solid #fff;}
+.pagination a {text-decoration:none; border:solid 1px #aae; color:#15b; }
+.pagination a, .pagination span {padding:2px 5px; margin: 0 5px 5px 0;}
+.pagination .current {background:#26b; color:#fff; border:solid 1px #aae; }
+.pagination .current.prev, .pagination .current.next{color:#999; border-color:#999; background:#fff; }
+
+/*日期选择器*/
+#datepicker_div, .datepicker_inline {font-family:Arial, Helvetica, sans-serif; font-size:14px; padding:0; margin:0; background:#ddd; width:185px;}
+#datepicker_div {display:none; border:1px solid #777; z-index:9999;}
+.datepicker_inline {float:left; display:block; border:0;}
+.datepicker_rtl {direction:rtl;}
+.datepicker_dialog {padding:5px !important; border:4px ridge #ddd !important;}
+button.datepicker_trigger {width:25px;}
+img.datepicker_trigger {margin:2px; vertical-align:middle;}
+.datepicker_prompt {float:left; padding:2px; background:#ddd; color:#000;}
+* html .datepicker_prompt {width:185px;}
+.datepicker_control, .datepicker_links, .datepicker_header, .datepicker {clear:both; float:left; width:100%; color:#fff;}
+.datepicker_control {background:#400; padding:2px 0px;}
+.datepicker_links {background:#000; padding:2px 0px;}
+.datepicker_control, .datepicker_links {font-weight:bold; font-size:80%; letter-spacing:1px;}
+.datepicker_links label {padding:2px 5px; color:#888;}
+.datepicker_clear, .datepicker_prev { float:left; width:34%;}
+.datepicker_rtl .datepicker_clear, .datepicker_rtl .datepicker_prev {float:right; text-align:right;}
+.datepicker_current {float:left; width:30%; text-align:center;}
+.datepicker_close, .datepicker_next {float:right; width:34%; text-align:right;}
+.datepicker_rtl .datepicker_close, .datepicker_rtl .datepicker_next {float:left; text-align:left;}
+.datepicker_header {padding:1px 0 3px; background:#333; text-align:center; font-weight:bold; height:1.3em;}
+.datepicker_header select {background:#333; color:#fff; border:0px; font-weight:bold;}
+.datepicker {background:#ccc; text-align:center; font-size:100%;}
+.datepicker a {display:block; width:100%;}
+.datepicker_titleRow {background:#777;}
+.datepicker_daysRow {background:#eee; color:#666;}
+.datepicker_weekCol {background:#777; color:#fff;}
+.datepicker_daysCell {color:#000; border:1px solid #ddd;}
+.datepicker_daysCell a{display:block;}
+.datepicker_weekEndCell {background:#ddd;}
+.datepicker_titleRow .datepicker_weekEndCell {background:#777;}
+.datepicker_daysCellOver {background:#fff; border:1px solid #777;}
+.datepicker_unselectable {color:#888;}
+.datepicker_today {background:#fcc !important;}
+.datepicker_currentDay {background:#999 !important;}
+.datepicker_status {background:#ddd; width:100%; font-size:80%; text-align:center;}
+#datepicker_div a, .datepicker_inline a {cursor:pointer; margin:0; padding:0; background:none; color:#000;}
+.datepicker_inline .datepicker_links a {padding:0 5px !important;}
+.datepicker_control a, .datepicker_links a {padding:2px 5px !important; color:#eee !important;}
+.datepicker_titleRow a {color:#eee !important;}
+.datepicker_control a:hover {background:#fdd !important; color:#333 !important;}
+.datepicker_links a:hover, .datepicker_titleRow a:hover {background:#ddd !important; color:#333 !important;}
+.datepicker_multi .datepicker {border:1px solid #777;}
+.datepicker_oneMonth {float:left; width:185px;}
+.datepicker_newRow {clear:left;}
+.datepicker_cover {display:none;display:block; position:absolute; z-index:-1; filter:mask(); top:-4px; left:-4px; width:200px; height:200px;}
+/*错误信息*/
+.cluetip-errorMsg #cluetip-title {position:relative;padding:5px;margin:0;background-color:#fcc;color:#f00;font-size:12px;border:2px dashed #e20;}
+/*Tip*/
+#cluetip-close img {border:0;}
+#cluetip-title {overflow:hidden;}
+#cluetip-title #cluetip-close {float:right; position:relative;}
+#cluetip-waitimage {width:43px; height:11px; position:absolute; background-image:url(wait.gif);}
+.cluetip-arrows {display:none; position:absolute; top:0; left:-11px; height:22px; width:11px; background-repeat:no-repeat; background-position:0 0;}
+#cluetip-extra {display:none;}
+.cluetip-default {background-color:#d9d9c2;}
+.cluetip-default #cluetip-outer {position:relative; margin:0; background-color:#d9d9c2;}
+.cluetip-default h3#cluetip-title {margin:0 0 5px; padding:8px 10px 4px; font-size:1.1em; font-weight:normal; background-color:#87876a; color:#fff;}
+.cluetip-default #cluetip-title a {color:#d9d9c2; font-size:0.95em;}  
+.cluetip-default #cluetip-inner {padding:10px;}
+.cluetip-default div#cluetip-close {text-align:right; margin:0 5px 5px; color:#900;}
+.clue-right-default .cluetip-arrows {background-image:url(ui/cluetip/darrowleft.gif);}
+.clue-left-default .cluetip-arrows {background-image:url(ui/cluetip/darrowright.gif); left:100%; margin-right:-11px; }
+.clue-top-default .cluetip-arrows {background-image:url(ui/cluetip/darrowdown.gif); top:100%; left:50%; margin-left:-11px; height:11px; width:22px;}  
+.clue-bottom-default .cluetip-arrows {background-image:url(ui/cluetip/darrowup.gif); top:-11px; left:50%; margin-left:-11px; height:11px; width:22px;}
+.cluetip-jtip {background-color:transparent;}
+.cluetip-jtip #cluetip-outer {border:2px solid #ccc; position:relative; background-color:#fff;}
+.cluetip-jtip h3#cluetip-title {margin:0 0 5px; padding:2px 5px; font-size:16px; font-weight:normal; background-color:#ccc; color:#333;}
+.cluetip-jtip #cluetip-inner {padding:0 5px 5px; display:inline-block;}
+.cluetip-jtip div#cluetip-close {text-align:right; margin:0 5px 5px; color:#900;}
+.clue-right-jtip .cluetip-arrows {background-image:url(ui/cluetip/arrowleft.gif);}
+.clue-left-jtip .cluetip-arrows {background-image:url(ui/cluetip/arrowright.gif); left:100%; margin-right:-11px;}
+.clue-top-jtip .cluetip-arrows {background-image:url(ui/cluetip/arrowdown.gif); top:100%; left:50%; margin-left:-11px; height:11px; width:22px;}  
+.clue-bottom-jtip .cluetip-arrows {background-image:url(ui/cluetip/arrowup.gif); top:-11px; left:50%; margin-left:-11px; height:11px; width:22px;}
+.cluetip-rounded {background:transparent url(ui/cluetip/bl.gif) no-repeat 0 100%; margin-top:10px; margin-left:12px;}
+.cluetip-rounded #cluetip-outer {background:transparent url(ui/cluetip/tl.gif) no-repeat 0 0; margin-top:-12px;}
+.cluetip-rounded #cluetip-title {background-color:transparent; padding:12px 12px 0; margin:0 -12px 0 0; position:relative;}
+.cluetip-rounded #cluetip-extra {position:absolute; display:block; background:transparent url(ui/cluetip/tr.gif) no-repeat 100% 0; top:0; right:0; width:12px; height:30px; margin:-12px -12px 0 0;}
+.cluetip-rounded #cluetip-inner {background:url(ui/cluetip/br.gif) no-repeat 100% 100%; padding:5px 12px 12px; margin:-18px -12px 0 0; position:relative;}
+.cluetip-rounded div#cluetip-close {text-align:right; margin:0 5px 5px; color:#009; background:transparent;}
+.cluetip-rounded div#cluetip-close a {color:#777;}
+.clue-right-rounded .cluetip-arrows {background-image:url(ui/cluetip/rarrowleft.gif);}
+.clue-left-rounded .cluetip-arrows {background-image:url(ui/cluetip/rarrowright.gif); left:100%; margin-left:12px;}
+.clue-top-rounded .cluetip-arrows {background-image:url(ui/cluetip/rarrowdown.gif); top:100%; left:50%; margin-left:-11px; height:11px; width:22px;} 
+.clue-bottom-rounded .cluetip-arrows {background-image:url(ui/cluetip/rarrowup.gif); top:-23px; left:50%; margin-left:-11px; height:11px; width:22px;}
+.cluetip-rounded #cluetip-title, .cluetip-rounded #cluetip-inner {zoom:1;}
+
+

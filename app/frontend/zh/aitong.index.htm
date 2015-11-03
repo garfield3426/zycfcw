@@ -1,0 +1,154 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>爱瞳基金-普瑞眼科集团连锁</title>
+<link type="text/css" href="css/atjj_main.css" rel="stylesheet" /> 
+</head>
+
+<body>
+   <div class="container">
+     <div class="header">
+          <div class="logo">
+          </div>
+          <div class="nav">
+              <a target="_blank" href="http://www.purui.cn/">首页</a>|
+              <a target="_blank" href="http://www.purui.cn/index-culture.html">企业文化</a>|
+              <a target="_blank" href="http://www.purui.cn/index-group.html">集团连锁</a>|
+              <a target="_blank" href="http://www.purui.cn/index-welfare.html">社会公益</a>|
+              <a target="_blank" href="http://www.purui.cn/index-doctor-showlist.html">专家团队</a>|
+              <a target="_blank" href="http://www.purui.cn/index-equipment-showlist.html">尖端设备</a>|
+              <a target="_blank" href="http://www.purui.cn/index-academic.html">学术建设</a>|
+              <a target="_blank" href="http://www.purui.cn/index-personnel.html">员工风采</a>|
+              <a target="_blank" href="http://www.purui.cn/index-recruitment.html">招贤纳士</a>
+          </div>
+          <div class="banner clearfix">
+              <p><img alt="" src="images/banner.jpg" usemap="#map" /></p>
+              <map id="map" name="map">
+                  <area shape="rect" coords="740,437,848,469" title="申请救助" href="<?php echo $v['swt'];?>" target="_blank"/>
+              </map>
+          </div>
+     </div>
+     <div class="main">
+         <div class="activity-description">
+              <h1>“普瑞爱眼基金”助跑“瞳计划”<br/>——用爱托起明天的太阳</h1>
+              <p>2014年5月，普瑞眼科医院集团携手百度健康公益联盟，积极投入其在全国范围内共同发起的针对贫困眼疾儿童的大型公益救助活动——“瞳计划”。普瑞眼科“瞳计划”，将由“普瑞爱眼基金”全程给予资金支持，致力援助每一个需要帮助的孩子，成就他们的光明与未来。</p>
+              <strong>活动时间：5月19日&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6月22日</strong>
+         </div>
+         <div class="atjj-description">
+              <div class="atjj-desbox">
+                   <p>爱眼基金由普瑞眼科医院集团成立于2014年，由成都市慈善总会提供管理和支持，主要致力于全国范围内的贫困眼疾人群的救助以及为防盲医生提供培训支持。成立以来，通过与国内外各种医疗机构、媒体、基金会、志愿者等广泛合作，传承“用爱传递光明”的理念，由集团筹集资金，用于支持中国的眼科医疗公益事业，帮助身处困境的眼疾人群，普瑞爱眼基金衷心希望与国内外热心于眼科医疗公益事业的组织、企业和个人建立友好联系，相互支持与合作，共同致力于保护人类光明的公益事业。</p>
+              </div>
+         </div>
+         <div class="tjh-description">
+              <h1>瞳计划介绍</h1>
+              <p>“瞳计划”是百度健康公益联盟发起的针对贫困地区先天性白内障儿童的专项救助项目。去年11月19日，百度联合上万家专业医疗机构成立百度健康公益联盟，首期联合投入2亿元医疗资源，覆盖国内上千个县市，为因医疗资源有限而得不到及时救助的患儿提供救助。作为全国大型连锁眼科医院集团的普瑞眼科一直奉行“用爱传递光明”的信念，第一时间响应并积极参与该计划。</p>
+              <a class="more" target="_blank" href="http://www.purui.cn/index-article-showlist-cate-99.html"></a>
+         </div>
+        <div class="tjh-case">
+             <h1>瞳计划救助案例</h1>
+             <div class="tjh-casebox">
+				 <?php foreach($v['article_at1'] as $value):?>
+                <div class="casebox">
+                     <dl class="tjh-case1">
+                         <dd class="caseimg"><a target="_blank" href="/index-article-view-id-<?php echo $value['id']?>.html"><img alt="<?php echo $value['title']?>" src="<?php echo $value['img']?>"></a></dd>
+                         <dt class="casetitle1"><a target="_blank" href="/index-article-view-id-<?php echo $value['id']?>.html"><?php echo $value['title']?></a></dt>
+                         <dd><?php echo $value['describes']?></dd>
+                     </dl>
+                 </div>
+				 <?php endforeach;?>
+				  <?php foreach($v['article_at2'] as $value):?>
+                 <div class="casebox">
+                     <dl class="tjh-case2"> 
+                         <dd class="caseimg"><a target="_blank" href="/index-article-view-id-<?php echo $value['id']?>.html"><img alt="" src="<?php echo $value['img']?>"></a></dd>
+                         <dt class="casetitle2"><a target="_blank" href="/index-article-view-id-<?php echo $value['id']?>.html"><?php echo $value['title']?></a></dt>
+                         <dd><?php echo $value['describes']?></dd>
+                     </dl>
+                  </div>
+				   <?php endforeach;?>
+				   <?php foreach($v['article_at3'] as $value):?>
+                  <div class="casebox">
+                     <dl class="tjh-case3"> 
+                         <dd class="caseimg"><a target="_blank" href="/index-article-view-id-<?php echo $value['id']?>.html"><img alt="" src="<?php echo $value['img']?>"></a></dd>
+                         <dt class="casetitle3"><a target="_blank" href="/index-article-view-id-<?php echo $value['id']?>.html"><?php echo $value['title']?></a></dt>
+                         <dd><?php echo $value['describes']?></dd>
+                     </dl>
+                  </div>
+				   <?php endforeach;?>
+             </div>
+         </div>
+         <div class="news">
+             <h1>资讯与报道<a class="more" target="_blank" href="http://www.purui.cn/index-article-showlist-cate-100.html"></a></h1>
+             <div class="newbox">
+					<?php foreach($v['article_zx1'] as $value):?>
+                   <dl>
+                       <dt><a target="_blank" href="/index-article-view-id-<?php echo $value['id']?>.html"><img alt="<?php echo $value['title']?>" src="<?php echo $value['img']?>" ></a></dt>
+                       <dd><a target="_blank" href="/index-article-view-id-<?php echo $value['id']?>.html"><?php echo $value['title']?></a></dd>
+                   </dl>
+				   <?php endforeach;?>
+                   
+             </div>
+             <div class="newbox">
+                   <?php foreach($v['article_zx2'] as $value):?>
+                   <dl>
+                       <dt><a target="_blank" href="/index-article-view-id-<?php echo $value['id']?>.html"><img alt="<?php echo $value['title']?>" src="<?php echo $value['img']?>" ></a></dt>
+                       <dd><a target="_blank" href="/index-article-view-id-<?php echo $value['id']?>.html"><?php echo $value['title']?></a></dd>
+                   </dl>
+				   <?php endforeach;?>
+             </div>
+         </div>
+         <div class="pr-case">
+              <h1>普瑞眼科，用爱成就光明事业</h1>
+              <p>成立9年以来，普瑞眼科医院一直奉行“用爱传递光明”的信念，从公益参与者到公益组织者，从活动公益到全民公益，从义诊到公益援助，普瑞成立了自己的“爱眼基金”，并与国际防盲协会、中国红十字基金会、澳大利亚霍洛基金会等深度合作，身体力行，以爱心和专业传递光明希望……践行公益，普瑞在路上！</p>
+              <div class="morebox"><a class="more"  target="_blank" href="http://www.purui.cn/index-welfare.html"></a></div>
+              <h2>9年以来，普瑞援助无数贫困眼疾儿童</h2>
+              <div class="pr-casebox">
+                   <dl class="pr-case1"> 
+                     <dt>“爱眼助学”公益活动</dt>
+                     <dd>昆明普瑞眼科医院联合德福公益“德福书屋”走进边远山区小学，为学生们开展眼科筛查和捐赠。</dd>
+                   </dl>
+                   <dl class="pr-case2"> 
+                     <dt>“看的见的希望”儿童公益项目</dt>
+					 <dd>“看得见的希望”旨在为上海市的低收入和流动儿童建立一个眼保健和公益补助网络的项目。</dd>
+                   </dl>
+                  <dl class="pr-case3"> 
+                     <dt>兰州小儿眼疾公益筛查</dt>
+                     <dd>兰州普瑞眼科医院为全市的小学及幼儿园孩子们进行了免费的眼科检查，并教育孩子们对眼睛正确使用防止眼疾的发生。</dd>
+                   </dl>
+                   <dl class="pr-case4"> 
+                     <dt>  "成都暖冬行动”---马边行</dt>
+                     <dd>乐山市马边彝族自治县黄茅埂村小学是本次活动的重点聚焦受助点，成都普瑞医院来到这里为学生们进行了捐助及眼科筛查。</dd>
+                   </dl>
+                   <dl class="pr-case5"> 
+                     <dt>“晶彩明天”活动</dt>
+					 <dd>乌鲁木齐普瑞眼科医院与新疆妇女儿童基金会共同推出了“晶彩明天”计划，会在全疆范围内寻找100名贫困斜弱视儿童，在普瑞眼科医院接受免费爱心治疗，让孩子们的未来更加精彩。</dd>
+                   </dl>
+                   <dl class="pr-case6"> 
+                     <dt>明眸·雪莲花</dt>
+                     <dd>乌鲁木齐普瑞眼科医院“明眸雪莲花”走进伊犁，伊犁州9位贫困斜弱视孩子在普瑞眼科接受免费救助。</dd>
+                   </dl>
+              </div>
+         </div>
+         <div class="main-foot clearfix">
+             <img alt="" src="images/main-foot.png" />
+         </div>
+     </div>
+     <div class="footer">
+         <div class="subnav">
+              <a target="_blank" href="http://www.p0931.com/">兰州普瑞</a>|
+              <a target="_blank" href="http://www.p0551.com/">合肥普瑞</a>|
+              <a target="_blank" href="http://www.p0371.com/">郑州普瑞</a>|
+              <a target="_blank" href="http://www.kmprykyy.com/">昆明普瑞</a>|
+              <a target="_blank" href="http://www.p0991.com/">乌鲁木齐普瑞</a>|
+              <a target="_blank" href="http://www.pr0791.com/">南昌普瑞</a>|
+              <a target="_blank" href="http://www.pr021.com/">上海普瑞</a>|
+              <a target="_blank" href="http://www.p023.com/">重庆普瑞</a>|
+              <a target="_blank" href="http://www.pr027.com/">武汉普瑞</a>|
+              <a target="_blank" href="http://www.p0451.com/">哈尔滨普瑞</a>|
+              <a target="_blank" href="http://www.bjpryk.com/">北京普瑞华德</a>|
+              <a target="_blank" href="http://www.p028.com/"> 成都普瑞</a>
+         </div>
+		 <p>Copyright © 2005-2010 普瑞眼科医院集团 版权所有 All right Reserved<br/>E-mail:hours@purui.cn<br/>ICP备案：蜀ICP备13023131号</p>
+     </div>
+</body>
+</html>

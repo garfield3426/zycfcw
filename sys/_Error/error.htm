@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title><?php echo _Error(0x000100)?></title>
+    </head>
+    <style type="text/css">
+        body{font-size:12px;background:#eee;}
+        h1{font-size:13px;color:#333;font-weight:bold;}
+        .ol{border:1px dashed #666;padding:5px;margin:5px;color:#660;background:#ffc;line-height:16px;}
+        ol{margin-right:30px;}
+        li{border-bottom:1px dashed #dd8;}
+        .message{border:1px solid #666;padding:10px;margin:5px;color:#800;background:#fcc;}
+    </style>
+    <body>
+        <div>
+            <h1><?php echo _Error(0x000100)?></h1>
+            <div class="message"><?php echo textFormat($pvar['message'])?></div>
+            <h1><?php echo _Error(0x000101)?></h1>
+            <div class="ol"><ol>
+                <?php foreach($pvar['trace'] as $v):?>
+                <li><?php echo $v;?></li>
+                <?php endforeach; ?>
+            </ol><div>
+        </div>
+    </body>
+</html>

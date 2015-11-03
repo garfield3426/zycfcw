@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+<title><?php echo $v['item']['title']?></title>
+<meta name="keywords" content="<?php echo $v['item']['keyword']?>" />
+<meta name="description" content="<?php echo $v['item']['describes']?>" />
+<?php include('inc/pub_head.php')?>
+<link rel="Bookmark" href="/favicon.ico" >
+<link rel="Shortcut Icon" href="/favicon.ico" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/html5.js"></script>
+<script type="text/javascript" src="js/respond.min.js"></script>
+<script type="text/javascript" src="js/PIE_IE678.js"></script
+<![endif]-->
+<link href="css/H-ui.css" rel="stylesheet" type="text/css" />
+<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<!--[if IE 7]>
+<link href="static/h-ui/css/font-awesome-ie7.min.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+<!--[if IE 6]>
+<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('.pngfix,.icon');</script>
+<![endif]-->
+</head>
+
+<body>
+<?php include('inc/banner.php')?>
+<div class="main">
+	<div class="wp fluidgrid">
+	    <div class="col-12 tips mt-15">
+		              为了方便自己出租和他人求租，请真实填写房源信息，如果发现填写虚假房源信息，此手机号码将永远被冻结。
+		              <span class="icon-remove"></span>
+		</div>
+	    <div class="col-12 mt-15 mr-0">
+	    	    <div class="housesale clearfix"> 
+	    	       <h1 class="info-title mt-0 mb-0">国际丽都+顶层复式+稀有出售+有钥匙随时看!</h1>
+	    	       <p class="subtitle">2015/7/1&nbsp;&nbsp;19:35:44&nbsp;发布</p>
+	    	       <div class="housesale-box">
+                         <dl class="col-8 tj">
+                         	<dd>期望租金：不超过1000元</dd>
+                         	<dd>期望面积：不小于30平米</dd>
+                         	<dd>期望区域：某某市某某区</dd>
+                         	<dd>期望户型：二居室</dd>
+                         	<dd>租赁方式：整租</dd>
+                         	<dd>房屋配套：拎包入住、可做饭、可上网、可洗澡</dd>
+                         </dl>
+                         <dl class="col-4 housesale-boxr">
+                         	<dd>联系人：赵女士</dd>
+                         	<dd class="phone"><span>13352836933</span></dd>
+                         </dl>
+	    	       </div>
+	    	       <div class="housesale-details">
+	    	       	  <p>楼下一个卧室带阳台，客厅足有40平米左右，餐厅朝北厨房在餐厅一侧，卫生间朝西。上二楼是一个旋转楼梯至二楼，楼上一房朝南一房朝北，卫生间朝北，朝北带40平米露台。</p>
+	    	       	  <p>东苑半岛离地铁12号线只有100米出门就是地铁 周边的设施完善 可以预见未来的潜力十足</p>
+	    	       	  <p>业主因为工作原因在工作地已经买了房子</p>
+	    	       </div>
+	    	    </div>
+	    </div>
+	    <div class="clear"></div>
+	    <div class="wp flinkbox">
+        	<h1 class=" clear f-title"> 友情链接</h1>
+		    <div class="flink row-1180-24 mr-0 ml-0">
+		         <?php include('inc/links.php')?>
+		    </div>
+		</div>
+	</div>
+</div>
+<?php include('inc/footer.php')?>
+<script type="text/javascript" src="js/JquerySlide.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        PicSlide.initSlide("BoxMainPic2014", 400, 300, "srcN");
+        PicSlide.BindSlide("BoxMainPic2014", 400, 300, "thumbnail", "btn-right", "btn-left",4);
+    });
+</script>
+<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+<script type="text/javascript">
+    jQuery(".eshouse-details").slide({titCell:".hd li",mainCell:".bd",trigger:"click",delayTime:0,switchLoad:"_src" });
+</script>
+</body>
+</html>

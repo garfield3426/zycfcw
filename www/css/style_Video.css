@@ -1,0 +1,38 @@
+
+/* --------------------------------------- VideoList -------------------------------------- */
+.lTopVideo{width:220px; height:72px; background-image: url(../images/L_top_Video.jpg); }
+
+.VideoListTT{width:190px; height:30px; background-image: url(../images/VideoList_title.gif); margin:14px 0 0 0;}
+.VideoList{760px; height:auto;}
+.VideoListT{width:760px; height:auto;}
+.VideoListT img{ float:left; border:0;}
+.VideoListC{width:684px; height:auto; padding:0 38px;}
+.VideoList1{width:228px; height:158px; background-image:url(../images/VideoList1_bg.jpg); margin-bottom:15px;}
+.VideoList1 img{width:180px; height:115px; padding:0; margin:12px 27px 0 21px; border:0;}
+
+.VideoList1span{width:170px; height:20px; margin:0 0 0 38px;  line-height:20px;*line-height:18px; display:inline;overflow:hidden;}
+.VideoList1span a{width:170px; height:20px;   line-height:20px;*line-height:18px;} 
+
+.VideoListFGX{width:760px; height:25px; background-image:url(../images/VideoList_FGX.gif);}
+.VideoListB{width:760px; height:50px;}
+
+/* --------------------------------------- Video -------------------------------------- */
+.VIdeoTT{width:190px; height:30px; background-image: url(../images/Video_title.gif); margin:14px 0 0 0;}
+.VIdeo{width:760px; height:auto; padding:0;}
+.VIdeoT{width:760px; height:auto; padding:0;}
+.VIdeoT img{ float:left; border:0;}
+.VIdeoC{width:760px; height:auto; padding:10px 0 10px 0;}
+.VIdeoCTitle{width:760px; height:30px; font-size:25px; line-height:30px; color:#4e9e00;text-align:center; padding:5px 0 15px 0;}
+.VIdeoCTitle h1{width:760px; text-align:center;font-size:25px; padding:0; margin:0 ;  }
+.VIdeo1{width:650px; height:390px; padding:10px 0 0 60px; margin:0;}
+.VIdeoB{width:760px; height:auto; padding:0;}
+.VIdeoBlist{width:760px; height:221px;}
+.VIdeoBlistT{width:760px; height:48px; background-image:url(../images/videoB_T.jpg); background-position:right; background-repeat:no-repeat;}
+.VIdeoBlistL{width:53px; height:157px; background-image:url(../images/videoB_L.jpg); }
+.VIdeoBlistC{width:658px; height:157px; background-image:url(../images/VIdeoBlistC1BG.jpg);}
+.VIdeoBlistC1{width:210px; height:157px; background-image:url(../images/videoBlist_bg.jpg); padding:0 8px 0 0; display:inline;}
+.VIdeoBlistC1 img{ width:210px; height:130px; border:0; float:left;}
+.VIdeoBlistC1Span{width:185px; height:22px;  padding:5px 0 0 25px; line-height:22px; overflow:hidden;}
+
+.VIdeoBlistR{width:49px; height:157px; background-image:url(../images/videoB_R.jpg); background-position:right;}
+.VIdeoBlistB{width:760px; height:16px; background-image:url(../images/videoB_B.jpg); background-position:right;}

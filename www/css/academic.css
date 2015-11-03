@@ -1,0 +1,34 @@
+@charset "utf-8";
+/* CSS Document */
+a{ text-decoration:none; color:#333333;}
+img{ border:0px;}
+.main{ width:980px; height:auto; margin:0px auto;}
+	.top{ width:980px; height:380px;}
+		.top_img{ width:980px; height:95px;}
+.center{ width:940px; height:auto; padding-left:20px; background:#f8f9fb; padding-top:38px;}
+	.c_top{ width:910px; height:auto; padding-left:15px;}
+		.top_left{ width:500px; height:auto; float:left; margin-right:55px;}
+			.t_f_title{ width:500px; height:18px; background:url("../images/xueshujsh/title_1.gif") no-repeat; margin-bottom:30px; padding-top:4px;}
+			.t_f_title a{ width:34px; height:11px; display:block; margin-left:460px;}	
+			.doc_list{ width:485px; height:auto; padding-left:15px;}
+				.doc_one{ width:227px; height:110px; padding-right:15px; float:left; margin-bottom:20px;}
+					.doc_img{ width:78px; height:110px; float:left;}
+						.name{ width:78px; height:13px; line-height:13px; background:#b7d282; color:#FFFFFF; text-align:center;}
+					.doc_art{ width:140px; height:110px; padding-left:5px; float:left;}
+						.d_li,.t_d_li{ width:140px; height:26px; border-bottom:1px dashed #b5be96; overflow:hidden; line-height:26px;}
+						.d_li img{ margin:9px 6px 0px 5px;}
+		.top_right{ width:355px; height:auto; float:left;}
+			.t_r_title{ width:355px; height:18px; background:url("../images/xueshujsh/title_2.gif") no-repeat; margin-bottom:30px; padding-top:4px;}
+			.t_r_title a{ width:34px; height:11px; display:block; margin-left:314px;}
+			.t_r_list{ width:355px; height:auto;}
+				.t_d_li{ width:355px;}
+				.t_d_li img{ margin:9px 6px 0px 5px;}
+	.kong{ width:910px; height:10px; border-bottom:1px dashed #999999; margin-bottom:15px; clear:both;}
+	.download{ width:910px; height:auto; padding-left:15px;}
+		.download_title{ width:910px; height:18px; background:url("../images/xueshujsh/title_3.gif") no-repeat; margin-bottom:30px; padding-top:4px;}
+		.download_title a{ width:34px; height:11px; display:block; margin-left:870px;}
+		.download_ul{ width:910px; height:auto;}
+			.download_li{ width:123px; height:207px; float:left; margin-left:15px;}
+			.download_li img{ padding:1px; border:1px solid #999999;}
+			.down_bottom{ width:59px; height:19px; background:url("../images/xueshujsh/down_bottom.gif") no-repeat; margin-top:10px;}
+	

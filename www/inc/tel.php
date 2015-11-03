@@ -1,0 +1,1 @@
+<div class="telephone_content"><img class="telephone" src="image/test_tel.gif" /></div>

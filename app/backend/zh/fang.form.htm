@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>网站管理后台</title>
+        <link rel="stylesheet" type="text/css" href="backend/main.css" />
+        <script type="text/javascript" src="js/base.js"></script>
+        <script type="text/javascript" src="backend/main.js"></script>
+        <link rel="stylesheet" type="text/css" href="js/ui.css" />
+        <script src="js/ui.js" type="text/javascript"></script>
+        <script type="text/javascript" src="/js/ckeditor/ckeditor.js"></script>
+		<script type="text/javascript" src="/js/ckfinder/ckfinder.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/DatePicker/WdatePicker.js"></script>
+        <style type="text/css">
+            #mainForm label {display:block; width:60px; float:left;}
+            #mainForm li {padding:2px; border-bottom:1px solid #eaeaea;}
+			#mainForm li .t{float:left; width:95%;}
+        </style>
+        <script type="text/javascript">
+            var jsonData = <?php echo json_encode($v['jsonData']); ?>;
+            var headerUrl = '<?php echo Core::getUrl('header','default')?>';
+            var mainnavUrl = '<?php echo Core::getUrl('mainnav','default')?>';
+			window.onload = function(){
+				 ui.init();
+			}
+            function BrowseServer(inputId){
+					var finder = new CKFinder() ;
+					finder.basePath = '/js/ckfinder/';  //导入CKFinder的路径
+					finder.selectActionFunction = SetFileField; //设置文件被选中时的函数
+					finder.selectActionData = inputId;  //接收地址的input ID
+					finder.popup() ;
+            }
+                
+			//文件选中时执行
+			function SetFileField(fileUrl,data)
+			{
+				document.getElementById(data["selectActionData"]).value = fileUrl ;
+			}
+        </script>
+	
+    </head>
+    <body>
+        <!-- 页头 -->
+        <div id="header"></div>
+        <!-- 侧栏 -->
+        <div id="sideBar"></div>
+        <!-- 主内容 -->
+        <div id="content">
+            <div id="titleBar"><strong><?php echo $v['title']?></strong></div>
+            <!--文章信息-->
+            <div id="editForm">
+                <form id="mainForm" action="<?php echo $v['formAct']?>" method="post">
+                    <input type="hidden" name="item[id]" value="<?php echo $v['item']['id']?>" />
+                    <ul>      
+                        <li><label>状态：</label><select name="item[state]" class="auto"><option value=""></option></select></li>
+                        <li><label>分类：</label><select name="item[cate_id]" class="auto"><option value=""></option></select></li>
+                        <li><label>学校：</label><select name="item[xx]" class="auto"><option value="">请选择学校</option></select></li>
+                        <li><label>地铁：</label>
+						<select name="item[dt]"><option value="">请选择地铁线路</option>
+							<?php foreach($v[jsonData]['item[dt]']['list'] as $key=>$value){
+								if(preg_match('/disabled_/',$key)){
+									echo '<option value="'.$key.'" disabled="disabled">'.$value.'</option>';
+								}else{
+									echo '<option value="'.$key.'">'.$value.'</option>';
+								}
+								
+							}?>
+						</select>
+						</li>
+                        <li><label>朝向：</label><select name="item[cx]" class="auto"><option value="">请选择朝向</option></select></li>
+                        <li><label>装修程度：</label><select name="item[zx]" class="auto"><option value="">请选择装修程度</option></select></li>
+                        <li><label>特色：</label>
+							<?php foreach($v[jsonData]['item[ts]']['list'] as $key=>$value){
+								echo '<input type="checkbox" name="item[ts]" value="'.$key.'" />'.$value.'&nbsp;&nbsp;&nbsp;&nbsp;';
+							}?>
+						</li>
+                        <li><label>区域：</label><select name="item[qy]" class="auto"><option value=""></option></select></li>
+						
+                        <li><label>标题：</label><input name="item[title]" type="text" style="width:50%" value="<?php echo $v['item']['title']?>" /></li>
+                        <li><label>副标题：</label><input name="item[subhead]" type="text" style="width:50%" value="<?php echo $v['item']['subhead']?>" /></li>
+                        <li><label>文章出处：</label><input name="item[author]" type="text" style="width:20%" value="<?php if($v['item']['author']) echo $v['item']['author']; else echo '忠业诚';?>" /></li>
+                        <li><label>关键词：</label><input name="item[keyword]" type="text" style="width:50%" value="<?php echo $v['item']['keyword']?>" /></li>
+                        <li><label>缩略图：</label><input name="item[img]" id="item[img]" type="text" style="width:50%" value="<?php echo $v['item']['img']?>" ondblclick="BrowseServer('item[img]');" />双击选择图片（图片大小：200*150）</li>                       
+                        <li><label>置顶：</label><input name="item[is_order]" type="checkbox"  value="1" <?php if($v['item']['is_order']) echo checked?> /></li>
+                        <li><label>套红：</label><input name="item[color]" type="checkbox"  value="1" <?php if($v['item']['color']) echo checked?>/></li>
+                        <li><label>浏览量：</label><input name="item[browse]" type="text" style="width:5%" value="<?php echo $v['item']['browse']?>" /></li>
+                        <li><label>简介：</label><textarea name="item[describes]" style="width:50%;height:70px;"><?php echo $v['item']['describes']?></textarea></li>
+                        <li><label >内容：</label><div class="t"><textarea name="item[content]" class="formEditor" ><?php echo $v['item']['content']?></textarea></div></li>
+						<script type="text/javascript">CKEDITOR.replace('item[content]');</script>
+						<li><label>编辑人员：</label><input name="item[editor1]" type="text" style="width:20%" value="<?php echo $v['item']['editor1']?>" /></li>
+						<li><label>发布时间：</label><input name="item[put_time]"  style="width:20%" value="<?php echo $v['item']['put_time'];?>" onFocus="WdatePicker({startDate:'%y-%M-01 00:00:00',dateFmt:'yyyy-MM-dd HH:mm:ss',alwaysUseStartDate:true})"/>(发布时间默认为当前日期)</li>
+                    </ul>
+                    <div style="text-align:center;"><input name="submit" type="submit" value="提交" />
+                        <input type="button" title="goBackLink" class="auto" value="返回" /></div>
+                </form>
+            </div>
+        </div>
+	
+		
+		
+    </body>
+</html>

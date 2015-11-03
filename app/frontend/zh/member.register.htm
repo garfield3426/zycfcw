@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+<title>用户注册</title>
+<meta name="keywords" content="关键词,5个左右,单个8汉字以内">
+<meta name="description" content="网站描述，字数尽量空制在80个汉字，160个字符以内！">
+<link rel="Bookmark" href="/favicon.ico" >
+<link rel="Shortcut Icon" href="/favicon.ico" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/html5.js"></script>
+<script type="text/javascript" src="js/respond.min.js"></script>
+<script type="text/javascript" src="js/PIE_IE678.js"></script
+<![endif]-->
+<link href="css/H-ui.css" rel="stylesheet" type="text/css" />
+<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<!--[if IE 7]>
+<link href="static/h-ui/css/font-awesome-ie7.min.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<link href="js/icheck/icheck.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+<!--[if IE 6]>
+<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('.pngfix,.icon');</script>
+<![endif]-->
+</head>
+
+<body>
+<?php include('inc/banner.php')?>
+<div class="main">
+	<div class="wp fluidgrid">
+	     <div class="row register mt-15">
+		<form action="/index-member-register.html" method="post" id="mainForm">
+			<div class="col-9 mt-15 mr-0 login-left f-l">
+				 <div class="formControls mb-20 ml-30 mr-30">
+				    <legend>用户名：</legend>
+				    <input type="text" id="username" name="item[username]" class="input-text" autocomplete="off" placeholder="用户名" onblur="isValidMail('username')">
+				    <span><b></b></span>
+				 </div>
+				 <div class="formControls mb-20 ml-30 mr-30">
+				    <legend>设置密码：</legend>
+				    <input type="password" id="password" name="item[passwd]" class="input-text" autocomplete="off" placeholder="密码" onblur="isValidpwd('password')">
+				    <span><b></b></span>
+				 </div>
+				 <div class="formControls mb-20 ml-30 mr-30">
+				    <legend>确认密码：</legend>
+				    <input type="password" id="repassword" name="item[cpasswd]" class="input-text" autocomplete="off"  placeholder="" onblur="ispwdxt('password','repassword')">
+				    <span><b></b></span>
+				 </div>
+				 <div class="formControls mb-20 ml-30 mr-30 ">
+				    <legend>验证码：</legend>
+				    <input type="text" name="item[code]" class="col-3 input-text yanzheng" autocomplete="off" placeholder="">
+                    
+					<img class="myimg" src="/index-default-code.html" align="absmiddle" id="verify_code"width="100" height="36"/><a class="my_a" href="javascript:document.getElementById('verify_code').src='/index-default-code-'+Math.random()+'.html';void(0);">看不清楚？换个图片</a>
+					
+				 </div>
+				 <div class="formControls tongyi mt-20 ml-30 mr-30">
+				    <legend>&nbsp;&nbsp;&nbsp;</legend>
+				    <input type="checkbox" checked="checked" class="f-l mt-10" ><span class="f-l" name="item[ty]" value="1">我同意</span><a href="" class="f-l">《忠业诚服务协议》</a>
+				 </div>
+				 <div class="formControls mt-20 ml-30 mr-30">
+				    <legend>&nbsp;&nbsp;&nbsp;</legend>
+				    <input class="btn btn-primary register_btn" type="submit" name="submit" value="立即开通">
+				 </div>
+			</div>
+			</form>
+			<div class="col-4 mt-15 mr-0 register-right f-r">
+	             <p class="ml-20">已有通行证账号，请<a href="/index-member-login.html">直接登录</a></p>
+			</div>
+	    </div>
+    </div>
+    <div class="clear"></div>
+    <div class="wp flinkbox">
+        <h1 class=" clear f-title"> 友情链接</h1>
+	    <div class="flink row-1180-24 mr-0 ml-0">
+	         <?php include('inc/links.php')?>
+	    </div>
+	</div>
+</div>
+<?php include('inc/footer.php')?>
+<script type="text/javascript" src="js/icheck/jquery.icheck.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+	   $('.skin-minimal input').iCheck({
+		checkboxClass: 'icheckbox-blue',
+			radioClass: 'iradio-blue',
+			increaseArea: '20%'
+		});
+    });
+
+    function custom_select(a,b,c,d){
+		  var $selecttext = $(a),
+			  $drop = $(b),
+			   $inp = $(c);
+			   
+			  if($drop.css("display")=="none")
+				{
+					$drop.css({'display':'block'});
+				}
+			  else
+				{
+					$drop.css({'display':'none'});
+				}
+				
+			   $drop.find("li").click(function(){
+			        $inp.text($drop.find("li").eq($(this).index()).text());
+					$selecttext.val($drop.find("li").eq($(this).index()).text());
+					$drop.css({'display':'none'});
+		       });
+		}
+
+	<!--function isValidMail_1(a) {
+	　　var username = document.getElementById(a).value;            
+	　　var Regex = /^(?:\w+\.?)*\w+@(?:\w+\.)*\w+$/;            
+	　　if (Regex.test(username)){                
+		  $("#username").next("span").removeClass("error").addClass("success");    
+	　　}            
+	　　else 
+	    {                
+		　　if (username == "") 
+		    {   
+		　　   $("#username").next("span").removeClass("success").addClass("error");   
+		       $("#username").next("span").html("<b></b>用户名输入不能为空!");          
+		　　　 return false;                
+		　　}                
+		　　else 
+		    {                                   
+		    	document.getElementById(a).value = "";                    
+		　　 	return false;                
+		　　}            
+	　　}        
+	} -->
+	function isValidpwd(a) {
+		var Textpwd = document.getElementById(a).value; 
+		var patrn=/^(\w){6,20}$/;   
+		if (!patrn.exec(Textpwd)) 
+		{
+           $("#password").next("span").removeClass("success").addClass("error");   
+		   $("#password").next("span").html("<b></b>只能输入6-20个字母、数字、下划线!");   
+		   return false; 
+		}
+		else
+		{
+			$("#password").next("span").removeClass("error").addClass("success"); 
+			return true;
+		}
+	}
+    function ispwdxt(a,b)
+    {
+      var Textpwd = document.getElementById(a).value; 
+      var Textrepwd = document.getElementById(b).value; 
+      if(Textpwd != Textrepwd)
+      {
+        $("#repassword").next("span").removeClass("success").addClass("error");   
+		$("#repassword").next("span").html("<b></b>您输入确认密码不一致，请重新输入!"); 
+		return false; 
+      }
+      else
+      {
+        $("#repassword").next("span").removeClass("error").addClass("success"); 
+		return true;
+      }
+    }
+
+		
+</script>
+</body>
+</html>

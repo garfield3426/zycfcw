@@ -1,0 +1,32 @@
+/* CSS Document */
+
+.errArea {
+    background: url("/404/404.png") no-repeat scroll 0 0 transparent;
+    height: 341px;
+    margin-left: 330px;
+    position: relative;
+    width: 405px;
+}
+.errArea .backHome {
+    height: 100px;
+    left: 181px;
+    position: absolute;
+    top: 204px;
+    width: 190px;
+}
+.errArea .backHome .back_btn {
+    background:url("/404/back.gif") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 47px;
+    margin-top: 16px;
+    text-indent: -9999px;
+    width: 157px;
+}
+a {
+    color: #008CE5;
+    text-decoration: none;
+}
+a:hover {
+    color: #008CE5;
+    text-decoration: underline;
+}

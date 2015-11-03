@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>普瑞眼科_图片列表</title>
+<meta name="chinaz-site-verification" content="82195aa6-b475-4833-8324-6980c9fe60a2" />
+<?php include('inc/pub_head.php')?>
+<link href="css/style_map.css" rel="stylesheet" type="text/css" />
+<link href="css/style_Public.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<?php include('inc/banner.php')?>
+
+
+<div id="content">
+    <!------top map------>
+	<div class="map">
+  	<img src="images/top_map1.jpg" >
+    <img src="images/top_map2.jpg" >
+    <img src="images/top_map3.jpg" >
+    <img src="images/top_map4.jpg" >
+    <img src="images/top_map5.jpg" >
+    <img src="images/top_map6.jpg" >
+    <img src="images/top_map7.jpg" >
+    </div>
+    <!------mainContent------>
+    <div class="main">
+	    <!------LeftLink------>
+        	<?php include('inc/leftalbum.php')?>
+            
+        
+        <!------End of LeftLink------>
+        
+        <!------Right------>
+        	<div class="right">
+            	<div class="AboutTop">
+                <div class="mapListTT"></div>
+                <div class="back"><a href="/" target="_parent">首页</a> &gt; 图片列表</div></div>
+            <!------begin of mapList ------>
+            	<div class="mapListT"><img src="images/mapTop_1.jpg" width="760" height="36" />
+                    <img src="images/mapTop_2.jpg" width="759" height="39" />
+                    <img src="images/mapTop_3.jpg" width="760" height="44" />
+                </div>
+              <div class="mapListC">
+              	<div class="mapListCT">
+                	<div class="mapListCTl">图片</div>
+                    <div class="mapListCTc">标题</div>
+                    <div class="mapListCTr">日期</div>
+                </div>
+                <div class="mapListCB">
+                <ul>
+				
+				<?php foreach($v['list'] as $value):?>
+                	<li>
+                	  <div class=" mapListCLIl"><a href="<?php echo $value['viewLink']?>" target="_blank"><img src="<?php echo $value['img']?>" alt="<?php echo $value['title']?>" width="440" height="244" /></a></div>
+                      <div class="mapListCLIc">
+                      	<h2><a href="<?php echo $value['viewLink']?>" title="<?php echo $value['title']?>" target="_blank"><?php echo $value['title']?></a></h2>
+                        <div class="mapListCLIc_span"><?php echo $value['info']?></div>
+                      </div>
+                	  <div class="mapListCLIr"><?php echo $value['put_time']?></div>
+                    </li>
+                <?php endforeach;?>   
+
+                </ul>
+                </div>
+                
+                
+                
+              </div>
+              <div class=" mapListFGX"></div>
+             
+<div class="mapListB">
+                	<?php include('inc/pager.php')?>
+                </div>
+            <!------end of mapList------>
+              
+            
+                
+  </div>         
+        
+        <!------End of Right------>
+        	
+    </div>
+    <div class="mainFooter"><img src="images/footBg112.jpg" width="980" height="11" /></div>
+  <!------End of mainContent------>
+</div>
+<?php include('inc/footer.php')?>
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE >
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+<title>房源发布</title>
+<meta name="keywords" content="关键词,5个左右,单个8汉字以内">
+<meta name="description" content="网站描述，字数尽量空制在80个汉字，160个字符以内！">
+<link rel="Bookmark" href="/favicon.ico" >
+<link rel="Shortcut Icon" href="/favicon.ico" />
+<script src="js/ckeditor_basic/ckeditor.js"></script>
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/html5.js"></script>
+<script type="text/javascript" src="js/respond.min.js"></script>
+<script type="text/javascript" src="js/PIE_IE678.js"></script
+<![endif]-->
+<link href="css/H-ui.css" rel="stylesheet" type="text/css" />
+<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<!--[if IE 7]>
+<link href="static/h-ui/css/font-awesome-ie7.min.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<link href="js/icheck/icheck.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+<!--[if IE 6]>
+<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('.pngfix,.icon');</script>
+<![endif]-->
+</head>
+
+<body>
+<?php include('inc/banner.php')?>
+
+<div class="main">
+	<div class="wp fluidgrid">
+		<form action="<?php echo $v['formAct']?>" method="post" class="form form-horizontal responsive" id="mainForm">
+			<input type="hidden" name="item[id]" value="<?php echo $v['item']['id']?>" />
+			<div class="row">
+					<div class="col-12 tips mt-15">
+						  为了方便自己出租和他人求租，请真实填写房源信息，如果发现填写虚假房源信息，此手机号码将永远被冻结。
+						  <span class="icon-remove"></span>
+					</div>
+					<?php include('inc/left_login.php')?>
+					<div class="col-10 useradmin-content  fabu mt-15 mr-0">
+						<h1>二手房求购发布</h1>
+						<div class="useradmin-con">
+							<div class="write-info mr-0"> 
+								 <div class="clear"></div>
+								 <div class="write-content">
+										<input type="hidden" name="item[id]" value="<?php echo $v['item']['id']?>" />
+										<div class="row cl">
+											<label class="form-label col-2 t">联系人：</label>
+											<div class="formControls col-6">
+											  <input type="text" class="input-text" name="item[username]" autocomplete="off" placeholder="" value="<?php echo $v['item']['username']?>">
+											</div>
+										</div>
+										<div class="row cl">
+											<label class="form-label col-2 t">手机号码：</label>
+											<div class="formControls col-6">
+											  <input type="text" class="input-text" autocomplete="off"  name="item[mobile]" placeholder="" value="<?php echo $v['item']['mobile']?>">
+											</div>
+										</div>
+									   <!--  <div class="row cl">
+											<label class="form-label col-2 t">验证码：</label>
+											<div class="formControls skin-minimal col-3">
+												<input type="text" class="input-text" autocomplete="off" placeholder=""> 
+											</div>
+											<div class="formControls skin-minimal col-2">
+												 
+											</div>
+										</div>
+										<div class="row cl">
+											<div class="col-10 col-offset-2">
+											  <input class="btn btn-danger sub-btn" type="submit" value="下 一 步">
+											</div>
+										</div> -->
+							
+								</div>
+							</div>
+							<hr>
+							<div class="write-info mr-0">
+								 <div class="write-content">
+										<div class="row cl">
+											<label class="form-label col-2 t">发布类型：</label>
+											<div class="formControls col-3"> 
+													<div class="f-l mr-20">
+														<label><input class="mr-5" type="radio" name="item[fg]" value="1" <?php if( $v['item']['fg']==1):?> checked="checked"<?php endif?>>可分割</label>
+													</div>
+													<div class="f-l mr-20">
+														<label><input class="mr-5" type="radio" name="item[fg]" value="2" <?php if( $v['item']['fg']==2):?> checked="checked"<?php endif?>>不可分割</label>
+													</div>
+											</div>
+										</div>
+										<div class="row cl">
+											<label class="form-label col-2 t">目标区域：</label>
+											<div class="formControls col-3">
+												<div id="selectbox1" class="selectbox">
+													<div class="select-wrp">
+													  <div class="select-inp">请选择区域</div>
+													  <input  class="select-text select-value" type="text"  name="item[qy]"  value="<?php echo $v['item']['qy']?>"/>
+													  <a class="select-tri" ></a>
+													</div>
+													<div class="select-drop" style="display:none">
+													  <ul>
+														<?php foreach($v[ 'jsonData']['item[qy]']['list'] as $key=>$value):?>
+														<li><b <?php if( $v['item']['qy']==$key) echo 'class="selected"'?>><?php echo $key;?></b><span><?php echo $value;?></span></li>
+														<?php endforeach;?>
+													  </ul>
+													</div>
+												</div>
+											</div>
+											<div class="formControls col-3">
+												<div id="selectbox2" class="selectbox">
+													<div class="select-wrp">
+													  <div class="select-inp">请选择区域</div>
+													  <input  class="select-text select-value" type="text"  name="item[qy]"  value="<?php echo $v['item']['qy']?>"/>
+													  <a class="select-tri" ></a>
+													</div>
+													<div class="select-drop" style="display:none">
+													  <ul>
+														<?php foreach($v[ 'jsonData']['item[qy]']['list'] as $key=>$value):?>
+														<li><b <?php if( $v['item']['qy']==$key) echo 'class="selected"'?>><?php echo $key;?></b><span><?php echo $value;?></span></li>
+														<?php endforeach;?>
+													  </ul>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="row cl">
+											<label class="form-label col-2 t">户型：</label>
+											<div class="formControls col-1">
+												<input type="text" class="input-text" autocomplete="off" name="item[lc_c]" placeholder="" value="<?php echo $v['item']['lc_c']?>">
+											</div>
+											<label class="formControls skin-minimal lh-31 f-l">室，</label>
+											<div class="formControls col-1">
+												<input type="text" class="input-text" autocomplete="off" name="item[lc_c]" placeholder="" value="<?php echo $v['item']['lc_c']?>">
+											</div>
+											<label class="formControls skin-minimal lh-31 f-l">厅</label>
+											<div class="formControls skin-minimal col-1">
+												 <input type="text" class="input-text" autocomplete="off" name="item[lc_l]" placeholder="" value="<?php echo $v['item']['lc_l']?>">
+											</div>
+											<label class="formControls skin-minimal lh-31 f-l">层</label>
+										</div>
+										<div class="row cl">
+											<label class="form-label col-2 t">售价：</label>
+											<label class="formControls skin-minimal lh-31 f-l">不超过</label>
+											<div class="formControls col-1">
+											  <input type="text" class="input-text" autocomplete="off" name="item[lc_c]" placeholder="" value="<?php echo $v['item']['lc_c']?>">
+											</div>
+											<label class="formControls skin-minimal lh-31 f-l">万元</label>
+										</div>
+										<div class="row cl">
+											<label class="form-label col-2 t">建筑面积：</label>
+											<label class="formControls skin-minimal lh-31 f-l">不少于</label>
+											<div class="formControls col-1">
+											  <input type="text" name="item[jzmj]" class="input-text" autocomplete="off" placeholder="" value="<?php echo $v['item']['jzmj']?>">
+											</div>
+											<label class="formControls skin-minimal lh-31 f-l">平方米</label>
+										</div>
+										<div class="row cl">
+											<label class="form-label col-2 t lh-31">房屋需求：</label>
+											<div class="formControls col-2">
+												<div id="selectbox3" class="selectbox">
+														<div class="select-wrp">
+														  <div class="select-inp">请选择区域</div>
+														  <input  class="select-text select-value" type="text"  name="item[qy]"  value="<?php echo $v['item']['qy']?>"/>
+														  <a class="select-tri" ></a>
+														</div>
+														<div class="select-drop" style="display:none">
+														  <ul>
+															<?php foreach($v[ 'jsonData']['item[qy]']['list'] as $key=>$value):?>
+															<li><b <?php if( $v['item']['qy']==$key) echo 'class="selected"'?>><?php echo $key;?></b><span><?php echo $value;?></span></li>
+															<?php endforeach;?>
+														  </ul>
+														</div>
+												</div>
+										    </div>
+											<div class="formControls col-2">
+												<div id="selectbox4" class="selectbox">
+														<div class="select-wrp">
+														  <div class="select-inp">请选择区域</div>
+														  <input  class="select-text select-value" type="text"  name="item[qy]"  value="<?php echo $v['item']['qy']?>"/>
+														  <a class="select-tri" ></a>
+														</div>
+														<div class="select-drop" style="display:none">
+														  <ul>
+															<?php foreach($v[ 'jsonData']['item[qy]']['list'] as $key=>$value):?>
+															<li><b <?php if( $v['item']['qy']==$key) echo 'class="selected"'?>><?php echo $key;?></b><span><?php echo $value;?></span></li>
+															<?php endforeach;?>
+														  </ul>
+														</div>
+												</div>
+											</div>
+											<div class="formControls col-2">
+												<div id="selectbox5" class="selectbox">
+														<div class="select-wrp">
+														  <div class="select-inp">请选择区域</div>
+														  <input  class="select-text select-value" type="text"  name="item[qy]"  value="<?php echo $v['item']['qy']?>"/>
+														  <a class="select-tri" ></a>
+														</div>
+														<div class="select-drop" style="display:none">
+														  <ul>
+															<?php foreach($v[ 'jsonData']['item[qy]']['list'] as $key=>$value):?>
+															<li><b <?php if( $v['item']['qy']==$key) echo 'class="selected"'?>><?php echo $key;?></b><span><?php echo $value;?></span></li>
+															<?php endforeach;?>
+														  </ul>
+														</div>
+												</div>
+											</div>
+											<div class="formControls col-2">
+												<div id="selectbox6" class="selectbox">
+														<div class="select-wrp">
+														  <div class="select-inp">请选择区域</div>
+														  <input  class="select-text select-value" type="text"  name="item[qy]"  value="<?php echo $v['item']['qy']?>"/>
+														  <a class="select-tri" ></a>
+														</div>
+														<div class="select-drop" style="display:none">
+														  <ul>
+															<?php foreach($v[ 'jsonData']['item[qy]']['list'] as $key=>$value):?>
+															<li><b <?php if( $v['item']['qy']==$key) echo 'class="selected"'?>><?php echo $key;?></b><span><?php echo $value;?></span></li>
+															<?php endforeach;?>
+														  </ul>
+														</div>
+												</div>
+										    </div>
+										</div>
+										<div class="row cl">
+											<div class="col-10 col-offset-2">
+											  <input class="btn btn-danger sub-btn" type="submit" name="submit" value="发   布">
+											</div>
+										</div>
+								</div>
+							</div>
+							<hr>
+							<div class="write-info mr-0">
+									 <div class="write-content text-c">
+										  <img src="images/icon2.png" alt="" />
+										  <h1 class="sucess">恭喜您，已发布成功！</h1>
+										  <a class="btn border-red">预览查看</a>
+									 </div>
+							</div>
+						</div>
+				</div>
+			</div>
+		</form>	  
+    </div>
+    <div class="clear"></div>
+    <div class="wp flinkbox">
+        <h1 class=" clear f-title"> 友情链接</h1>
+	    <div class="flink row-1180-24 mr-0 ml-0">
+	         <?php include('inc/links.php')?>
+	    </div>
+	</div>
+</div>
+<?php include('inc/footer.php')?>
+<script type="text/javascript" src="js/icheck/jquery.icheck.min.js"></script>
+<script type="text/javascript" src="js/custom_select.js"></script>
+<script type="text/javascript">
+	$(function(){
+	   $('.skin-minimal input').iCheck({
+		checkboxClass: 'icheckbox-blue',
+			radioClass: 'iradio-blue',
+			increaseArea: '20%'
+		});
+    });
+
+        custom_select('#selectbox1');
+        custom_select('#selectbox2');
+        custom_select('#selectbox3');
+		custom_select('#selectbox4');
+		custom_select('#selectbox5');
+		custom_select('#selectbox6');
+</script>
+<script type="text/javascript" src="js/img_datadeal.js"></script>
+</body>
+</html>

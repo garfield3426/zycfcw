@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="chinaz-site-verification" content="82195aa6-b475-4833-8324-6980c9fe60a2" />
+<title>普瑞眼科_社会公益</title>
+<link href="css/social.css" rel="stylesheet" type="text/css" />
+<link href="css/style_Public.css" rel="stylesheet" type="text/css" />
+</head>
+<?php include('inc/pub_head.php')?>
+<body>
+<?php include('inc/banner.php')?>
+<div class="main">
+	<div class="top">
+		<div class="top_img"><img src="images/top_1.jpg" /></div>
+		<div class="top_img"><img src="images/top_2.jpg" /></div>
+		<div class="top_img"><img src="images/top_3.jpg" /></div>
+		<div class="top_img"><img src="images/top_4.jpg" /></div>
+	</div>
+	
+	<div class="center">
+		<div class="c_left">
+			<div class="c_l_title"><a href="/index-album-showlist-cate-90.html" target="_blank"></a></div>
+			<div class="c_1_img"></div>
+			<div class="c_l_ul">
+			<?php $album=ext('album_list',1,3,90)?>
+			<?php foreach($album['list'] as $value):?>
+				<div class="l_li"><img src="images/li_bg_1.jpg"/><a href="<?php echo $value['viewLink']?>" title="<?php echo $value['title']?>" target="_blank"><?php echo $value['title']?></a></div>
+			<?php endforeach;?>
+				
+			</div>
+			
+		</div>
+		<div class="c_right">
+			<div class="video">
+				<div class="video_title"><a href="/index-video-showlist-cate-84.html" target="_blank"></a></div>
+				<div class="video_content">
+				<?php $video=ext('video_list',0,1,84)?>
+				<?php foreach($video['list'] as $value):?>
+					<div class="v_left"><a href="<?php echo $value['viewLink']?>" title="<?php echo $value['title']?>" target="_blank"><img width="281" height="189" src="<?php echo $value['logo']?>" alt="<?php echo $value['title']?>" /></a></div>
+				<?php endforeach;?>
+					<div class="v_right">
+						<div class="v_ul">
+						<?php $video=ext('video_list',1,7,84)?>
+						<?php foreach($video['list'] as $value):?>
+							<div class="l_li"><img src="images/li_bg_2.jpg"/><a href="<?php echo $value['viewLink']?>" title="<?php echo $value['title']?>" target="_blank"><?php echo $value['title']?></a></div>
+						<?php endforeach;?>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="article_list">
+				<div class="article_title"><a href="/index-article-showlist-cate-52.html" target="_blank"></a></div>
+				<div class="a_list">
+					<div class="a_ul">
+					<?php $art=ext('article_list',6,1,false,false,52)?>
+					<?php foreach($art['list'] as $value):?>
+						<div class="a_l_li"><img src="images/li_bg_3.gif"/><div class="art_title"><a href="<?php echo $value['viewLink']?>" title="<?php echo $value['title']?>" target="_blank"><?php echo $value['title']?></a></div><div class="art_time"><?php echo $value['put_time']?></div></div>
+					<?php endforeach;?>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</div>
+<?php include('inc/footer.php')?>
+</body>
+</html>

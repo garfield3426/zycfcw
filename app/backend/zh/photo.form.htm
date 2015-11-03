@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>网站管理后台</title>
+        <link rel="stylesheet" type="text/css" href="backend/main.css" />
+        <script type="text/javascript" src="js/base.js"></script>
+        <script type="text/javascript" src="backend/main.js"></script>
+        <link rel="stylesheet" type="text/css" href="js/ui.css" />
+        <script src="js/ui.js" type="text/javascript"></script>
+        <script type="text/javascript" src="js/fckeditor/fckeditor.js"></script>
+	   <script type="text/javascript" src="js/ckfinder/ckfinder.js"></script>
+        <style type="text/css">
+            #mainForm label {display:block; width:100px; float:left;}
+            #mainForm li {padding:2px; border-bottom:1px solid #eaeaea;}
+            .imageTitle { width:300px;}
+        </style>
+        <script type="text/javascript">
+            var jsonData = <?php echo json_encode($v['jsonData']); ?>;
+            var headerUrl = '<?php echo Core::getUrl('header','default')?>';
+            var mainnavUrl = '<?php echo Core::getUrl('mainnav','default')?>';
+            $(function(){
+                ui.init();
+            });
+            
+            //文件浏览器
+            var currentImgBox = null;
+            function SetUrl(url){
+                $(currentImgBox).val(url);
+            }
+            function openBrowser(el){
+                currentImgBox = el;
+
+                var finder = new CKFinder();
+                finder.BasePath = 'js/ckfinder/';
+                finder.SelectFunction = SetUrl;
+
+                //传递sessionid
+                finder.sessionid = '<?php echo session_id();?>';
+                finder.resType = 'Images';
+
+                finder.Popup();
+            }
+        </script>
+        
+<link href="SWFUpload/css/default.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="SWFUpload/swfupload/swfupload.js"></script>
+<script type="text/javascript" src="SWFUpload/js/swfupload.queue.js"></script>
+<script type="text/javascript" src="SWFUpload/js/fileprogress.js"></script>
+<script type="text/javascript" src="SWFUpload/js/handlers.js"></script>
+<script type="text/javascript">
+var swfu;
+
+		window.onload = function() {
+			var settings = {
+				flash_url : "/SWFUpload/swfupload/swfupload.swf",
+				upload_url: "/SWFUpload/upload.php",	
+				post_params: {"PHPSESSID" : "<?php echo session_id(); ?>",
+								"album_id" : "<?php echo $v['album_id'] ?>"},
+				file_size_limit : "100 MB",
+				file_types : "*.*",
+				file_types_description : "All Files",
+				file_upload_limit : 10,  //配置上传个数
+				file_queue_limit : 0,
+				custom_settings : {
+					progressTarget : "fsUploadProgress",
+					cancelButtonId : "btnCancel"
+				},
+				debug: false,
+
+				// Button settings
+				button_image_url: "/SWFUpload/images/TestImageNoText_65x29.png",
+				button_width: "65",
+				button_height: "29",
+				button_placeholder_id: "spanButtonPlaceHolder",
+				button_text: '<span class="theFont">浏览</span>',
+				button_text_style: ".theFont { font-size: 16; }",
+				button_text_left_padding: 12,
+				button_text_top_padding: 3,
+				
+				file_queued_handler : fileQueued,
+				file_queue_error_handler : fileQueueError,
+				file_dialog_complete_handler : fileDialogComplete,
+				upload_start_handler : uploadStart,
+				upload_progress_handler : uploadProgress,
+				upload_error_handler : uploadError,
+				upload_success_handler : uploadSuccess,
+				upload_complete_handler : uploadComplete,
+				queue_complete_handler : queueComplete	
+			};
+
+			swfu = new SWFUpload(settings);
+	     };
+</script>
+        
+    </head>
+    <body>
+        <!-- 页头 -->
+        <div id="header"></div>
+        <!-- 侧栏 -->
+        <div id="sideBar"></div>
+        <!-- 主内容 -->
+        <div id="content">
+            <div id="titleBar"><strong><?php echo $v['title']?></strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><strong>[<a href="admin-album-create.html">添加图册</a>]</strong></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><strong>[<a href="admin-album-showlist.html">图册列表</a>]</strong></span></div>
+            <!--文章信息-->
+            <div id="editForm">
+                <form id="mainForm" action="/SWFUpload/upload.php" method="post">
+                    					
+                    <ul>
+                        
+                        <li><label>相册：</label>
+						<?php foreach($v['album'] as $i):?>
+                        		 <?php if($i[id]==$v['album_id']) echo $i['title']?>
+                        <?php endforeach;?>
+							<!--<select name="item[album_id]">
+                        	<option value="">请选择相册</option>
+                        	<?php foreach($v['album'] as $i):?>
+                        		<option value="<?php echo $i['id']?>" <?php if($i[id]==$v['album_id']) echo "selected='selected'";?>><?php echo $i['title']?></option>
+                        	<?php endforeach;?>
+                        	</select>-->
+						</li>
+                        <li><label>相片：</label>
+
+							<div style="width:500px;margin-left:100px;">
+								<div class="fieldset flash" id="fsUploadProgress">
+									<span class="legend">快速上传</span>
+								</div>
+								<div id="divStatus">0 个文件已上传</div>
+									<div>
+										<span id="spanButtonPlaceHolder"></span>
+										<input id="btnCancel" type="button" value="取消所有上传" onclick="swfu.cancelQueue();" disabled="disabled" style="margin-left: 2px; font-size: 8pt; height: 29px;" />
+									</div>
+							</div>                        
+                                                
+                        </li>
+                    </ul>
+                    
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

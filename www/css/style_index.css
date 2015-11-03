@@ -1,0 +1,114 @@
+@charset "utf-8";
+/* CSS Document */
+body{ width:980px; height:auto; margin:0 auto; padding:0; font-size:12px; font-family:"宋体", Arial; color:#333; }
+
+#header{ width:964px; height:90px; margin-bottom:6px; padding:0 8px 0 8px; float:left; background-color:#FFF;}
+#content{width:964px; height:auto;padding:0 8px 0 8px; float:left; background-color:#FFF;}
+#footer{width:980px; height:auto; float:left; padding:15px 0 0 0;background-color:#FFF;}
+
+a{ color:#333; text-decoration:none;}
+div{float:left;}
+.clear{clear:both;}
+.more{width:34px; height:11px; float:right; padding:10px 10px 0 0; cursor:pointer;}
+.more img{border:0;}
+.more2{width:34px; height:11px; float:right; padding:0px 10px 0 0; cursor:pointer;}
+.more2 img{border:0;}
+
+/* Font */
+.GreenNav{font-size:15px; font-family:"微软雅黑"; color:#04511a; text-align:center; font-weight:bold;  height:38px; width:80px;}
+.GreenNav a{ padding-top:13px; height:25px;width:80px;margin:0;color:#04511a;background-repeat: no-repeat; display:block;}
+.GreenNav a:hover{padding-top:13px; color:#FFF; height:25px;width:80px;background-image: url(../images/nav_over.jpg);margin:0;background-repeat: no-repeat; display:block;
+}
+
+
+.GrayNav a{color:#898989;}
+.GrayNav {font-size:10px; font-family:Arial; text-align:center; width:80px; color:#898989;}
+.black1{ height:25px;font-size:14px; text-align:center; line-height:25px; width:230px;margin:2px 0 0 10px; padding:0; display:inline;}
+.orange1{height:20px;font-size:14px; text-align:center; line-height:20px; color:#F60; width:245px;margin:0 0 0 0px; padding:0; overflow:hidden;}
+.fff{width:100px; text-align:center;font-size:14px;	font-family:"微软雅黑";	color:#FFF; padding:3px 0 0 0;font-weight:bold;}
+.Gray2{color:#1b6f00;width:100px; font-size:14px;	font-family:"微软雅黑"; padding:3px 0 0 15px; font-weight:bold;}
+.orange{width:155px; height:25px; font-size:14px; color:#F60; font-weight:bold;}
+/* logo And Navigation */
+
+.topT{width:764px; height:27px; background-image:url(../images/top_t.jpg); background-repeat:no-repeat;}
+.IndexSearch{width:206px; height:26px; float:right;}
+.IndexSearch form{width:206px; height:26px; margin:0; padding:0; float:left; }
+.IndexSearch form input{float:left; margin:0; padding:0; background-color:none;}
+.IndexSearch_input{width:160px; height:23px; color:#999; line-height:23px; background-image:url(../images/input_indexTop.gif); background-repeat:no-repeat; border:0; margin:0 ; padding:3px 0 0 5px;  background-color:none;}
+.IndexSearch_btn{width:26px; height:27px; background-image:url(../images/btn_search_indexTop.gif); border:0; background-color:none; background-repeat:no-repeat; cursor:pointer;}
+.IndexSearchLink{width:auto; height:24px; padding:3px 10px 0 0px; line-height:24px; float:right;}
+.IndexSearchLink a{cursor:pointer; color:#999;}
+.topR{width:764px; height:80px;}
+.logo{width:200px; height:80px;}
+.nav{width:720px; height:53px; margin-left:40px; text-align:center;display:inline;}
+.nav a{cursor:pointer; text-align:center; }
+.nav1{width:80px; height:53px;}
+.nav1top{width:80px;height:38px; background-image:url(../images/nav_bg.jpg);}
+
+.nav1bottom{width:80px; height:15px; }
+
+/* ad */
+.ad{width:964px; height:320px; }
+
+/* center */
+.center{width:964px; height: autopx; padding-top:16px; background-color:#f8f9f3;}
+.L{width:245px; height:362px; margin-right:18px; display:inline; float:left;}
+.lT{width:245px; height: auto;}
+.lTitle{width:245px; height:25px; background-image: url(../images/l_title.jpg);}
+.lphotoBg{width:245px; height:153px; background-image:url(../images/l_photoBg.jpg); background-repeat:no-repeat;}
+.lphotoBg img{width:180px; height:116px; padding:15px 0 0 35px; border:0;}
+.lC{width:245px; height: auto;}
+.lcText{width:230px; height: 42px;margin:2px 0 0 10px; padding:0; line-height:20px; display:inline;overflow:hidden;}
+
+.lBottom{width:245px; height:112px; _background-image:url(../images/l_textList.jpg); _background-position:0 4px;_background-repeat:repeat-x;}
+.lBottom ul{width:235px; _width:220px; height:106px; padding:5px 0 0 10px; margin:0;}
+.lBottom li{width:235px;_width:220px;margin:0;list-style-type: none;line-height:25px;_height:25px; overflow:hidden;white-space:nowrap; border-bottom:1px dashed #CCC; _border:none;}
+.lBottom li img{width:7px; height:6px;margin:0 5px 2px 10px;  *margin:5px 5px 0 2px; +margin:5px 5px 0 0; padding:0;display:inline; }
+
+.C{width:369px; height:362px; margin:0 24px 0 0; float:left; display:inline;}
+.news{width:369px; height:159px; }
+.newsT{width:369px; height:30px;background-image:url(../images/news_titleBg.gif);}
+.newsTitle{width:100px; height:30px; background-image: url(../images/news_titleOn.jpg);}
+.newsTitle2{width:100px; height:30px; background-image: url(../images/news_titleOff.jpg); background-repeat: no-repeat;}
+.newsC{width:369px; height:116px; padding:13px 0 0 0;_background-image:url(../images/news_text.gif);_background-repeat:repeat-x;_background-position:0 13px;}
+.newsC ul{width:364px; height:116px; padding:0 0 0 5px; margin:0;line-height:23px; }
+.newsC li{width:360px; _height:23px;margin:0;list-style-type: none;line-height:23px;overflow:hidden;white-space:nowrap; border-bottom:1px dashed #CCC;_border:none;}
+.newsC li img{width:8px; height:7px;margin:0 12px 2px 5px;  *margin:5px 5px 0 0; display:inline; }
+
+.expert{width:369px; height:203px;}
+.expertT{width:369px; height:30px; padding:6px 0 0 0; background-image:url(../images/experts_topBg.gif);}
+.expertB{width:354px; height:145px; background-image:url(../images/experts_Bg.jpg); padding:22px 0 0 15px;}
+.expertB img{ width:180px; height:120px; float:left;border:#FFF 2px;}
+.expertBtext{width:155px; height:120px; line-height:22px; padding:0 0 0 6px;}
+
+.R{width:292px; height:362px; float:left;}
+.MediaPlay{width:292px; height:230px;}
+.MediaPlayT{width:292px; height:25px; background-image:url(../images/Media_top.jpg);}
+.MediaPlayL{width:8px; height:205px; background-image: url(../images/Media_l.jpg);}
+.MediaPlayCB{width:270px; height:205px; padding:0 3px 0 3px; background-image:url(../images/Media_Cbg.gif); background-position:bottom; }
+.MediaPlayC img{width:270px; height:200px; border:0;}
+.MediaPlayB{width:276px; height:33px; background-image: url(../images/Media_bottom.jpg); }
+.MediaPlayR{width:8px; height:205px; background-image:url(../images/Media_r.jpg);}
+.MediaText{width:292px; height:132px;_background-image: url(../images/Media_text.gif);_background-position:0px 4px;}
+.MediaText ul{width:360px; height:116px; padding:10px 0 0 5px; _padding:10px 0 0 0;margin:0; _display:inline; }
+.MediaText li{width:290px;_width:270px; _height:21px; margin:0;list-style-type: none;line-height:22px; padding:0; overflow:hidden;white-space:nowrap; border-bottom:1px dashed #CCC;_border:none;}
+.MediaText li img{width:9px; height:10px;margin:0px 12px 0 5px;_margin:0px 12px 0 0; display:inline; }
+
+.link { background: url(../images/footerLine.gif)  bottom left no-repeat;  padding-bottom:12px; margin-bottom:7px; width:680px; }
+.Information { color:#818181; line-height:20px; }
+.Information p { margin:0px;}
+.footer_left { float:left;}
+
+.erweima { list-style-type:none; float:left;  width:244px; margin:0px;}
+.erweima li { float:left; text-align:center; margin-left:20px; display:inline;}
+.erweima li  img { display:block;}
+
+/*选项卡1*/   
+#Tab1{ width:369px; height:159px; margin:0px; padding:0px;}   
+  
+/*菜单class*/   
+.Menubox { width:369px; height:30px;background-image:url(../images/news_titleBg.gif);}   
+.Menubox ul{ margin:0px;padding:0px; float:left; width:220px; height:30px; list-style:none;  }   
+.li_menu_off{ padding:0px; margin:0;float:left; display:block; cursor:pointer;  width:100px; height:27px; background-image:url(../images/news_titleOff.jpg); list-style:none; text-align:center;font-size:14px;	font-family:"微软雅黑";	color:#1b6f00; padding:3px 0 0 0;font-weight:bold;}   
+.li_menu_on{float:left;  padding:0px; margin:0; width:100px; height:27px; background-image: url(../images/news_titleOn.jpg); background-repeat: no-repeat;list-style:none; text-align:center;color:#fff;font-size:14px;font-family:"微软雅黑"; padding:3px 0 0 0; font-weight:bold; }   
+.Contentbox{width:369px; height:129px; }     

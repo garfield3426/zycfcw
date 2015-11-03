@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+<title>房产快讯列表页</title>
+<meta name="keywords" content="关键词,5个左右,单个8汉字以内">
+<meta name="description" content="网站描述，字数尽量空制在80个汉字，160个字符以内！">
+<link rel="Bookmark" href="/favicon.ico" >
+<link rel="Shortcut Icon" href="/favicon.ico" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/html5.js"></script>
+<script type="text/javascript" src="js/respond.min.js"></script>
+<script type="text/javascript" src="js/PIE_IE678.js"></script
+<![endif]-->
+<link href="css/H-ui.css" rel="stylesheet" type="text/css" />
+<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<!--[if IE 7]>
+<link href="static/h-ui/css/font-awesome-ie7.min.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+<!--[if IE 6]>
+<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('.pngfix,.icon');</script>
+<![endif]-->
+</head>
+
+<body>
+<?php include('inc/banner.php')?>
+
+<div class="main">
+	<div class="wp fluidgrid">
+	    <?php include('inc/top.php')?>
+	    <div class="col-9 mt-15 mr-0  main-l bd0" >
+	    	    <div class="fckx">
+		    	    <div class="fckx-top clearfix">
+						<?php $art=ext('article_list',1,1,true,false,2,null,null,null,true)?>
+						<?php foreach($art['list'] as $value):?>
+		    	        <a href="/index-article-view-id-<?php echo $value['id']?>.html" title="<?php echo $value['title']?>" target="_blank"><img class="l" alt="" src="<?php echo $value['img']?>" width="350px" height="350px"></a>
+						<?php endforeach;?>
+						<?php $art=ext('article_list',3,1,false,false,2,null,100)?>
+						<?php foreach($art['list'] as $value):?>
+		    	    	<div class="kxt-list">
+		    	    	     <h4><a href="/index-article-view-id-<?php echo $value['id']?>.html" title="<?php echo $value['title']?>" target="_blank"><?php echo $value['title']?></a></h4>
+		    	    	     <p class="fckx-summary mt-0 mb-0"><?php echo $value['describes']?></p>
+		    	    	</div>
+						<?php endforeach;?>
+		    	    	
+		    	    </div>
+		    	    <div class="fckx-list"> 
+						<?php foreach($v['list'] as $value):?>
+	                    <dl>
+	                         <?php if($value['img']):?><dt><a href="/index-article-view-id-<?php echo $value['id']?>.html" title="<?php echo $value['title']?>" target="_blank"><img src="<?php echo $value['img']?>" alt=""  width="80px" height="80px"/></a></dt><?php endif;?>
+	                         <dd class="t"><a href="/index-article-view-id-<?php echo $value['id']?>.html" title="<?php echo $value['title']?>" target="_blank"><?php echo $value['title']?></a></dd>
+	                         <dd class="s"><?php echo $value['describes']?> ...<a href="/index-article-view-id-<?php echo $value['id']?>.html" title="<?php echo $value['title']?>" target="_blank">[详情]</a>
+							 </dd>
+	                    </dl>
+	                    <?php endforeach;?>
+						<?php include('inc/pager.php')?>
+		    	    </div>
+		    	</div>
+		    	<div class="new-fl">
+		    	    <div class="hd pt-15">
+		    	        <ul>
+							<li><span>本地新闻</span></li>
+							<li><span>全国新闻</span></li>
+						</ul>
+		    	    </div>
+		    	    <div class="fckx-listbox">
+		    	        <div class="fckx-list">  
+		                    <?php $art=ext('article_list',4,1,false,false,52)?>
+							<?php foreach($art['list'] as $value):?>
+		                    <dl>
+		                         <?php if($value['img']):?><dt><a href="/index-article-view-id-<?php echo $value['id']?>.html" title="<?php echo $value['title']?>" target="_blank"><img src="<?php echo $value['img']?>" alt=""  width="80px" height="80px"/></a></dt><?php endif;?>
+		                         <dd class="t"><a href="/index-article-view-id-<?php echo $value['id']?>.html" title="<?php echo $value['title']?>" target="_blank"><?php echo $value['title']?></a></dd>
+		                         <dd class="s"><?php echo $value['describes']?> ...<a href="<?php echo $value['viewLink']?>">[详情]</a>
+								 </dd>
+		                    </dl>
+							<?php endforeach;?>
+		                    
+			    	    </div>
+			    	    <div class="fckx-list">  
+							
+		                    <?php $art=ext('article_list',4,1,false,false,87)?>
+							<?php foreach($art['list'] as $value):?>
+		                    <dl>
+		                         <?php if($value['img']):?><dt><a href="/index-article-view-id-<?php echo $value['id']?>.html" title="<?php echo $value['title']?>" target="_blank"><img src="<?php echo $value['img']?>" alt="" width="80px" height="80px"/></a></dt><?php endif;?>
+		                         <dd class="t"><a href="/index-article-view-id-<?php echo $value['id']?>.html" title="<?php echo $value['title']?>" target="_blank"><?php echo $value['title']?></a></dd>
+		                         <dd class="s"><?php echo $value['describes']?> ...<a href="<?php echo $value['viewLink']?>">[详情]</a>
+								 </dd>
+		                    </dl>
+							<?php endforeach;?>
+
+		                    
+							
+			    	    </div>
+		    	    </div>
+		    	</div>
+	    </div>
+	    <?php include('inc/leftarticle.php')?>
+	    <div class="clear"></div>
+	    
+		<div class="flinkbox">
+	        <h1 class=" clear f-title"> 友情链接</h1>
+		    <div class="flink mr-0 ml-0">
+			<?php include('inc/links.php')?>
+		         
+		    </div>
+		</div>
+	</div>
+</div>
+<?php include('inc/footer.php')?>
+<script type="text/javascript" src="js/JquerySlide.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        PicSlide.initSlide("BoxMainPic2014", 400, 300, "srcN");
+        PicSlide.BindSlide("BoxMainPic2014", 400, 300, "thumbnail", "btn-right", "btn-left",4);
+    });
+</script>
+<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+<script type="text/javascript">
+    jQuery(".new-fl").slide({titCell:".hd li",mainCell:".fckx-listbox",effect:"fade",trigger:"click",delayTime:0,switchLoad:"_src" });
+</script>
+</body>
+</html>

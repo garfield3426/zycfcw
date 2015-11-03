@@ -1,0 +1,35 @@
+@charset "utf-8";
+/* CSS Document */
+
+a{ text-decoration:none; color:#333333;}
+img{border:0;}
+.main{ width:980px; height:auto; margin:0px auto;}
+	.top{ width:980px; height:380px;}
+		.top_img{ width:980px; height:95px;}
+.center{ width:940px; height:auto; padding-left:40px; background:#f8f9fb; padding-top:38px;}
+	.story{ width:880px; height:auto;}
+		.s_title{ width:880px; height:18px; background:url("../images/title_1.gif") no-repeat; margin-bottom:30px; padding-top:4px;}
+		.s_title a{ width:34px; height:11px; display:block; margin-left:830px;}
+		.s_content{ width:850px; height:190px; margin-left:15px; padding-bottom:35px; border-bottom:1px dashed #999999;}
+			.s_img{ width:577px; height:190px; float:left; margin-right:33px;}
+			.s_list{ width:240px; height:190px; float:left;}
+				.s_li{ width:240px; height:26px; border-bottom:1px dashed #b5be96; overflow:hidden; line-height:26px;}
+				.s_li img{ margin:9px 6px 0px 5px;}
+	.c_botom{ width:880px; height:auto; margin-top:32px;}
+		.c_left{ width:520px; height:220px; float:left; margin-right:35px;}
+			.l_title{ width:520px; height:18px; background:url("../images/title_2.gif") no-repeat; margin-bottom:26px; padding-top:4px;}
+			.l_title a{ width:34px; height:11px; display:block; margin-left:479px;}
+			.video{ width:520px; height:170px;}
+				.v_img{ width:252px; height:170px; float:left; margin-right:20px;}
+				.v_list{ width:240px; height:164px; float:left; padding-top:6px;}
+		.c_right{ width:325px; height:auto; float:left;}
+			.r_title{ width:325px; height:18px; background:url("../images/title_3.gif") no-repeat; margin-bottom:26px; padding-top:4px;}
+			.r_title a{ width:34px; height:11px; display:block; margin-left:282px;}
+			.a_ul{ width:325px; height:auto; padding-top:6px;}
+				.a_l_li{ width:325px; height:26px; border-bottom:1px dashed #b5be96;}
+					.a_l_li img{ float:left; margin:9px 6px 0px 5px;}
+					.art_title{ width:220px; height:26px; line-height:26px; float:left; overflow:hidden;}
+					.art_time{ width:60px; height:26px; line-height:26px; float:left;}
+				
+				.l_li{ width:236px; height:26px; border-bottom:1px dashed #b5be96; overflow:hidden;white-space:nowrap;}
+				.l_li img{ margin:9px 6px 0px 5px;}

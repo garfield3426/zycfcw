@@ -1,0 +1,454 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+<title>别墅出租列表页</title>
+<meta name="keywords" content="关键词,5个左右,单个8汉字以内">
+<meta name="description" content="网站描述，字数尽量空制在80个汉字，160个字符以内！">
+<link rel="Bookmark" href="/favicon.ico" >
+<link rel="Shortcut Icon" href="/favicon.ico" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/html5.js"></script>
+<script type="text/javascript" src="js/respond.min.js"></script>
+<script type="text/javascript" src="js/PIE_IE678.js"></script
+<![endif]-->
+<link href="css/H-ui.css" rel="stylesheet" type="text/css" />
+<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<!--[if IE 7]>
+<link href="static/h-ui/css/font-awesome-ie7.min.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+<!--[if IE 6]>
+<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('.pngfix,.icon');</script>
+<![endif]-->
+</head>
+
+<body>
+<?php include('inc/banner.php')?>
+
+<div class="main">
+    <div class="wp fluidgrid">
+	     <div class="row">
+	        <?php include('inc/top.php')?>
+	        <div class="clear"></div>
+	        <div class="col-12 submenu mt-15">
+	            <div class="hd">
+					<ul>
+	                    <li class="on"><span>按条件查询</span></li>
+	                    
+	               </ul>
+				</div>
+				<div class="clear"></div>
+				<div class="search-con">
+					<div id="list_38" class="quxian mt-20 ml-25" name="div_districtandcomarea">
+	       				<span class="type">区域：</span>
+						<div class="qxName" style="z-index: 2">
+						            <a <?php  if(!$v['kw']['qy']){echo "class=\"org bold\"";}?> tag="">不限</a>
+									<?php foreach($v[ 'jsonData']['item[qy]'] as $key=>$value):?>
+									<a <?php  if($v['kw']['qy']==$value['id']){echo "class=\"org bold selected\"";}else{ echo "href=\"javascript:;\"";}?>  rel="nofollow" tag="-qy-<?php echo $value['id'];?>"><?php echo $value['title_zh'];?></a>
+									<?php endforeach;?>
+						            
+						</div>
+	        		</div>
+					
+					<?php if($v['sq']):?>
+                    <div id="div_shangQuan" class="shangQuan ml-25">
+					    <p class="top"></p>
+					    <p id="shangQuancontain" class="contain">
+					                <a <?php  if(!$v['kw']['sq']){echo "class=\"org bold \"";}?> tag="">不限</a>
+									<?php foreach($v[ 'sq']as  $value):?>
+					               <a <?php  if($v['kw']['sq']==$value['id']){echo "class=\"org bold selected\"";}else{ echo "href=\"javascript:;\"";}?>  rel="nofollow" tag="-sq-<?php echo $value['id'];?>"><?php echo $value['title_zh'];?></a>
+									<?php endforeach;?>
+					    </p>
+					    <p class="bottom"></p>
+					</div>
+					<?php endif;?>
+				
+	                <div class="clear"></div>
+					<ul class="info ml-25">
+				         <li id="list_39" name="div_price">租金：
+				            <a <?php  if(!$v['kw']['zj']){echo "class=\"org bold\"";}?> tag="">不限</a>
+				            <a <?php  if($v['kw']['zj']==1){echo "class=\"org bold\"";}else{ echo "href=\"javascript:;\"";}?> rel="nofollow" tag="-zj-1">2000元以下</a>
+				            <a <?php  if($v['kw']['zj']==2){echo "class=\"org bold\"";}else{ echo "href=\"javascript:;\"";}?> rel="nofollow" tag="-zj-2">2000-3000元</a>
+				            <a <?php  if($v['kw']['zj']==3){echo "class=\"org bold\"";}else{ echo "href=\"javascript:;\"";}?> rel="nofollow" tag="-zj-3">3000-4000元</a>
+				            <a <?php  if($v['kw']['zj']==4){echo "class=\"org bold\"";}else{ echo "href=\"javascript:;\"";}?>rel="nofollow" tag="-zj-4">4000-5000元</a>
+				            <a <?php  if($v['kw']['zj']==5){echo "class=\"org bold\"";}else{ echo "href=\"javascript:;\"";}?> rel="nofollow" tag="-zj-5">5000-6000元</a>
+				            <a <?php  if($v['kw']['zj']==6){echo "class=\"org bold\"";}else{ echo "href=\"javascript:;\"";}?> rel="nofollow" tag="-zj-6">6000-8000元</a>
+							<a <?php  if($v['kw']['zj']==7){echo "class=\"org bold\"";}else{ echo "href=\"javascript:;\"";}?> rel="nofollow" tag="-zj-7">8000-10000元</a>
+				            <a <?php  if($v['kw']['zj']==8){echo "class=\"org bold\"";}else{ echo "href=\"javascript:;\"";}?> rel="nofollow" tag="-zj-8">10000元以上</a>
+				            <input id="cminPricel" type="text" maxlength="4" size="4" value="<?php echo $v['kw']['zjl']?>" onkeydown="onlyNum();" title="请输入最低价格" onfocus="javascript:document.getElementById('pConfirmButton').style.display='inline-block';" class="inputSmall">-<input id="cmaxPriceh" type="text" maxlength="6" size="6" value="<?php echo $v['kw']['zjh']?>" onkeydown="onlyNum();" title="请输入最高价格" onfocus="javascript:document.getElementById('pConfirmButton').style.display='inline-block';" class="inputSmall">
+				            <span class="tip-box">
+				                <input id="pConfirmButton" type="button" style="display: none;" class="btnSmall" value="确定">
+						        <div class="w_tip" id="MessagePrice">
+						            <div class="top"></div>
+						        	<div id="MessagePriceText" class="bottom"></div>
+						        </div>
+				            </span> 
+				        </li>
+				        <li id="list_40" name="div_room">户型：
+				            <a <?php  if(!$v['kw']['hx']){echo "class=\"org bold\"";}?> tag="">不限</a>
+				            <a <?php  if($v['kw']['hx']==1){echo "class=\"org bold\"";}else{ echo "href=\"javascript:;\"";}?> rel="nofollow" tag="-hx-1">一居</a>
+				            <a <?php  if($v['kw']['hx']==2){echo "class=\"org bold\"";}else{ echo "href=\"javascript:;\"";}?> rel="nofollow" tag="-hx-2">二居</a>
+				            <a <?php  if($v['kw']['hx']==3){echo "class=\"org bold\"";}else{ echo "href=\"javascript:;\"";}?> rel="nofollow" tag="-hx-3">三居</a>
+				            <a <?php  if($v['kw']['hx']==4){echo "class=\"org bold\"";}else{ echo "href=\"javascript:;\"";}?> rel="nofollow" tag="-hx-4">四居</a>
+				            <a <?php  if($v['kw']['hx']==5){echo "class=\"org bold\"";}else{ echo "href=\"javascript:;\"";}?> rel="nofollow" tag="-hx-5">五居</a>
+				            <a <?php  if($v['kw']['hx']==6){echo "class=\"org bold\"";}else{ echo "href=\"javascript:;\"";}?> rel="nofollow" tag="-hx-6">五居以上</a>
+				        </li>
+	    			</ul>
+					<!-- <div id="list_42" class="quxian mt-20 ml-25" name="div_districtandcomarea">
+	       				<span class="type">地铁：</span>
+						<div class="qxName" style="z-index: 2">
+						              <a <?php  if(!$v['kw']['dt']){echo "class=\"org bold\"";}?> tag="">不限</a>
+									<?php foreach($v[ 'jsonData']['item[dt]'] as $key=>$value):?>
+									<a <?php  if($v['kw']['dt']==$value['id']){echo "class=\"org bold selected\"";}else{ echo "href=\"javascript:;\"";}?>  rel="nofollow" tag="-dt-<?php echo $value['id'];?>"><?php echo $value['title_zh'];?></a>
+									<?php endforeach;?> 
+						</div>
+	        		</div>
+
+					<?php if($v['dt']):?>
+                    <div id="div_DiTie" class="shangQuan ml-25">
+					    <p class="top"></p>
+					    <p id="shangQuancontain" class="contain">
+					                <a <?php  if(!$v['kw']['dtxl']){echo "class=\"org bold selected\"";}?> tag="">不限</a>
+									<?php foreach($v[ 'dt']as  $value):?>
+					               <a <?php  if($v['kw']['dtxl']==$value['id']){echo "class=\"org bold selected\"";}else{ echo "href=\"javascript:;\"";}?>  rel="nofollow" tag="-dtxl-<?php echo $value['id'];?>"><?php echo $value['title_zh'];?></a>
+									<?php endforeach;?>
+					    </p>
+					    <p class="bottom"></p>
+					</div>
+					<?php endif;?> -->
+					 <div class="clear"></div>
+					<!-- <div id="list_44" class="moresearchinfo tese" name="div_feature">
+	        			<span>电轨：  </span>
+						
+				        <a <?php  if(!$v['kw']['dg']){echo "class=\"org bold\"";}?> tag="">不限</a>
+						<?php foreach($v[ 'jsonData']['item[dg]']['list'] as $key=>$value):?>
+				        <a <?php  if($v['kw']['dg']==$key){echo "class=\"org bold\"";}else{ echo "href=\"javascript:;\"";}?>  rel="nofollow" tag="-dg-<?php echo $key;?>"><?php echo $value;?></a>
+						<?php endforeach;?>
+				        <div class="clear"></div>
+				    </div> -->
+	    			<div id="list_43" class="moresearchinfo tese" name="div_feature">
+	        			<span>出租方式：  </span>
+												
+				        <a <?php  if(!$v['kw']['czfs']){echo "class=\"org bold\"";}?> tag="">不限</a>
+						<?php foreach($v[ 'jsonData']['item[czfs]']['list'] as $key=>$value):?>
+				        <a <?php  if($v['kw']['czfs']==$key){echo "class=\"org bold\"";}else{ echo "href=\"javascript:;\"";}?>  rel="nofollow" tag="-czfs-<?php echo $key;?>"><?php echo $value;?></a>
+						<?php endforeach;?>
+				        <div class="clear"></div>
+				    </div>
+					<div class="moresearchinfo tese" name="div_feature">
+	        			<span class="f-l mr-10 ">更多找房条件：</span>
+	        			<div class="formControls w96 mr-10 f-l"> 
+	        			    <span class="select-box index-selet">
+				            	<select class="select"  id="cx" size="1" name="demo1" datatype="*" nullmsg="请选择所在城市！">
+					                <option value="" selected="">朝向</option>
+									<option <?php  if(!$v['kw']['cx']){echo "class=\"org bold\"";}?> value=" ">不限</option>
+									<?php foreach($v[ 'jsonData']['item[cx]']['list'] as $key=>$value):?>
+					                <option value="-cx-<?php echo $key;?>" <?php if( $v['kw']['cx']==$key) echo 'selected="selected"'?>><?php echo $value;?></option>
+									<?php endforeach;?>
+					            </select>
+			              	</span> 
+			            </div>
+				        <div class="formControls w96 mr-10 f-l"> 
+	        			    <span class="select-box index-selet">
+				            	<select class="select" id="lc" size="1" name="demo1" datatype="*" nullmsg="请选择所在城市！">
+					                <option value="" selected="">楼层</option>
+									<option <?php  if(!$v['kw']['lc']){echo "class=\"org bold\"";}?> value=" ">不限</option>
+					                <?php foreach($v[ 'lc_qg_zz'] as $key=>$value):?>
+					                <option value="-lc-<?php echo $key;?>"  <?php if( $v['kw']['lc']==$key) echo 'selected="selected"'?>><?php echo $value;?></option>
+									<?php endforeach;?>
+					            </select>
+					            </select>
+			              	</span> 
+			            </div>
+			            <div class="formControls w96 mr-10 f-l"> 
+	        			    <span class="select-box index-selet">
+				            	<select class="select" id="zxcd" size="1" name="demo1" datatype="*" nullmsg="请选择所在城市！">
+					                <option value="" selected="">装修</option>
+					                <option <?php  if(!$v['kw']['zxcd']){echo "class=\"org bold\"";}?> value=" ">不限</option>
+									<?php foreach($v[ 'jsonData']['item[zxcd]']['list'] as $key=>$value):?>
+					                <option value="-zxcd-<?php echo $key;?>"  <?php if( $v['kw']['zxcd']==$key) echo 'selected="selected"'?>><?php echo $value;?></option>
+									<?php endforeach;?>
+					            </select>
+			              	</span> 
+			            </div>
+			            <!-- <div class="formControls w96 mr-10 f-l"> 
+	        			    <span class="select-box index-selet">
+				            	<select class="select" size="1" name="demo1" datatype="*" nullmsg="请选择所在城市！">
+					                <option value="" selected="">请选择</option>
+					                <option value="1">北京</option>
+					                <option value="2">上海</option>
+					                <option value="3">广州</option>
+					            </select>
+			              	</span> 
+			            </div>
+			            <div class="formControls w96 mr-10 f-l"> 
+	        			    <span class="select-box index-selet">
+				            	<select class="select" size="1" name="demo1" datatype="*" nullmsg="请选择所在城市！">
+					                <option value="" selected="">请选择</option>
+					                <option value="1">北京</option>
+					                <option value="2">上海</option>
+					                <option value="3">广州</option>
+					            </select>
+			              	</span> 
+			            </div> -->
+				        <div class="clear"></div>
+				    </div>
+					<div class="finder moresearchinfo tese">
+				        <span class="mr10 floatl">当前找房条件：</span>
+				        <a class="term qy" tag="" style="display:none;"></a>
+				        <a class="term zj" tag="" style="display:none;"></a>
+				        <a class="term hx" tag="" style="display:none;"></a>
+				        <a class="term mj" tag="" style="display:none;"></a>
+				        <a class="term xl" tag="" style="display:none;"></a>
+				        <a  href="http://www.zycfcw.com/index-rent-showlist.html">清空全部</a>
+				    </div>
+				</div>
+			</div>
+		 </div>
+    </div>
+    <div class="clear"></div>
+    <div class="wp fluidgrid">
+        <div class="content-top">
+             <h3 class="f-l">全部房源</h3>
+             <div class="top-pagebox f-l">
+             	<!-- <span>1/18</span>
+             	<a href="" class="toppage-next f-r"></a>
+             	<a href="" class="toppage-prev f-r"></a> -->
+             </div>
+        </div>
+    	
+		
+		
+		<div class="col-9 mt-0 mr-0  main-l">
+    	     <div class="houseList">
+			 
+			 <?php foreach($v['list'] as $value):?>
+                    <dl id="list_1" class="list rel">
+		                <dt class="img rel l">
+		                        <a href="<?php echo $value['viewLink']?>" target="_blank">
+		                            <img width="200" height="150" src="<?php echo $value['sn_images']['0']?>"></a>
+						     <p class="txtBg"></p>
+							 <p class="txt"><span class="iconImg"><?php echo $value['num']?></span></p>
+						</dt>
+						<dd class="info rel r">
+						    <p class="title"><a href="<?php echo $value['viewLink']?>" target="_blank" title="<?php echo $value['title']?>"><?php echo $value['title']?></a></p>
+						    <p class="gray6 mt-12"><?php echo $value['lpmc']?></p>
+						    <p class="gray6 mt-12"><?php if($value['czfs']) echo Category::getTitle($value['czfs']).'&nbsp;&nbsp;&nbsp;&nbsp;|'?>&nbsp;&nbsp;&nbsp;&nbsp;<?php if($value['jzmj'])  echo $value['jzmj'].'㎡&nbsp;&nbsp;&nbsp;&nbsp;|'?>&nbsp;&nbsp;&nbsp;&nbsp;<?php if($value['zxcd']) echo Category::getTitle($value['zxcd']).'&nbsp;&nbsp;&nbsp;&nbsp;|'?>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $value['cx']?></p>
+		                    <p><span class="name"><?php echo $value['username']?></span><span class="time">10分钟前更新</span></p>
+		                    <div class="ts YaHei"><?php echo $value['fx_s']?>室<?php echo $value['fx_t']?>厅</div>
+							
+							<div class="moreInfo">
+								  <p class="mt-5 text-r"><span class="price"><?php echo $value['zj']?></span>
+								  <span class="YaHei ml-5">元/月</span></p>
+								  
+							 </div>
+						</dd>
+						<div class="clear"></div>
+			        </dl>
+			<?php endforeach;?>		
+
+                   <?php include('inc/pager.php')?>
+
+                 
+    	     </div>
+        </div>
+		
+		<div class="btnbox f-r">
+        		     <a class="maifl l" href="/index-rent-create.html" target="_blank">
+        		     	 <span>免费发布出租</span>
+        		     </a>
+        		     <a class="maifr f-r" href="/index-qiuzu-create.html" target="_blank">
+        		         <span>免费发布求租</span>
+        		     </a>
+        </div>
+    	<?php include('inc/leftarticle.php')?>
+    </div>
+    <div class="clear"></div>
+    <div class="wp flinkbox">
+        <h1 class=" clear f-title"> 友情链接</h1>
+	    <div class="flink row-1180-24 mr-0 ml-0">
+	         <?php include('inc/links.php')?>
+	    </div>
+	</div>
+</div>
+<?php include('inc/footer.php')?>
+<script>
+	var qy = <?php $qy = $v['kw']['qy']? '-qy-'.$v['kw']['qy'] :''; echo "'".$qy."'";?>;
+	var sq = <?php $sq = $v['kw']['sq']? '-sq-'.$v['kw']['sq'] :''; echo "'".$sq."'";?>;
+	var zj = <?php $zj = $v['kw']['zj']?'-zj-'.$v['kw']['zj']:''; echo "'".$zj."'";?>;
+	var zjl = <?php $zjl = $v['kw']['zjl']?'-zjl-'.$v['kw']['zjl']:''; echo "'".$zjl."'";?>;
+	var zjh = <?php $zjh = $v['kw']['zjh']?'-zjh-'.$v['kw']['zjh']:''; echo "'".$zjh."'";?>;
+	var hx = <?php $hx = $v['kw']['hx']?'-hx-'.$v['kw']['hx']:''; echo "'".$hx."'";?>;
+	var mj = <?php $mj = $v['kw']['mj']?'-mj-'.$v['kw']['mj']:''; echo "'".$mj."'";?>;
+	var mjl = <?php $mjl = $v['kw']['mjl']?'-mjl-'.$v['kw']['mjl']:''; echo "'".$mjl."'";?>;
+	var mjh = <?php $mjh = $v['kw']['mjh']?'-mjh-'.$v['kw']['mjh']:''; echo "'".$mjh."'";?>;
+	var dt = <?php $dt = $v['kw']['dt']?'-dt-'.$v['kw']['dt']:''; echo "'".$dt."'";?>;
+	var dtxl = <?php $dtxl = $v['kw']['dtxl']?'-dtxl-'.$v['kw']['dtxl']:''; echo "'".$dtxl."'";?>;
+	var dg = <?php $dg = $v['kw']['dg']?'-dg-'.$v['kw']['dg']:''; echo "'".$dg."'";?>;
+	var ts = <?php $ts = $v['kw']['ts']?'-ts-'.$v['kw']['ts']:''; echo "'".$ts."'";?>;
+	var czfs = <?php $czfs = $v['kw']['czfs']?'-czfs-'.$v['kw']['czfs']:''; echo "'".$czfs."'";?>;
+	var xx = <?php $xx = $v['kw']['xx']?'-xx-'.$v['kw']['xx']:''; echo "'".$xx."'";?>;
+	var cx = <?php $cx = $v['kw']['cx']?'-cx-'.$v['kw']['cx']:''; echo "'".$cx."'";?>;
+	var fl = <?php $fl = $v['kw']['fl']?'-fl-'.$v['kw']['fl']:''; echo "'".$fl."'";?>;
+	var lc = <?php $lc = $v['kw']['lc']?'-lc-'.$v['kw']['lc']:''; echo "'".$lc."'";?>;
+	var zxcd = <?php $zxcd = $v['kw']['zxcd']?'-zxcd-'.$v['kw']['zxcd']:''; echo "'".$zxcd."'";?>;
+	var zzlb = <?php $zzlb = $v['kw']['zzlb']?'-zzlb-'.$v['kw']['zzlb']:''; echo "'".$zzlb."'";?>;
+	var jzlx = <?php $jzlx = $v['kw']['jzlx']?'-jzlx-'.$v['kw']['jzlx']:''; echo "'".$jzlx."'";?>;
+	var jg = <?php $jg = $v['kw']['jg']?'-jg-'.$v['kw']['jg']:''; echo "'".$jg."'";?>;
+	var url_head='http://www.zycfcw.com/index-rent-showlist'; //url头部
+	var url_mid = null; //url中间部分，所有变量的集合
+	var url_end = '.html';//url尾部
+	var url = null;
+	
+	//区域
+	$("#list_38 a").click(function(){
+    	qy=$(this).attr("tag");
+		loc_url();
+	});
+	
+	//商圈
+	$("#div_shangQuan a").click(function(){
+    	sq=$(this).attr("tag");
+		loc_url();
+	});
+	
+	//租金
+	$("#list_39 a").click(function(){
+		zj=$(this).attr("tag");
+		zjl="";
+		zjh="";
+		loc_url();
+	});
+
+    $("#pConfirmButton").click(function(){
+        zjl=$("#cminPricel").val();
+		zjh=$("#cmaxPriceh").val();
+        if(parseInt(zjl) < parseInt(zjh))
+        {  
+            zjl='-zjl-'+zjl;
+            zjh='-zjh-'+zjh;
+            zj="";
+			loc_url();
+		}
+		else
+		{
+		  alert("最高租金不能小于最低租金");
+		  $("#cminPricel").val("");
+		  $("#cmaxPriceh").val("");
+		}
+	});
+
+
+
+	//户型
+	$("#list_40 a").click(function(){
+		hx=$(this).attr("tag");
+		loc_url();
+	});
+	//面积
+	$("#list_41 a").click(function(){
+		mj=$(this).attr("tag");
+		mjl="";
+		mjh="";
+		loc_url();
+	});
+
+    $("#aConfirmButton").click(function(){
+        mjl=$("#cminAreal").val();
+		mjh=$("#cmaxAreah").val();
+        if(parseInt(mjl) < parseInt(mjh))
+        {  
+            mjl='-mjl-'+mjl;
+            mjh='-mjh-'+mjh;
+            mj="";
+			loc_url();
+		}
+		else
+		{
+		  alert("最高面积不能小于最低面积");
+		  $("#cminAreal").val("");
+		  $("#cmaxAreah").val("");
+		}
+	});
+
+	//地铁
+	$("#list_42 a").click(function(){
+		dt=$(this).attr("tag");
+		loc_url();
+	});
+	//地铁线路
+	$("#div_DiTie a").click(function(){
+		dtxl=$(this).attr("tag");
+		loc_url();
+	});
+	//电轨
+	$("#list_44 a").click(function(){
+		dg=$(this).attr("tag");
+		loc_url();
+	});
+	//出租方式
+	$("#list_43 a").click(function(){
+		czfs=$(this).attr("tag");
+		loc_url();
+	});
+	//学校
+	$("#list_45 a").click(function(){
+		xx=$(this).attr("tag");
+		loc_url();
+	});
+	//朝向
+    $("#cx").change(function(){ 
+		cx=$("#cx").val();
+		loc_url();
+	});
+	//房龄
+    $("#fl").change(function(){ 
+		fl=$("#fl").val();
+		loc_url();
+	});
+	//楼层
+    $("#lc").change(function(){ 
+		lc=$("#lc").val();
+		loc_url();
+	});
+	//装修程度
+    $("#zxcd").change(function(){ 
+		zxcd=$("#zxcd").val();
+		loc_url();
+	});
+	//住宅类别
+    $("#zzlb").change(function(){ 
+		zzlb=$("#zzlb").val();
+		loc_url();
+	});
+	//建筑类别
+    $("#jzlx").change(function(){ 
+		jzlx=$("#jzlx").val();
+		loc_url();
+	});
+	//房屋结构
+    $("#jg").change(function(){ 
+		jg=$("#jg").val();
+		loc_url();
+	});
+
+	//点击后跳转url
+	function loc_url(){
+		url_mid = qy+sq+zj+zjl+zjh+hx+mj+mjl+mjh+dt+dtxl+dg+czfs+xx+cx+fl+lc+zxcd+zzlb+jzlx+jg;
+		window.location.href=url_head+url_mid+url_end;
+	}
+
+	function onlyNum()
+	{
+	 if(!(event.keyCode==46)&&!(event.keyCode==8)&&!(event.keyCode==37)&&!(event.keyCode==39))
+	  if(!((event.keyCode>=48&&event.keyCode<=57)||(event.keyCode>=96&&event.keyCode<=105)))
+	    event.returnValue=false;
+	}
+</script>
+</body>
+</html>

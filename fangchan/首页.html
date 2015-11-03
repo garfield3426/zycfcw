@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+<title>房源发布</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<link rel="Bookmark" href="/favicon.ico" >
+<link rel="Shortcut Icon" href="/favicon.ico" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/html5.js"></script>
+<script type="text/javascript" src="js/respond.min.js"></script>
+<script type="text/javascript" src="js/PIE_IE678.js"></script
+<![endif]-->
+<link href="css/H-ui.css" rel="stylesheet" type="text/css" />
+<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<!--[if IE 7]>
+<link href="static/h-ui/css/font-awesome-ie7.min.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<link href="js/icheck/icheck.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+<!--[if IE 6]>
+<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('.pngfix,.icon');</script>
+<![endif]-->
+</head>
+
+<body>
+<div class="header index-header">
+    <div class="head-top">
+	    <div class="wp fluidgrid">
+		    <div class="row">
+		        <div class="col-12 mt-0  ">
+		             <ul>
+		                <li class="last"><span>24小时房产热线：<strong>400-4000-4000</strong></span></li>
+		                <li><a class="qq" href="">在线QQ</a></li>
+		                <li><a class="wchar" href="">微信扫一扫</a></li>
+		             	<li><a href="">注册</a></li>
+		             	<li><a href="">登录</a></li>
+		             </ul>
+		        </div>
+		    </div>
+		</div>
+	</div>
+	<div class="wp cl">
+	    <div class="row">
+		    <div class="col-3 index-logo">
+		    	<img src="images/logo.jpg" alt="" />
+		    </div>
+		    <nav class="index-nav f-r">
+		        <ul class="cl">
+		                <li><a class="current" href="#">二手房</a></li>
+		                <li><a href="#">租房</a></li>
+		                <li><a href="#">写字楼 </a></li>
+		                <li><a href="#">新房</a></li>
+		                <li><a href="#">商铺</a></li>
+		                <li><a href="#">房价查询</a></li>
+		                <li><a href="#">房产快讯</a></li>
+		                <li class="last"><a href="#">手机找房</a></li>
+		         </ul>
+		    </nav>
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+<div class="main">
+	<div class="fluidgrid index-main">
+	     <div class="mainbg1"></div>
+	     <div class="mainbg2"></div>
+	     <div class="mainbg3"></div>
+	     <div class="mainbg wp">
+	          <a class="a1" href="">租房<img alt="" src="images/crile.png"></a>
+	          <a class="a2" href="">二手房<img alt="" src="images/crile.png"></a>
+	          <a class="a3" href="">商铺<img alt="" src="images/crile.png"></a>
+	          <a class="a4" href="">查询房价<img alt="" src="images/crile.png"></a>
+	          <a class="a5" href="">写字楼<img alt="" src="images/crile.png"></a>
+		 </div>
+    </div>
+
+</div>
+<div class="clear"></div>
+<div class="footer">
+	<div class="foot">
+		<a href="#">关于我们</a>
+		<a href="#">网站合作</a>
+		<a href="#">联系我们</a>
+		<a href="#">招聘信息</a>
+		<a href="#">中介加盟</a>
+		<a href="#">网站地图</a>
+		<a href="#">意见反馈</a>
+		<a href="#" class="last">服务声明</a>
+	</div>
+	<p>Copyright &copy 2015 Soufun ******,All Rights Reserved 苏州忠业诚房产经纪有限公司 版权所有</p>
+</div>
+<script type="text/javascript" src="js/icheck/jquery.icheck.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+	   $('.skin-minimal input').iCheck({
+		checkboxClass: 'icheckbox-blue',
+			radioClass: 'iradio-blue',
+			increaseArea: '20%'
+		});
+    });
+
+    function custom_select(a,b,c,d){
+		  var $selecttext = $(a),
+			  $drop = $(b),
+			   $inp = $(c);
+			   
+			  if($drop.css("display")=="none")
+				{
+					$drop.css({'display':'block'});
+				}
+			  else
+				{
+					$drop.css({'display':'none'});
+				}
+				
+			   $drop.find("li").click(function(){
+			        $inp.text($drop.find("li").eq($(this).index()).text());
+					$selecttext.val($drop.find("li").eq($(this).index()).text());
+					$drop.css({'display':'none'});
+		       });
+		}
+		
+</script>
+</body>
+</html>

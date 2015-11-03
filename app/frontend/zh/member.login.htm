@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+<title>会员登录</title>
+<meta name="keywords" content="关键词,5个左右,单个8汉字以内">
+<meta name="description" content="网站描述，字数尽量空制在80个汉字，160个字符以内！">
+<link rel="Bookmark" href="/favicon.ico" >
+<link rel="Shortcut Icon" href="/favicon.ico" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/html5.js"></script>
+<script type="text/javascript" src="js/respond.min.js"></script>
+<script type="text/javascript" src="js/PIE_IE678.js"></script
+<![endif]-->
+<link href="css/H-ui.css" rel="stylesheet" type="text/css" />
+<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<!--[if IE 7]>
+<link href="static/h-ui/css/font-awesome-ie7.min.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<link href="js/icheck/icheck.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+<!--[if IE 6]>
+<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('.pngfix,.icon');</script>
+<![endif]-->
+</head>
+
+<body>
+<?php include('inc/banner.php')?>
+<div class="main">
+	<div class="wp fluidgrid">
+	     <div class="row login">
+	        <div class="col-8 mt-15 mr-0 login-left">
+	             <img src="images/login-advert.jpg" alt="" />
+                 <a class="jr-btn" target="_blank" href="/index-member-register.html">马上加入</a>
+                 <div class="login-ldetails">
+                       <ul>
+                           <li><strong class="ls1">忠业诚会员享有的特权</strong>买、卖双方均免中介费，双方各收取5000元/套居间费</li>
+                           <li><strong class="ls2">搜房保障</strong>二手房全套房产交易保障</li>
+                           <li><strong class="ls3">装修管家</strong>享受无虑装修全程托管</li>
+                           <li><strong class="ls4">专属金融服务</strong>低息贷款，投资理财</li>
+                       </ul>
+                  </div>
+			</div>
+			<form action="/index-member-login.html" method="post" id="mainForm">
+			<div class="col-4 mt-15 mr-0 login-right f-r">
+			     <div class="login-title">
+			     	<ul>
+			     	    <li class="current">登&nbsp;&nbsp;录</li>
+			     	    <li></li>
+			     	</ul>
+			     </div>
+	             <div class="formControls username mt-30 ml-30 mr-30">
+				    <input type="text" name="item[username]" class="input-text usernametext" onfocus="this.style.color='#000'" onblur="this.style.color='#999'" value="" autocomplete="off" placeholder="用户名">
+				 </div>
+				 <div class="formControls pwd mt-20 ml-30 mr-30">
+				    <input type="password" name="item[passwd]" class="input-text pwdtext" onfocus="this.style.color='#000'" onblur="this.style.color='#999'" autocomplete="off" placeholder="密码">
+				 </div>
+				 <div class="formControls zdlogin mt-20 ml-30 mr-30">
+				   <!--  <input type="checkbox" class="f-l mt-10" ><span class="f-l">自动登录</span> --><a href="" class="f-r">忘记密码？</a>
+				 </div>
+				 <div class="formControls mt-20 ml-30 mr-30">
+				    <input class="btn loginbtn" type="submit" name="submit" value="登  录">
+				 </div>
+				 <div class="formControls loginbtm mt-20 ml-30 mr-30 mb-30">
+				    <a href="/index-member-register.html" class="f-r">我要注册</a>
+				 </div>
+			</div>
+			</form>
+	    </div>
+    </div>
+    <div class="clear"></div>
+    <div class="wp flinkbox">
+        <h1 class=" clear f-title"> 友情链接</h1>
+	    <div class="flink row-1180-24 mr-0 ml-0">
+	         <?php include('inc/links.php')?>
+	    </div>
+	</div>
+</div>
+<?php include('inc/footer.php')?>
+<script type="text/javascript" src="js/icheck/jquery.icheck.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+	   $('.skin-minimal input').iCheck({
+		checkboxClass: 'icheckbox-blue',
+			radioClass: 'iradio-blue',
+			increaseArea: '20%'
+		});
+    });
+
+    function custom_select(a,b,c,d){
+		  var $selecttext = $(a),
+			  $drop = $(b),
+			   $inp = $(c);
+			   
+			  if($drop.css("display")=="none")
+				{
+					$drop.css({'display':'block'});
+				}
+			  else
+				{
+					$drop.css({'display':'none'});
+				}
+				
+			   $drop.find("li").click(function(){
+			        $inp.text($drop.find("li").eq($(this).index()).text());
+					$selecttext.val($drop.find("li").eq($(this).index()).text());
+					$drop.css({'display':'none'});
+		       });
+		}
+		
+</script>
+</body>
+</html>

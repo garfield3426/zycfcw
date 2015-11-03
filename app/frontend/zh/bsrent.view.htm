@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+<title><?php echo $v['item']['title']?></title>
+<meta name="keywords" content="<?php echo $v['item']['keyword']?>" />
+<meta name="description" content="<?php echo $v['item']['describes']?>" />
+<?php include('inc/pub_head.php')?>
+<link rel="Bookmark" href="/favicon.ico" >
+<link rel="Shortcut Icon" href="/favicon.ico" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/html5.js"></script>
+<script type="text/javascript" src="js/respond.min.js"></script>
+<script type="text/javascript" src="js/PIE_IE678.js"></script
+<![endif]-->
+<link href="css/H-ui.css" rel="stylesheet" type="text/css" />
+<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<!--[if IE 7]>
+<link href="static/h-ui/css/font-awesome-ie7.min.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+<!--[if IE 6]>
+<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('.pngfix,.icon');</script>
+<![endif]-->
+</head>
+
+<body>
+<?php include('inc/banner.php')?>
+
+<div class="main">
+	<div class="wp fluidgrid">
+	    <?php include('inc/top.php')?>
+	    <div class="col-9 mt-15 mr-0  main-l">
+	    	    <div class="houseInfor clearfix"> 
+	    	       <h1 class="info-title mt-0 mb-0"><?php echo $v['item']['title']?></h1>
+				   <!--pic start--> 
+				   <div id="esfshxq_100"> 
+					    <div class="jdt f-l"> 
+						    <div class="jdt-pic" id="agantesfxq_B02_01"> 
+								<img src="<?php echo $v['item']['sn_images']['0']?>" id="BoxMainPic2014" alt="" width="400" height="300" />
+						    </div> 
+						    <div class="sliderbox" id="agantesfxq_B02_02"> 
+							    <div id="btn-left" class="arrow-btn leftBtn"></div> 
+							    <div class="slider" id="thumbnail"> 
+								       <ul >
+											<?php if ($v['item']['sn_images']):?>
+											<?php foreach ($v['item']['sn_images'] as $value):?>
+									        <li class="current"> <img src="<?php echo $value;?>" width="80" height="60" /></li> 
+											<?php endforeach;?> 
+											<?php endif;?> 
+								       </ul> 
+							    </div> 
+							    <div id="btn-right" class="arrow-btn rightBtn"> </div> 
+						    </div> 
+					    </div> 
+				    </div> 
+				   <!--pic end--> 
+				   <!--jindian_info start--> 
+				    <div class="inforTxt f-l"> 
+					    <dl class="house-d house-price mb-10"> 
+						    <dd><strong class="red20b"><?php echo $v['item']['zj']?></strong>元/月&nbsp;&nbsp;[<?php echo $v['zffs_zzbs'][$v['item']['zffs_zzbs']]?>]</dd>
+						    <dd></dd> 
+						    <dd>户<span class="pl-28"></span>型：<?php echo $v['item']['fx_s']?>室<?php echo $v['item']['fx_t']?>厅<?php echo $v['item']['fx_w']?>卫</dd> 
+						    <dd>面<span class="pl-28"></span>积：<?php echo $v['item']['jzmj']?>㎡</dd> 
+						</dl>
+						<dl class="house-d house-type mb-10">
+						    
+						    <dd>朝<span class="pl-28">向：<?php if ($v['item']['cx']) echo $v['item']['cx']?></dd> 
+						    <dd>楼<span class="pl-28"></span>层：<?php if ($v['item']['lc_l']) echo $v['item']['lc_l']?>/<?php if ($v['item']['lc_c'])  echo  $v['item']['lc_c']?>层</dd> 
+						    <dd>出租方式：<?php if ($v['item']['czfs']) echo Category::getTitle($v['item']['czfs'])?></dd> 
+						    <dd>装<span class="pl-28"></span>修：<?php if ($v['item']['zxcd']) echo $v['item']['zxcd']?></dd>
+							<dd>配套设施：
+							<?php foreach($v['item'][ 'ptss_bs'] as $value):?>   
+													<?php echo  $v['ptss_bs'][$value].'&nbsp;&nbsp;'?>
+							<?php endforeach;?></dd> 
+						    <!-- <dd>配套设施<?php if ($v['item']['zzlb']) echo $v['item']['zzlb']?></dd> 
+						    <dd>建筑类型：<?php if ($v['item']['jzlx']) echo $v['item']['jzlx']?></dd> 
+						    <dd>产权性质：<?php if ($v['item']['cqxz']) echo $v['item']['cqxz']?></dd>
+						    <dd>看房时间：<?php if ($v['item']['kfsj']) echo $v['item']['kfsj']?></dd> -->
+							<dd>楼盘名称：<?php  echo $v['item']['lpmc']?></dd>
+					    </dl> 
+					    <div class="clear"></div>
+					    <!-- <div class="house-bit">
+					        <span class="colorGreen note">地铁房</span>
+			                <span class="colorRed note">学区房</span>
+			                <span class="colorBlue note">地铁周边</span>
+					    </div> -->
+					    <div class="phone_top"> 
+					        <span class="mobilecode l">130 7331 7881</span>
+	                        <a class="share l ml-10" href="#"></a>
+					    </div> 
+				    </div>
+	                <!--jindian_info start end--> 
+	    	    </div>
+	    	    <div class="eshouse-details">  
+						<div class="hd">
+							<ul>
+								<li><span>房源描述</span></li>
+								<li><span class="last">房源图片</span></li>
+								<!-- <li><span>交通地图</span></li>
+								<li><span class="last">小区介绍</span></li> -->
+							</ul>
+						</div>
+						<div class="bd">
+							<div class="esf-details">
+	                             <?php echo $v['item']['content']?>
+							</div>
+							<div class="esf-details">
+							
+								<?php if ($v['item']['sn_images']):?>
+								<?php foreach ($v['item']['sn_images'] as $value):?>
+	                             <p><img alt="" src="<?php echo $value;?>" _src="<?php echo $value;?>"></p>
+								 <?php endforeach;?> 
+								 <?php endif;?> 
+	                             
+							</div>
+							<div class="esf-details">
+	                             <?php echo $v['item']['gj']?>
+							</div>
+							<div class="esf-details xqjs">
+	                             <!-- <dl class="mt10">
+						            <dd><span>二 手 房：</span><a target="_blank" href="/house-xm1210090680/">73</a>套</dd>
+						            <dd><span>租 房：</span><a target="_blank" href="http://zu.sh.fang.com/house-xm1210090680/">5</a>套</dd>
+						            <dd><span>物业类型：</span>住宅</dd>
+						            <dd><span>绿 化 率：</span>40.10%</dd>
+						            <dd><span>物 业 费：</span>1.00元/平米·月</dd>
+						            <dd><span>物业公司：</span>成事高邸物业有限公司</dd>
+						            <dd><span>开 发 商：</span>上海成事高第置业有限公司</dd>
+						            <div class="clear"></div>
+						        </dl> -->
+								<?php echo $v['item']['xq_content']?>
+							</div>
+						</div>
+	    	    </div>
+	    </div>
+        <div class="btnbox f-r">
+        		     <a class="maifl l" href="/index-rent-create.html" target="_blank">
+        		     	 <span>免费发布出租</span>
+        		     </a>
+        		     <a class="maifr f-r" href="/index-qiuzu-create.html" target="_blank">
+        		         <span>免费发布求租</span>
+        		     </a>
+        </div>
+	   <?php include('inc/leftarticle.php')?>
+	    <div class="clear"></div>
+	    <div class="wp flinkbox">
+        	<h1 class=" clear f-title"> 友情链接</h1>
+		    <div class="flink row-1180-24 mr-0 ml-0">
+		         <?php include('inc/links.php')?>
+		    </div>
+		</div>
+	</div>
+</div>
+<?php include('inc/footer.php')?>
+<script type="text/javascript" src="js/JquerySlide.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        PicSlide.initSlide("BoxMainPic2014", 400, 300, "srcN");
+        PicSlide.BindSlide("BoxMainPic2014", 400, 300, "thumbnail", "btn-right", "btn-left",4);
+    });
+</script>
+<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+<script type="text/javascript">
+    jQuery(".eshouse-details").slide({titCell:".hd li",mainCell:".bd",trigger:"click",delayTime:0,switchLoad:"_src" });
+</script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<ul id="mainNav" class="menu">
+    <li><a href="javascript:void(0);" class="main"><span>首页</span></a></li>
+    <li><a href="javascript:void(0);" class="main"><span>房源信息管理</span></a>
+    <ul>
+        <li><a href="<?php echo Core::getUrl('showlist','fang')?>">查看房源列表</a></li>
+        
+    </ul>
+    </li>
+    <li><a href="javascript:void(0);" class="main"><span>资讯管理</span></a>
+    <ul>
+        <li><a href="<?php echo Core::getUrl('showlist','article')?>">查看资讯列表</a></li>
+        <li><a href="<?php echo Core::getUrl('create','article')?>">发布新资讯</a></li>
+       <!-- <li><a href="<?php echo Core::getUrl('showlist','comment')?>">文章评论信息列表</a></li>-->
+        <li><a href="js/ckfinder/ckfinder.html?type=Images&sessionid=<?php echo session_id();?>" target="_blank">图片管理</a></li>
+    </ul>
+    </li>
+	<li><a href="javascript:void(0);" class="main"><span>会员管理</span></a>
+    <ul>
+        <li><a href="<?php echo Core::getUrl('showlist','member')?>">查看会员列表</a></li>
+      
+    </ul>
+    </li>
+    <li><a href="javascript:void(0);" class="main"><span>问题反馈管理</span></a>
+    <ul>
+     <!--   <li><a href="<?php echo Core::getUrl('showlist','bespeak')?>">问题反馈列表</a></li> -->
+     <!--   <li><a href="<?php echo Core::getUrl('showlist','bespeak',array('kw_reply'=>'0'))?>">未回访的留言</a></li> -->
+   </ul>
+    </li>
+	
+  
+    <li><a href="javascript:void(0);" class="main"><span>友情链接管理</span></a>
+    <ul>
+        <li><a href="<?php echo Core::getUrl('showlist','link')?>">查看友情链接列表</a></li>
+        <li><a href="<?php echo Core::getUrl('create','link')?>">添加友情链接</a></li>
+    </ul>
+    </li>
+    
+   <!--  <li><a href="javascript:void(0);" class="main"><span>首页滚动广告位管理</span></a>
+    <ul>
+        <li><a href="<?php echo Core::getUrl('showlist','ad')?>">滚动广告位信息列表</a></li>
+        <li><a href="<?php echo Core::getUrl('create','ad')?>">添加滚动广告位信息</a></li>
+    </ul>
+    </li> -->
+    
+    <li><a href="javascript:void(0);" class="main"><span>广告位管理</span></a>
+    <ul>
+        <li><a href="<?php echo Core::getUrl('showlist','adversite')?>">广告位信息列表</a></li>
+        <li><a href="<?php echo Core::getUrl('create','adversite')?>">添加广告位信息</a></li>
+    </ul>
+    </li>
+	<!-- <li><a href="javascript:void(0);" class="main"><span>视频管理</span></a>
+    <ul>
+        <li><a href="<?php echo Core::getUrl('showlist','video')?>">视频信息列表</a></li>
+        <li><a href="<?php echo Core::getUrl('create','video')?>">添加视频信息</a></li>
+    </ul>
+    </li>
+    <li><a href="javascript:void(0);" class="main"><span>工作日志管理</span></a>
+    <ul>
+        <li><a href="<?php echo Core::getUrl('showlist','daily')?>">工作日志列表</a></li>
+        <li><a href="<?php echo Core::getUrl('create','daily')?>">发布工作日志</a></li>
+		<li><a href="<?php echo Core::getUrl('showlist','notice')?>">公文包</a></li>
+        <li><a href="<?php echo Core::getUrl('create','notice')?>">发布通知等</a></li>
+    </ul>
+    </li> -->
+    <li><a href="javascript:void(0);" class="main"><span>系统维护</span></a>
+    <ul>
+       
+        <li><a href="<?php echo Core::getUrl('setting','system')?>">系统参数设置</a></li>
+        <li><a href="<?php echo Core::getUrl('showlist','system_log')?>">查看系统日志</a></li>
+        <li><a href="javascript:void(0);">系统用户管理</a>
+        <ul>
+            <li><a href="<?php echo Core::getUrl('showlist','system_user')?>">用户列表</a></li>
+            <li><a href="<?php echo Core::getUrl('create','system_user')?>">添加新用户</a></li>
+        </ul>
+        </li>
+        <li><a href="javascript:void(0);">系统用户组管理</a>
+        <ul>
+            <li><a href="<?php echo Core::getUrl('showlist','system_user_group')?>">用户组列表</a></li>
+            <li><a href="<?php echo Core::getUrl('create','system_user_group')?>">新建用户组</a></li>
+        </ul>
+        </li>
+        <li><a href="javascript:void(0);">系统类别管理</a>
+        <ul>
+            <li><a href="<?php echo Core::getUrl('showlist','system_category')?>" target="_blank">类别管理</a></li>
+            <li><a href="<?php echo Core::getUrl('create','system_category')?>"  target="_blank">添加新类别</a></li>
+        </ul>
+        </li>
+        <li><a href="javascript:void(0);">开发者菜单</a>
+        <ul>
+            <li><a href="<?php echo Core::getUrl('system_permissions','developer')?>">管理权限定义</a></li>
+            <!--<li><a href="<?php echo Core::getUrl('member_permissions','developer')?>">会员组权限定义</a></li>-->
+        </ul>
+        </li>
+    </ul>
+    </li>
+    <li><a href="javascript:void(0);" class="main"><span>个人资料</span></a>
+    <ul>
+        <li><a href="<?php echo Core::getUrl('profile','default')?>">我的资料</a></li>
+        <li><a href="<?php echo Core::getUrl('changepassword','default')?>">修改密码</a></li>
+    </ul>
+    </li>
+    <!--
+    <li><a href="javascript:void(0);" class="main"><span>帮助</span></a>
+    <ul>
+        <li><a href="<?php echo Core::getUrl('help','help')?>">帮助</a></li>
+        <li><a href="<?php echo Core::getUrl('about','help')?>">关于</a></li>
+    </ul>
+    </li>
+    -->
+</ul>

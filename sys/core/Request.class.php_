@@ -1,0 +1,122 @@
+<?php
+/**
+ * Request 类
+ * 提供对 request 的基本操作
+ */
+class Request extends Object {
+    var $requestData = array();
+
+    /**
+     * 构造方法
+     */
+    function  __construct(){
+        if(!get_magic_quotes_gpc()){
+            $_POST= addQuotes($_POST);
+        }
+        $this->set('reqdata', array_merge($_POST, $_FILES));
+        //print_r (array_merge($_POST, $_FILES));// ﻿Array ( [kw_state] => 1 [kw_cate] => 11 [kw_order] => [kw_color] => [kw_bTime] => [kw_eTime] => [kw_title] => [kw_editor] => [mulop] => [row] => 20 ) 
+       
+        if($GLOBALS['fw_config']->get('core_sef_query_string')){//此处判断是否用了搜索引擎友好
+
+            $this->_parseQueryString();
+        }else{
+
+            $this->_parseQsNormal();//没有使用引擎友好
+        }
+    }
+
+    /**
+     * 获得类一个唯一的实例
+     */
+    function & singleton(){
+        static $instance;
+        if(!isset($instance)){
+            $class= __CLASS__;
+            $instance= new $class();
+        }
+        return $instance;
+    }
+
+    /**
+     * 取得一个变量
+     * @return string
+     */
+    function get($key){
+    	
+        if(is_array($key)){
+            $key1= key($key);
+            $key2= $key[$key1];
+            return $this->requestData[$key1][$key2];
+        }
+       
+        return $this->requestData[$key];
+    }
+
+    /**
+     * 设置一个变量
+     * @param string
+     * @param string
+     */
+    function set($key, $val){
+        $this->requestData[$key]= $val;
+    }
+
+   /**
+     * 解析查询字串(普通)
+     */
+    function _parseQsNormal(){
+    	$web_url = $_SERVER['SCRIPT_URL'];// /doctor-view-id-2.html
+        $web_url = substr($web_url, 1, -5); // 去除‘/’和‘.html’
+        $mod_act = explode('-',$web_url);   //array('0'=>doctor,'1'=>view,'2'=>id,'3'=>2)
+       // print_r($mod_act);
+    	$module= strtolower($mod_act[1]);
+        $action= strtolower($mod_act[2]);
+        $reqdata[mod]=$mod_act[1]?$mod_act[1]:'default';
+        $reqdata[act]=$mod_act[2]?$mod_act[2]:'index';
+        if(count($mod_act)>3){
+        	
+        	foreach($mod_act as $k=>$v){
+        		if($k!=0&$k!=1&$k!=2&($k%2==1)){
+        			$array1[]=$v;
+        		}elseif($k!=0&$k!=1&$k!=2&($k%2==0)){
+        			$array2[]=$v;
+        		}	
+        	}
+        	$array3 = array_combine($array1,$array2);//合并两个数组
+        	
+        }
+        if(is_array($array3)){
+	        foreach($array3 as $key=>$value){
+	        	$reqdata[$key]=$value;
+	        }
+        }
+      
+        $this->requestData['reqdata']= array_merge($reqdata, $this->requestData['reqdata']);
+        $this->requestData['adminOrIndex']= $mod_act[0];
+        $this->requestData['moduleName']= $mod_act[1]?$mod_act[1]:'default';
+        $this->requestData['actionName']= $mod_act[2]?$mod_act[2]:'index';
+        //print_r($this->requestData);//Array ( [reqdata] => Array ( [mod] => article [act] => showlist [page] => 0 ) [moduleName] => article [actionName] => showlist ) ﻿ 
+    }
+
+     /**
+     * 解析查询字串(搜索引擎友好)
+     */
+    function _parseQueryString(){
+    	//print_r($_SERVER['QUERY_STRING']);//mod=article&act=showlist&page=0&title=%E4%BA%BA
+        $data= explode(',', $_SERVER['QUERY_STRING']);
+        $reqdata= array();
+        $paras_num= count($data);
+        for($i= 2; $i < $paras_num && $i < 1000; $i += 2){
+            if('' == $data[$i])
+                continue;
+            $reqdata[$data[$i]]= urldecode($data[$i +1]);
+        }
+        $reqdata= addQuotes($reqdata);
+      
+        $this->requestData['reqdata']= array_merge($reqdata, $this->requestData['reqdata']);
+        $this->requestData['moduleName']= $data[0];
+        $this->requestData['actionName']= $data[1];
+        //print_r($this->requestData) Array ( [reqdata] => Array ( [title] => 人 ) [moduleName] => mod=article&act=showlist&page=0&title=%E4%BA%BA [actionName] => ) 
+    }
+}
+?>

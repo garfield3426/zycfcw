@@ -1,0 +1,72 @@
+body{ width:980px; height:auto; margin:0 auto; padding:0; font-size:12px; font-family:"宋体", Arial; color:#666;  }
+
+#header{ width:980px; float:left;}
+#content{width:980px; float:left; }
+#footer{width:980px; padding:15px 0 0 0;}
+
+a{ color:#666666; text-decoration:none; }
+div{float:left;}
+.clear{clear:both;}
+
+/* Font */
+.red18px{ width:auto; color:#9e181d; font-size:18px; font-weight:bold;}
+/* top map*/
+.map{width:980px; height:auto;}
+.map img{float:left; padding:0; margin:0;}
+
+/* main content */
+.main{width:980px; height:auto; background-color:#f8f9fb;}
+
+.mainFooter{width:980px; height:11px; background-image:url(../images/footBg112.jpg); background-repeat: repeat-x; line-height:0;}
+
+/* left */
+
+.RecruitmentL{width:180px; height:auto; padding:0 15px 0 25px; background-image:url(../images/Recruitment_L_bg.gif);background-position:25px 0; background-repeat:repeat-y;}
+.RecruitmentL_T{width:180px; height:9px;line-height:0; background-image:url(../images/Recruitment_L_t.gif);background-repeat:no-repeat; }
+.RecruitmentL_C{width:180px; height: auto; }
+.RecruitmentL_Ctext{width:180px; text-align:center; font-size:14px;line-height:25px; padding:10px 0 0 0; letter-spacing:3px;}
+.RecruitmentL_Ctext a{cursor:pointer;}
+.RecruitmentL_B{width:180px; height:19px; line-height:0; background-image: url(../images/Recruitment_L_B.gif);background-repeat:no-repeat;}
+.RecruitmentL_fgx{width:180px; height:5px; line-height:0;background-image: url(../images/Recruitment_L_fgx.gif); background-repeat:no-repeat;}
+
+/* right */
+.RecruitmentR{width:760px; height:auto;}
+.RecCon{width:760px; height:auto;  background-position:27px 0; }
+#basic-accordian1{width:710px;z-index:2; margin:2px 0 0 27px; display:inline; border-bottom:1px solid #dddddd;background-image:url(../images/Recruitment_R_Textbg.gif);background-repeat:repeat-y;}
+
+#basic-accordian{width:710px;z-index:2; margin:2px 0 0 27px; display:inline; border-bottom:1px solid #dddddd;background-image:url(../images/Recruitment_R_Textbg.gif);background-repeat:repeat-y;}
+/*菜单背景*/
+.accordion_headings{ width:690px; height:30px; background-image:url(../images/Recruitment_R_title.jpg); background-position:0 0; padding:10px 0 0 20px;
+ color:#4d643a;
+ cursor:pointer;
+ font-weight:bold;
+ font-size: 14px;
+ line-height: 25px;
+ letter-spacing: 1px;
+}/*菜单分类行*/
+.accordion_headings:hover{}
+
+
+.accordion_child{width:700px; height: auto;background-image:url(../images/Recruitment_R_Textbg.gif);background-repeat:repeat-y; border-top:1px solid #dddddd;
+ padding-left: 10px;
+ padding-bottom: 8px;
+}
+.accordion_childText{margin:0; padding:20px; line-height:25px;}
+.accordion_child ul{ margin:0; padding:10px 0 0 10px; line-height:25px;}
+.accordion_child ul li{margin:0; padding:0;
+ font-size: 12px;
+ display: block;
+ line-height: 20px;
+ display:block;
+}
+.accordion_child ul li a{
+ text-decoration: none;
+ color: #666666;
+}
+.accordion_child ul li a:hover{
+ color: #FFFFFF;
+}
+.header_highlight{ background-image:url(../images/Recruitment_R_title.jpg); background-position:0 40px;
+ color:#F60;
+}/*当前显示菜单分类样式*/
+ 

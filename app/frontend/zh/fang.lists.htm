@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+<title>后台房源列表</title>
+<meta name="keywords" content="关键词,5个左右,单个8汉字以内">
+<meta name="description" content="网站描述，字数尽量空制在80个汉字，160个字符以内！">
+<link rel="Bookmark" href="/favicon.ico" >
+<link rel="Shortcut Icon" href="/favicon.ico" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/html5.js"></script>
+<script type="text/javascript" src="js/respond.min.js"></script>
+<script type="text/javascript" src="js/PIE_IE678.js"></script
+<![endif]-->
+<link href="css/H-ui.css" rel="stylesheet" type="text/css" />
+<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<!--[if IE 7]>
+<link href="static/h-ui/css/font-awesome-ie7.min.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<link href="js/icheck/icheck.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+<!--[if IE 6]>
+<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('.pngfix,.icon');</script>
+<![endif]-->
+</head>
+
+<body>
+<?php include('inc/banner.php')?>
+<div class="main">
+	<div class="wp fluidgrid">
+	     <div class="row">
+	         <?php include('inc/top.php')?>
+	       <?php include('inc/left_login.php')?>
+			<div class="col-10 useradmin-content mt-15 mr-0">
+                <h1>房源列表</h1>
+                <div class="useradmin-list">
+					<?php foreach($v['list'] as $value):?>
+					<dl>
+					    <dt><span>更新时间：<?php echo $value['put_time']?></span><span>编号：<?php echo $value['bh']?></span> <a href="<?php echo $value['delLink']?>" target="_blank"><input class="f-r btn btn-link del" type="button" value="删除" /></a></dt>
+					    <dd>
+							<?php if($value['fytype']==245):?>
+					        <span class="info">
+					            <img src="<?php echo $value['sn_images'][0]?>" alt="" width="100px" height="75px"/>
+					        	<strong><?php echo $value['title']?></strong>
+					        	<em><?php echo $value['lpmc']?>(<?php echo $value['address']?>) </em>
+					        	<em> <?php $jb=$this->lang->get('lx_xzl'); echo $jb[$value['lx_xzl']];?>|<?php $jb=$this->lang->get('jb_xzl'); echo $jb[$value['jb_xzl']];?>| <?php echo $value['jzmj']?>平</em>
+					        </span>
+							<?php elseif($value['fytype']==246):?>
+							
+							<span class="info">
+					            <img src="<?php echo $value['sn_images'][0]?>" alt="" width="100px" height="75px"/>
+					        	<strong><?php echo $value['title']?></strong>
+					        	<em><?php echo $value['lpmc']?>(<?php echo $value['address']?>) </em>
+					        	<em> <?php $jb=$this->lang->get('splx_sp'); echo $jb[$value['splx_sp']];?>| <?php echo $value['jzmj']?>平</em>		
+					        </span>
+							
+							<?php endif;?>
+					        <span class="status">
+					        	<?php if($value['state'] ==0):?><b class="hide"><i></i>审核中……</b><?php endif;?>
+					        	<?php if($value['state'] ==1):?><b class="show"><i></i>审核通过</b><?php endif;?>
+					        	<?php if($value['state'] ==2):?><b class="delete"><i></i>已删除</b><?php endif;?>
+					        </span>
+					        <span class="operate">
+					        	<!--<a class="freshen" href="">刷新</a>-->
+					        	<a class="change" href="<?php echo $value['editLink']?>" target="_blank">修改</a>
+					        </span>
+					    </dd>
+					</dl>
+					<?php endforeach;?>
+					
+				</div>
+			</div>
+	    </div>
+	    
+    </div>
+    <div class="clear"></div>
+    <div class="wp flinkbox">
+        <h1 class=" clear f-title"> 友情链接</h1>
+	    <div class="flink row-1180-24 mr-0 ml-0">
+	         <?php include('inc/links.php')?>
+	    </div>
+	</div>
+</div>
+<?php include('inc/footer.php')?>
+<script type="text/javascript" src="js/icheck/jquery.icheck.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+	   $('.skin-minimal input').iCheck({
+		checkboxClass: 'icheckbox-blue',
+			radioClass: 'iradio-blue',
+			increaseArea: '20%'
+		});
+    });
+
+     function custom_select(a,b,c,d){
+		  var $selecttext = $(a),
+			  $drop = $(b),
+			   $inp = $(c);
+			   
+			  if($drop.css("display")=="none")
+				{
+					$drop.css({'display':'block'});
+				}
+			  else
+				{
+					$drop.css({'display':'none'});
+				}
+				
+			   $drop.find("li").click(function(){
+			        $inp.text($drop.find("li").eq($(this).index()).text());
+					$selecttext.val($drop.find("li").eq($(this).index()).text());
+					$drop.css({'display':'none'});
+		       });
+		}
+		
+</script>
+</body>
+</html>

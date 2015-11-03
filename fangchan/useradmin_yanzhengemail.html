@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+<title>房源发布</title>
+<meta name="keywords" content="关键词,5个左右,单个8汉字以内">
+<meta name="description" content="网站描述，字数尽量空制在80个汉字，160个字符以内！">
+<link rel="Bookmark" href="/favicon.ico" >
+<link rel="Shortcut Icon" href="/favicon.ico" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/html5.js"></script>
+<script type="text/javascript" src="js/respond.min.js"></script>
+<script type="text/javascript" src="js/PIE_IE678.js"></script
+<![endif]-->
+<link href="css/H-ui.css" rel="stylesheet" type="text/css" />
+<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<!--[if IE 7]>
+<link href="static/h-ui/css/font-awesome-ie7.min.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<link href="js/icheck/icheck.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<!--[if IE 6]>
+<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('.pngfix,.icon');</script>
+<![endif]-->
+</head>
+
+<body>
+<div class="header">
+	<div class="wp fluidgrid">
+	     <div class="row">
+	          <div class="col-5 mt-0">
+	              <img alt="" src="images/logo.jpg"  />
+	          </div>
+	          <div class="col-3 mt-0">
+	              <img alt="" src="images/head1.jpg"  />
+	          </div>
+	          <div class="col-4 text-r  mt-0">
+	              <img alt="" src="images/phone.jpg"  />
+	          </div>
+	     </div>
+	</div>
+</div>
+<div class="clear"></div>
+<div class="navbg">
+      <nav class="mainnav cl wp">
+          <ul class="cl">
+                <li class="current"><a href="#">首页</a></li>
+                <li><a href="#">二手房</a></li>
+                <li><a href="#">租房</a></li>
+                <li><a href="#">写字楼</a></li>
+                <li><a href="#">新房</a></li>
+                <li><a href="#">商铺</a></li>
+                <li><a href="#">房价查询</a></li>
+                <li><a href="#">房产快讯</a></li>
+                <li><a href="#">手机找房</a></li>
+          </ul>
+     </nav>
+</div>
+<div class="searchbg">
+	<div class="wp fluidgrid search">
+	     <div class="col-5 searchbox mt-10">
+	          <div class="searchBar">
+	              <form class="form-search" method="post" action="">
+	                <input id="searchKeyword" name="searchKeyword" value="请输入搜索关键词" class="searchTxt" autocomplete="off" onfocus="if(this.value=='请输入搜索关键词')this.value=''" onblur="if(this.value=='')this.value='请输入搜索关键词'">
+	                <input id="searchBtn" name="searchBtn" type="submit" value="搜索" class="searchBtn" onclick="b_onclick()">
+	              </form>
+	          </div>
+	     </div>
+	     <div class="col-7 mt-10 mb-10">
+	          <a>学区房</a>
+	          <a>二手房税表</a>
+	          <a>交房流程</a>
+	     </div>
+	</div>
+</div>
+<div class="clear"></div>
+<div class="main">
+	<div class="wp fluidgrid">
+	     <div class="row">
+	        <div class="col-12 tips mt-15">
+	              为了方便自己出租和他人求租，请真实填写房源信息，如果发现填写虚假房源信息，此手机号码将永远被冻结。
+	              <span class="icon-remove"></span>
+	        </div>
+	        <div class="col-2 user-navmenu mt-15 mr-0">
+	            <div class="menu-group">
+	                <h3 class="icon1">房源管理</h3>
+	                <ul>
+	                    <li class="on"><a href="#">管理出售房源</a></li>
+	                    <li><a href="#">管理求购房源</a></li>
+	                    <li><a href="#">管理出租房源</a></li>
+	                    <li><a href="#">管理求租房源</a></li>
+	                </ul>
+                </div>
+                <div class="menu-group">
+	                <h3 class="icon2">账户设置</h3>
+	                <ul>
+	                    <li><a href="#">个人资料</a></li>
+	                    <li><a href="#">安全设置</a></li>
+	                </ul>
+                </div>
+                <div class="menu-group">
+	                <h3 class="icon3">二手房</h3>
+	                <ul>
+	                    <li><a href="#">发布出售房源</a></li>
+	                    <li><a href="#">发布求购房源</a></li>
+	                    <li><a href="#">发布出租房源</a></li>
+	                    <li><a href="#">发布求租房源</a></li>
+	                </ul>
+                </div>
+                <div class="menu-group">
+	                <h3 class="icon4">商铺/写字楼</h3>
+	                <ul>
+	                    <li><a href="#">发布出售房源</a></li>
+	                    <li><a href="#">发布求购房源</a></li>
+	                    <li><a href="#">发布出租房源</a></li>
+	                    <li><a href="#">发布求租房源</a></li>
+	                </ul>
+                </div>
+			</div>
+			<div class="col-10 useradmin-content mt-15 mr-0">
+                <h1>安全设置</h1>
+                <div class="useradmin-info">
+                <form action="" method="post" class="form form-horizontal responsive mt-50" id="demoform-1">
+					<div class="row cl">
+				        <label class="form-label col-2 t">常用邮箱：</label>
+				        <div class="formControls col-4">
+				            <input type="text" class="input-text" autocomplete="off" placeholder="输入格式：xxxx@xxxx.com">
+				        </div>
+				    </div>
+				    <div class="row cl mt-20">
+				            <div class="col-10 col-offset-2">
+				              <input class="btn btn-danger sub-btn" type="submit" value="确    定">
+				            </div>
+				    </div>
+				</form>
+				</div>
+			</div>
+	    </div>
+	    
+    </div>
+    <div class="clear"></div>
+    <div class="wp flinkbox">
+        <h1 class=" clear f-title"> 友情链接</h1>
+	    <div class="flink row-1180-24 mr-0 ml-0">
+	         <a class="col-2" href="">扬州二手房111</a>
+			 <a class="col-2" href="">扬州二手房1</a>
+			 <a class="col-2" href="">扬州二手房111</a>
+			 <a class="col-2" href="">扬州二手房1</a>
+			 <a class="col-2" href="">扬州二手房111</a>
+			 <a class="col-2" href="">扬州二手房1</a>
+			 <a class="col-2" href="">扬州二手房111</a>
+			 <a class="col-2" href="">扬州二手房1</a>
+			 <a class="col-2" href="">扬州二手房111</a>
+			 <a class="col-2" href="">扬州二手房1</a>
+			 <a class="col-2" href="">扬州二手房111</a>
+			 <a class="col-2" href="">扬州二手房1</a>
+			 <a class="col-2" href="">扬州二手房111</a>
+			 <a class="col-2" href="">扬州二手房1</a>
+			 <a class="col-2" href="">扬州二手房111</a>
+			 <a class="col-2" href="">扬州二手房1</a>
+	    </div>
+	</div>
+</div>
+<div class="footer">
+	<div class="foot">
+		<a href="#">关于我们</a>
+		<a href="#">网站合作</a>
+		<a href="#">联系我们</a>
+		<a href="#">招聘信息</a>
+		<a href="#">中介加盟</a>
+		<a href="#">网站地图</a>
+		<a href="#">意见反馈</a>
+		<a href="#" class="last">服务声明</a>
+	</div>
+	<p>Copyright &copy 2015 Soufun ******,All Rights Reserved 苏州忠业诚房产经纪有限公司 版权所有</p>
+</div>
+<script type="text/javascript" src="js/icheck/jquery.icheck.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+	   $('.skin-minimal input').iCheck({
+		checkboxClass: 'icheckbox-blue',
+			radioClass: 'iradio-blue',
+			increaseArea: '20%'
+		});
+    });
+
+        custom_select('#selectbox1');
+        custom_select('#selectbox2');
+        custom_select('#selectbox3');
+        custom_select('#selectbox4');
+        custom_select('#selectbox5');
+        custom_select('#selectbox6');
+		function custom_select(a){
+		    var $conbox= $(a);
+		    var $selectdrop = $conbox.find(".select-drop");
+		    var $value = $conbox.find(".select-value");
+		    var $inp = $conbox.find(".select-inp");
+		    var $selecttri = $conbox.find(".select-tri");
+			var length = $selectdrop.find("li").length;
+			var result = null;
+			for(var i=0; i<length ;i++)
+			{
+		        if($selectdrop.find("li").eq(i).find("b").attr("class") == null)
+		        {
+                    result = false;
+		        }
+                else
+                {
+		        	result = true;
+					break;
+			    }
+			}
+			if(result)
+			{
+			   $s=$selectdrop.find("li b.selected").next("span").text();
+			   $inp.text($s);
+			}
+            $selecttri.click(function(){
+	            if($selectdrop.css("display")=="none")
+					{
+						$selectdrop.css({'display':'block'});
+					}
+				else
+					{
+						$selectdrop.css({'display':'none'});
+					}
+			});
+			$inp.click(function(){
+	            if($selectdrop.css("display")=="none")
+					{
+						$selectdrop.css({'display':'block'});
+					}
+				else
+					{
+						$selectdrop.css({'display':'none'});
+					}
+			});
+			$selectdrop.find("li").click(function(){
+			        $inp.text($selectdrop.find("li").eq($(this).index()).find("span").text());
+					$value.val($selectdrop.find("li").eq($(this).index()).find("b").text());
+					$selectdrop.css({'display':'none'});
+		    });
+		}
+		
+</script>
+</body>
+</html>

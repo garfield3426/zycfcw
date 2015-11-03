@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>网站管理后台</title>
+        <link rel="stylesheet" type="text/css" href="backend/main.css" />
+        <!-- 加载JS -->
+        
+        <script type="text/javascript" src="js/base.js"></script>
+        <script type="text/javascript" src="backend/main.js"></script>
+        
+        <!-- 自定义加载 -->
+        <script type="text/javascript" src="backend/lib/gridview.js"></script>
+        <!-- UI -->
+        <link rel="stylesheet" type="text/css" href="js/ui.css" />
+        <script src="js/ui.js" type="text/javascript"></script>
+        
+        <script type="text/javascript">
+            var headerUrl = '<?php echo Core::getUrl('header','default')?>';
+            var mainnavUrl = '<?php echo Core::getUrl('mainnav','default')?>';
+            var jsonData = <?php echo json_encode($v['jsonData']); ?>;
+            $(function(){
+                GridView.init('grid');
+                ui.init();
+            });
+        </script>
+       
+        <style text"text/css">
+        #list img.logo { height:60px; width:120px; margin:5px; border:1px solid #ddd; }
+		
+		<!--
+			#up-web, #add, #up-self, #up-help {float:left;display:block;margin:0px 5px;height:16px;padding-left:18px;background:transparent url("/view/admin1/frame0/style0/image/web.gif") no-repeat scroll 0px 0px;}
+			#up-web {background:transparent url("/view/admin1/frame0/style0/image/save.gif") no-repeat scroll 0px 0px;}
+			#up-self {background:transparent url("/view/admin1/frame0/style0/image/arrow.gif") no-repeat scroll 0px 0px;}
+			#up-help {background:transparent url("/view/admin1/frame0/style0/image/help.gif") no-repeat scroll 0px 0px;}
+			#add {background:transparent url("/view/admin1/frame0/style0/image/add.gif") no-repeat scroll 0px 0px;}
+			.doctor { position:relative; margin:15px 15px 0px; width:700px; height:176px;  background:#FF9900;}
+				.d-01 { position:absolute; margin:0px;border:0px;padding:0px;width:131px;height:156px;top:0px;left:0px;}
+				.d-02 { position:absolute; margin:0px;border:0px;padding:0px;width:500px;height:80px;top:0px;left:160px;line-height:22px;}
+				.d-03 { position:absolute; margin:0px;border:0px;padding:0px;width:400px;height:100px;top:6px;left:290px;}
+				.d-04 { position:absolute; margin:0px;border:0px;padding:0px;width:400px;height:100px;top:90px;left:145px;}
+				.d-05 { position:absolute; margin:0px;border:0px;padding:0px;width:80px;height:76px;left:550px;top:92px;background:#EEEEEE;}
+			.list-div .doctor .photo { display:block; border:1px solid #EEEEEE; padding:2px; width:131px; height:150px; }
+			
+
+		/* 功能型按钮的结构，和内容型的结构，使用同一张图片资源 */
+		.button-a, .button-a-in, .button-b, .button-b-in {background:url("/view/admin1/frame0/style0/image/my-button.gif") no-repeat scroll 0px 0px;}
+		/* 指定功能型按钮的样式 */
+		.button-b { width:150px; height:60px; background-position: -21px -21px; border:0; color:#464646; line-height:23px; }
+		.button-b-in { width:150px; height:60px; background-position: -21px -82px; border:0; color:#464646; line-height:23px; }
+		/* 指定内容型按钮的样式 */
+		a.button-a{ display:block; width:150px; height:60px; background-position:-21px -21px; border:0; color:#464646;line-height:23px; text-align:center}
+		a.button-a-in { display:block; width:150px; height:60px; color:#464646; text-decoration:none; background-position:-21px -82px}
+		
+		/*定义保存按钮的样式*/
+		.button-save, .button-saves { margin:0px; border:0px; padding:0px; background:url("/view/admin1/frame0/style0/image/my-button.gif") no-repeat scroll 0px 0px; }
+		.button-save { width:16px; height:16px; background-position:0px 0px; }
+		.button-saves { width:16px; height:16px; background-position:-21px 0px; }
+			
+		-->
+		
+				/*表格的样式*/
+		.list-div {overflow:hidden; BORDER-RIGHT: #bbdde5 1px solid; BORDER-TOP: #bbdde5 1px solid; BACKGROUND: #eef8f9; BORDER-LEFT: #bbdde5 1px solid; WIDTH: 99%; BORDER-BOTTOM: #bbdde5 1px solid}
+		.list-div TABLE {WIDTH: 100%}
+		.list-div TH {BACKGROUND: url(../images/th_bg.gif) #bbdde5 repeat-x; LINE-HEIGHT: 24px; WHITE-SPACE: nowrap}
+		.list-div TD {BACKGROUND: #fff; LINE-HEIGHT: 22px}
+		.list-div TD.first-cell {PADDING-LEFT: 10px; FONT-WEIGHT: bold}
+		.list-div INPUT {VERTICAL-ALIGN: middle}
+		.list-div A:visited {COLOR: #192e32; text-decoration:none; }
+		.list-div A:link {COLOR: #192e32; text-decoration:none; }
+		.list-div A:hover {COLOR: #9d7250}
+		.list-div INPUT {VERTICAL-ALIGN: middle}
+		.list-div IMG {VERTICAL-ALIGN: middle}
+		.list-div .footer {BACKGROUND: #f4fafb; TEXT-ALIGN: right}
+		.list-bench { padding-left:15px; width:100%-17px; height:24px;  background: #BBDDE5; border: #FFFFFF 1px solid; line-height: 24px; white-space: nowrap;}
+		.list-div dl{ overflow:hidden;  }
+		.list-div dt{ margin:5px 15px; padding-bottom:4px; width:100%-15px; border-bottom: #FFFFFF 1px solid;}
+		.list-div dd{ float:left; white-space:nowrap;_white-space:normal; margin:2px 15px; }
+
+			/*我的表单样式*/
+			.MyForm {
+				margin:0px;border:0px;padding:5px;width:590px;height:auto;background:#EEF8F9;
+				font-family:"宋体",Calibri,Arial,Helvetica,sans-serif; font-size:12px; line-height:21px; color:#666666;
+			}
+			fieldset {
+				margin:0px;
+				border-style:solid; border-width:1px; border-color:#FFFFFF #FFFFFF #FFFFFF #FFFFFF;
+				padding:0px;
+				width:788px;
+				background:#EEF8F9 none repeat scroll 0 0;
+			}
+			legend {
+				background:#BFBF30 none repeat scroll 0 0;
+				font-family:"宋体",Calibri,Arial,Helvetica,sans-serif; font-size:12px; font-weight:bold; line-height:21px; color:#FFFFFF;
+				margin:0px 0px 0px 15px;
+				border-style:solid; border-width:1px; border-color:#E5E5C3 #505014 #505014 #E5E5C3;
+				padding:0px 10px;
+			}
+			.MyForm dl {clear:both;margin:10px 0px; border:0px;padding:0px;}
+			.MyForm dl dt {
+				float:left;
+				margin:0px; border:0px;padding:0px 5px; margin-bottom:10px;_margin-bottom:0px;
+				text-align:right;
+				width:80px;
+			}
+			.MyForm dl dd {
+				float:left;
+				margin:0px; border:0px;padding:0px 5px;  margin-bottom:10px;_margin-bottom:0px;
+				width:300px;
+			}
+			.MyForm dl dd input { width:300px; }
+			.MyForm dl dd textarea {  width:300px; font-family:"宋体",Calibri,Arial,Helvetica,sans-serif; font-size:12px;  color:#666666; }
+			.MyForm dl dd span {  
+				/* position:absolute; 是为了将这个 span 从正常的文档流中脱离出来 这时候当文字过多在 200px 宽的容器里装不下时 才可以自动换行*/
+				position:absolute; display:block; width:200px; height:auto; padding:0px 10px 0px 25px; white-space:normal; 
+				font-family:"宋体",Calibri,Arial,Helvetica,sans-serif; font-size:12px;  line_height:18px; color:#666666; 
+			}
+			
+		
+		td {
+font-family:'宋体 ',Arial,Helvetica,sans-serif;
+font-size:12px;
+}
+		
+		
+        </style>
+    </head>
+    <body>
+        <!-- 页头 -->
+        <div id="header"></div>
+        <!-- 侧栏 -->
+        <div id="sideBar"></div>
+        <!-- 主内容 -->
+        <div id="content">
+          
+                <div id="titleBar"><strong><?php echo $v['title']?></strong></div>
+               
+                <!--列表区-->
+                <div id="list">
+                    <div class="list-div">
+                    <?php foreach($v['list'] as $i):?>
+					     <form name="mainForm" action="/admin-zuozhen-save-id-<?php echo $i['id']?>.html" method="POST">
+					        <input type="hidden" name="itemdate[doctor_id]" value="<?php echo $i['id']?>" />
+					        <input type="hidden" name="itemdate[b_id]" value="<?php echo $i['b_id']?>" />
+							
+					        <div class="doctor">
+					            <div class="d-01"><img class="photo" src="<?php echo $i['img']?>" alt="<?php echo $i['name']?>" /></div>
+					            <div class="d-02">专家姓名：<br /><?php echo $i['name']?><br />所在科室：<br /><?php echo $i['b_name']?></div>
+					            <div class="d-03">
+					                <table>
+					                
+					                    <tr><td><input id="save-order" class="button-save" type="button"   onMouseOver="this.className='button-saves'" onMouseOut="this.className='button-save'" /></td><td>星期一</td><td>星期二</td><td>星期三</td><td>星期四</td><td>星期五</td><td>星期六</td><td>星期天</td></tr>
+					                    
+					                    <tr><td>上午</td>
+					                    <?php foreach($v['nonceWeek'] as $k=>$date):?>
+					                    <?php if($k!=0):?>
+					                        <td><input type="checkbox" name="item[noceWeekAM<?php echo $k;?>]" value="<?php echo $date;?>" 
+					        					<?php foreach($i['result'] as $value):?>
+					        						<?php if($value['amorpm']==1&$value['zuozhen_date']==$date):?>
+					        							checked="checked"
+					        						<?php endif;?>
+					        					<?php endforeach;?>
+					        				/></td>
+					                    <?php endif;?>
+					                    <?php endforeach;?>
+					                        
+					                    </tr>
+					                    
+					                    <tr><td>下午</td>
+					                    <?php foreach($v['nonceWeek'] as $k=>$date):?>
+					                    <?php if($k!=0):?>
+					                        <td><input type="checkbox" name="item[noceWeekPM<?php echo $k;?>]" value="<?php echo $date;?>" 
+					        					<?php foreach($i['result'] as $value):?>
+					        						<?php if($value['amorpm']==2&$value['zuozhen_date']==$date):?>
+					        							checked="checked"
+					        						<?php endif;?>
+					        					<?php endforeach;?>
+					        				/></td>
+					                    <?php endif;?>
+					                    <?php endforeach;?>
+					                    </tr>
+					                   
+					                   
+					                </table>
+					            </div>
+					            <div class="d-04">
+					                <table>
+					                    <tr>
+					                        <td><input id="save-order" class="button-save" type="button" onclick="return saves('doctor_form_'+<?php echo $i['id']?>);"  onMouseOver="this.className='button-saves'" onMouseOut="this.className='button-save'" /></td>
+					                        <td>星期一</td><td>星期二</td><td>星期三</td><td>星期四</td><td>星期五</td><td>星期六</td><td>星期天</td>
+					                    </tr>
+					                    <tr><td>上午</td>
+					                    <?php foreach($v['getNextWeekDay'] as $k=>$date):?>
+					                    <?php if($k!=0):?>
+					                        <td><input type="checkbox" name="item[nextWeekAM<?php echo $k;?>]" value="<?php echo $date;?>" 
+					        					<?php foreach($i['result'] as $value):?>
+					        						<?php if($value['amorpm']==1&$value['zuozhen_date']==$date):?>
+					        							checked="checked"
+					        						<?php endif;?>
+					        					<?php endforeach;?>
+					        				/></td>
+					                    <?php endif;?>
+					                    <?php endforeach;?>   
+					                        
+					                    </tr>
+					                    <tr><td>下午</td>
+					                    
+					                    <?php foreach($v['getNextWeekDay'] as $k=>$date):?>
+					                    <?php if($k!=0):?>
+					                        <td><input type="checkbox" name="item[nextWeekPM<?php echo $k;?>]" value="<?php echo $date;?>" 
+					        					<?php foreach($i['result'] as $value):?>
+					        						<?php if($value['amorpm']==2&$value['zuozhen_date']==$date):?>
+					        							checked="checked"
+					        						<?php endif;?>
+					        					<?php endforeach;?>
+					        				/></td>
+					                    <?php endif;?>
+					                    <?php endforeach;?>   
+					                    </tr>
+					                </table>
+					            </div>
+					            
+					        </div>
+					     <tr bgcolor="#f0f8fe">
+					          <td colspan="4" align="center"><input name="submit" type="submit" value=" 提交信息 " /></td>
+					     </tr>
+					    </form>
+					<?php endforeach;?>
+</div>
+                </div>
+            
+        </div>
+    </body>
+</html>

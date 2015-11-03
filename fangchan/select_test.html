@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		/*自定义select*/
+		.selectbox { position:relative; z-index: 9999; height:31px; line-height:31px; text-align:left; position: relative;}
+		.selectbox .select-wrp {overflow: hidden; border: 1px solid #D4D4D4; background: #fff; }
+		.selectbox .select-inp {padding:0 26px 0 15px; border-radius: 3px 0 0 3px; cursor: pointer;}
+		.selectbox a.select-tri,#selectbox a.select-tri:link, #selectbox a.select-tri:visited { position:absolute; display:block; width: 33px; height: 33px; top:0; right:0; cursor:pointer; background: transparent url('images/icon_arrow.gif') no-repeat center center;}
+		.selectbox .select-drop { background:#E2E2E2; border:1px solid #ADADAD; border-radius: 2px;}
+		.selectbox .select-drop li {padding-left:15px;}
+		.selectbox .select-drop li:hover {background: #0081cc; color: #fff; cursor: pointer;}
+		.selectbox .select-text{ display:none;}
+		/*自定义select end*/
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+</head>
+<body>
+	<div id="selectbox1" class="selectbox">
+		<div class="select-wrp">
+			<div id="select-inp1" class="select-inp" onclick="custom_select('#selectbox1')">站长素材</div>
+			<input name="b" id="select-value1" class="select-text" type="text"  />
+			<a class="select-tri" onclick="custom_select('#select-text1','#select-drop1','#select-value1')"></a>
+		</div>
+		<div id="select-drop1" class="select-drop" style="display:none">
+			<ul>
+				<li><b>0</b><span>焦点图特效</span></li>
+				<li><b>1</b><span>菜单导航</span></li>
+				<li><b>2</b><span>flash素材</span></li>
+				<li><b>3</b><span>jquery特效</span></li>
+				<li><b>4</b><span>jquery特效11</span></li>
+			</ul>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function custom_select(a){
+		    var $conbox= $(a);
+			if($drop.css("display")=="none")
+				{
+					$drop.css({'display':'block'});
+				}
+			else
+				{
+					$drop.css({'display':'none'});
+				}
+				
+			$drop.find("li").click(function(){
+			        $inp.text($drop.find("li").eq($(this).index()).text());
+					$value.val($drop.find("li").eq($(this).index()).find("b").text());
+					$drop.css({'display':'none'});
+		    });
+		}
+	</script>
+</body>
+</html>

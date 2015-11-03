@@ -1,0 +1,95 @@
+@charset "utf-8";
+/* CSS Document */
+*{ margin:0; padding:0;}
+a{ text-decoration:none;}
+li{ list-style:none;}
+img{ border:0;}
+.clearfix{ clear:both; content:"";}
+.blank{ clear:both;}
+body{ font-size:14px; background:url(/zhuanti/ifs150/images/bg1.png) 0 0 repeat; font-family:微软雅黑;}
+.headerbox{ position:relative; z-index:0}
+.headerbox .left,.right{ position:absolute; z-index:0; width:407px; height:94px;}
+.headerbox .left{ width:50%; top:0; left:0; background:url(/zhuanti/ifs150/images/headbg1.jpg) 0 0 repeat-x;}
+.headerbox .right{ width:50%; top:0; right:0; background:url(/zhuanti/ifs150/images/headbg2.jpg) 0 0 repeat-x;}
+.headbg{ background:url(/zhuanti/ifs150/images/headbg.jpg) top center no-repeat; height:94px; position:relative; z-index:1;}
+.header{ width:964px; margin:0 auto; height:94px; overflow:hidden; position:relative; z-index:2;}
+.header .logo{ float:left; width:193px; height:94px; background:url(/zhuanti/ifs150/images/logo.png) 0 0 no-repeat;}
+.header .nav{ float:right; width:675px; line-height:25px; font-size:16px; padding-top:43px;color:#fff;}
+.header .nav a{ display:inline-block; padding:0 5px; font-size:15px; height:25px; line-height:25px; color:#fff;}
+.header .nav a:hover{ text-decoration:underline;}
+.banner{ text-align:center; position:relative; z-index:5;}
+.banner .bannerleft{ position:absolute; top:0; left:0; width:50%; height:722px; background:url(/zhuanti/ifs150/images/bannerbg.jpg) 0 0 repeat-x; }
+.banner .bannerright{ position:absolute; top:0; right:0; width:50%; height:722px; background:url(/zhuanti/ifs150/images/bannerbg1.jpg) 0 0 repeat-x; }
+.banner img{ position:relative; z-index:6;}
+.main{ width:964px; margin:0 auto; background:#fff;}
+.section{ background:url(/zhuanti/ifs150/images/titlebg.png) 0 0 no-repeat; padding-left:20px; padding-bottom:24px;}
+.section h1{ height:60px; font-weight:500; color:#fff;}
+.section h1 strong{ height:60px; line-height:60px; font-weight:500; color:#fff200; font-size:30px; letter-spacing:-2px;}
+.section h1 span{ font-size:20px;  color:#0077be; float:right; padding-top:25px; padding-right:20px;}
+.section h1 span.title-r{ padding-top:0px; }
+.content{ border:14px solid #83cefe; background:#fff;}
+.advantge-table{ width:100%;}
+.advantge-table td{ vertical-align:top; font-size:18px;}
+.advantge-table .td1,.advantge-table .td2{ width:182px; height:47px; text-align:center; color:#fff; vertical-align:middle;}
+.advantge-table .td1{ background:#0077be;}
+.advantge-table .td2{ background:#38c6f4;}
+.advantge-table .adv-details td{ padding:10px; text-align:justify; border-left:1px solid #83cefe; border:-right:1px solid #83cefe; word-break:break-all;}
+.advantge-table .adv-details td.detdf{}
+
+.qfm { background:url(/zhuanti/ifs150/images/qfm.jpg) bottom right no-repeat; padding:20px 36px 56px 36px; word-break:break-all; text-align:justify;}
+.qfm h2{ font-size:宋体,Arial; padding-bottom:35px; line-height:36px; color:#053f87; font-weight:500;}
+.qfm ol{ width:420px;}
+.qfm ol li{font-size:18px; line-height:28px; position:relative; padding:5px 0 5px 40px; text-shadow:1px #CCC;}
+.qfm ol li span{ display:block; position:absolute; top:5px;  left:0; z-index:50; text-align:center; font-weight:700; color:#fff; width:28px; height:28px; background:url(/zhuanti/ifs150/images/qfm-icon.jpg) left center no-repeat;}
+
+.comparison{ margin-bottom:20px;}
+.comparison h1{ height:90px; line-height:90px; font-size:30px; background:#0074be; text-align:center; color:#fff;}
+.comparison h1 strong{ color:#fff200;}
+.comparison-table{ border-left:1px solid #0074be; margin:21px 41px 0 41px;}
+.comparison-table td{ text-align:center; border-right:1px solid #0074be; border-bottom:1px solid #0074be;  padding:12px 9px; font-size:16px; color:#0074be; text-align:justify;  vertical-align:top;}
+.comparison-table .th td{ background:#0074be; height:23px; font-size:27px; border-right:1px solid #fff; color:#fff200; text-align:center; vertical-align:middle;}
+.comparison-table .th .thl{ border-right:1px solid #0074be;}
+.comparison-table .td1{ text-align:center; vertical-align:middle;}
+.comparison-table td strong{ color:#f6871f; }
+.comparison-table .td2 {text-align:center; vertical-align:middle;}
+.comparison-table .td2 strong{  font-size:25px;} 
+
+.doctor{ padding:23px 51px;}
+.doctor .docbox{ border-bottom:1px solid #0074be; overflow:hidden; padding-bottom:17px; margin-bottom:16px;}
+.doctor .docbox img{ float:right; border:1px solid #d3d5d6;  margin:10px 19px 0 61px;}
+.doctor .docbox h2{ font-size:24px; padding-bottom:20px; color:#053f87; font-weight:500;}
+.doctor .docbox p{ font-size:18px; line-height:32px; text-align:justify; text-justify:inter-ideograph;}
+
+.linktips h2{ background:#053e86; width:369px; height:36px; line-height:34px; color:#fff200; font-weight:500; font-size:24px; text-align:center;}
+.linktips p{ font-size:18px; line-height:48px; padding-left:12px;}
+
+
+.security-updates{ padding-bottom:14px;}
+.security-updates h1{ height:92px; line-height:92px; text-align:center; background:#0074be; color:#fff; font-size:30px; font-weight:500;}
+.security-updates h1 strong{ color:#fff200; font-size:35px; padding:0 3px; font-weight:500; }
+.security-updates .secupbox{ padding:11px 11px 11px 21px; overflow:hidden;}
+.security-updates .secupbox dl{ float:left; width:280px; padding:10px; background:#007acd; margin-right:10px; min-height:420px;}
+.security-updates .secupbox dl dt{ font-size:24px; color:#fff200; line-height:24px; padding:13px 0 19px 0;}
+.security-updates .secupbox dl dd.secup_details{ font-size:16px; line-height:20px; color:#fff; text-align:justify; text-justify:inter-ideograph;}
+
+
+.video{ padding:16px 20px; height:495px;}
+
+.confident{}
+.confident h1{ font-size:30px; background:#0074be; height:92px; line-height:92px; font-weight:500; color:#fff; text-align:center; }
+.confident h1 strong{ font-size:39px; color:#fff200; font-weight:500; padding:0 3px;}
+.confident .confidentbox{ padding:20px;}
+.confident .confidentbox dl{ display:inline-table; background:#00a9e5; margin-bottom:15px; overflow:hidden;}
+.confident .confidentbox dl dt{ float:left; background:#0074be; width:285px; height:64px; padding:15px 0; margin-right:34px; text-align:center; font-size:25px; line-height:34px; color:#fff;}
+.confident .confidentbox dl dt strong{ color:#fff200; font-size:30px; line-height:32px;font-weight:500;}
+.confident .confidentbox dl dd{ display:table-cell; vertical-align:middle; font-size:18px; line-height:26px; text-align:justify; padding:0 34px 0 0; color:#fff;}
+
+
+.aqx{ text-align:center; padding-bottom:43px;}
+
+.footer{ width:964px; margin:0 auto;  background:#0074be; padding:30px 0;}
+.subnav { text-align:center; color:#fff; font-size:16px;}
+.subnav a{ padding:0 5px; color:#fff; font-size:16px;}
+.subnav a:hover{  text-decoration:underline;}
+.footer p{ text-align:center; line-height:26px; font-size:16px; color:#fff; padding-top:22px;}
+

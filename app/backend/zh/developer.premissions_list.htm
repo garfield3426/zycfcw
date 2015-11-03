@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>网站管理后台</title>
+        <link rel="stylesheet" type="text/css" href="backend/main.css" />
+        <!-- 加载JS -->
+        <script type="text/javascript" src="js/base.js"></script>
+        <script type="text/javascript" src="backend/main.js"></script>
+        <!-- 自定义加载 -->
+        <script type="text/javascript" src="backend/lib/gridview.js"></script>
+        <!-- UI -->
+        <link rel="stylesheet" type="text/css" href="js/ui.css" />
+        <script src="js/ui.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            var headerUrl = '<?php echo Core::getUrl('header','default')?>';
+            var mainnavUrl = '<?php echo Core::getUrl('mainnav','default')?>';
+            var jsonData = <?php echo json_encode($v['jsonData']); ?>;
+            $(function(){
+                GridView.init('grid');
+                ui.init();
+            });
+        </script>
+    </head>
+    <body>
+        <!-- 页头 -->
+        <div id="header"></div>
+        <!-- 侧栏 -->
+        <div id="sideBar"></div>
+        <!-- 主内容 -->
+        <div id="content">
+            <form id="mainForm" action="<?php echo $v['formAct']?>" method="post">
+                <div id="titleBar"><strong><?php echo $v['title']?></strong></div>
+                <!--搜索条-->
+                <div id="filterBar">
+                    <input type="button" class="auto" title="addLink" value="新建权限" />
+                </div>
+                <!--列表区-->
+                <div id="list">
+                    <table id="grid" width="99%" align="center" border="0" cellpadding="2" cellspacing="1" bgcolor="#FFFFFF">
+                        <thead>
+                            <tr bgcolor="#dbeaf5">
+                                <td width="1%">&nbsp;</td>
+                                <td width="10%">权限标识</td>
+                                <td>描述</td>
+                                <td width="10%">操作</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach($v['list'] as $i):?>
+                            <tr>
+                                <td><input name="id[]" type="checkbox" value="<?php echo $i['id']?>" /></td>
+                                <td><?php echo $i['title']?></td>
+                                <td><?php echo $i['description']?></td>
+                                <td><a class="auto"  href="/admin-developer-system_permissions-do-update-id-<?php echo $i['id']?>.html">修改</a>
+                                    <a class="auto"  href="/admin-developer-system_permissions-do-del-id-<?php echo $i['id']?>.html">删除</a></td>
+                            </tr>
+                            <?php endforeach;?>
+                        </tbody>
+                        <tfoot>
+                            <tr bgcolor="#f0f8fe">
+                                <td colspan="1">↑</td>
+                                <td colspan="3">
+                                    <input type="button" class="btnCheck" value="反选" />
+                                    <input type="button" class="btnUncheck" value="取消选中" />
+                                    选中项：<select name="mulop" class="auto"><option value=""></option></select>
+                                </td>
+                            </tr>
+                            <tr bgcolor="#f0f8fe">
+                                <td colspan="3">
+                                    <div class="auto pagination"></div>
+                                </td>
+                                <td colspan="1" align="right">
+                                    显示：<select name="row" class="auto"><option value=""></option></select>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

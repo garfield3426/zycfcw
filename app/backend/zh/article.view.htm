@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+<title><?php echo $v['item']['title']?></title>
+<meta name="keywords" content="<?php echo $v['item']['keyword']?>" />
+<meta name="description" content="<?php echo $v['item']['describes']?>" />
+<?php include('inc/pub_head.php')?>
+<link rel="Bookmark" href="/favicon.ico" >
+<link rel="Shortcut Icon" href="/favicon.ico" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/html5.js"></script>
+<script type="text/javascript" src="js/respond.min.js"></script>
+<script type="text/javascript" src="js/PIE_IE678.js"></script
+<![endif]-->
+<link href="css/H-ui.css" rel="stylesheet" type="text/css" />
+<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<!--[if IE 7]>
+<link href="static/h-ui/css/font-awesome-ie7.min.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+<!--[if IE 6]>
+<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('.pngfix,.icon');</script>
+<![endif]-->
+</head>
+
+<body>
+<?php include('inc/banner.php')?>
+
+<div class="main">
+    <div class="wp fluidgrid">
+        <?php include('inc/top.php')?>
+        <div class="col-12 mt-0 mr-0 breadcrumb clear">
+            	您的位置：<a href="/">首页</a>&gt<a href="">房产资讯</a>&gt<?php echo $v['item']['title']?>
+        </div>
+        <div class="col-9 mt-0 mr-0  main-l bd0">
+                <div class="fckx-details">
+                	<h1><?php echo $v['item']['title']?></h1>
+                	<div class="fb"><span class="time">时间：<?php echo $v['item']['put_time']?></span><span class="source">来源：<?php echo $v['item']['author']?></span></div>
+                	<div class="fckx-dsummary">
+                		<strong>[摘要]</strong><?php echo $v['item']['describes']?>
+                	</div>
+                    <?php echo $v['item']['content']?>
+                </div>
+                <h2 class="maintitle pt-15">
+                	 <span class="text-c">热门推荐</span>
+                </h2>
+                <div class="hots">
+                	<ul class="newlist l">
+                		<li><b></b><a href="">恒大出狠招惊动全行业全国住宅实施无理</a></li>
+                		<li><b></b><a href="">沪不在中国城市60强之列哪里买房最划算</a></li>
+                		<li><b></b><a href="">二三线城市楼市或崩盘警惕14个房价危险</a></li>
+                		<li><b></b><a href="">财政部账本：一季度财收增3.9% 房产业拖</a></li>
+                		<li><b></b><a href="">房企拿地面积下降降息对楼市刺激有限</a></li>
+                	</ul>
+                	<ul class="newlist r">
+                		<li><b></b><a href="">恒大出狠招惊动全行业全国住宅实施无理</a></li>
+                		<li><b></b><a href="">沪不在中国城市60强之列哪里买房最划算</a></li>
+                		<li><b></b><a href="">二三线城市楼市或崩盘警惕14个房价危险</a></li>
+                		<li><b></b><a href="">财政部账本：一季度财收增3.9% 房产业拖</a></li>
+                		<li><b></b><a href="">房企拿地面积下降降息对楼市刺激有限</a></li>
+                	</ul>
+                </div>
+        </div>
+        <div class="f-r">
+				<?php $adversite=ext('adversite','right_article')?>
+                <?php if($adversite):?>	
+				<a href="<?php echo $adversite['url']?>" target="_blank"><img width="285" height="190" src="<?php echo $adversite['logo']?>" alt="<?php echo $adversite['title']?>"/></a>
+				<?php endif;?>
+		</div>
+        <div class="toplist f-r mt-15">
+        		<dl>
+        			<dt class="pl-10">资讯排行榜</dt>
+        			<dd><span class="red">1</span><a href="">沪上开盘直击！来自开盘现场的第一手报道</a></dd>
+    				<dd><span class="red">2</span><a href="">更细节！上海学区房常见的20个问题</a></dd>
+    				<dd><span class="red">3</span><a href="">330新政一个月沪百盘涨跌调查:最高涨价80</a></dd>
+    				<dd><span>4</span><a href="">闸北汶水路最后半个地王现身 150亿元总价</a></dd>
+    				<dd><span>5</span><a href="">十大城市房价指数报告 上海房价环比出现</a></dd>
+    				<dd><span>6</span><a href="">南北通道计划今年年底动工</dd>
+    				<dd><span>7</span><a href="">沪轨交15号线年内或建成 上大板块二次升</a></dd>
+    				<dd><span>8</span><a href="">一线城市天平倾斜：深圳旺丁、北京旺财</a></dd>
+    				<dd><span>9</span><a href="">沪上首套房贷利率调查：17银行有优惠 普</a></dd>
+    				<dd><span>10</span><a href="">沪上首套房贷利率调查：17银行有优惠 普</a></dd>
+        		</dl>
+        </div>
+        <?php include('inc/leftarticle.php')?>
+    </div>
+   <div class="clear"></div>
+   <div class="wp flinkbox">
+            <h1 class=" clear f-title"> 友情链接</h1>
+            <div class="flink row-1180-24 mr-0 ml-0">
+                  <?php include('inc/links.php')?>
+            </div>
+    </div>
+	</div>
+</div>
+<?php include('inc/footer.php')?>
+</body>
+</html>

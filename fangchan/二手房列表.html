@@ -1,0 +1,586 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+<title>二手房首页</title>
+<meta name="keywords" content="关键词,5个左右,单个8汉字以内">
+<meta name="description" content="网站描述，字数尽量空制在80个汉字，160个字符以内！">
+<link rel="Bookmark" href="/favicon.ico" >
+<link rel="Shortcut Icon" href="/favicon.ico" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/html5.js"></script>
+<script type="text/javascript" src="js/respond.min.js"></script>
+<script type="text/javascript" src="js/PIE_IE678.js"></script
+<![endif]-->
+<link href="css/H-ui.css" rel="stylesheet" type="text/css" />
+<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<!--[if IE 7]>
+<link href="static/h-ui/css/font-awesome-ie7.min.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+<!--[if IE 6]>
+<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('.pngfix,.icon');</script>
+<![endif]-->
+</head>
+
+<body>
+<div class="header">
+	<div class="wp fluidgrid">
+	     <div class="row">
+	          <div class="col-5 mt-0">
+	              <img alt="" src="images/logo.jpg"  />
+	          </div>
+	          <div class="col-3 mt-0">
+	              <img alt="" src="images/head1.jpg"  />
+	          </div>
+	          <div class="col-4 text-r  mt-0">
+	              <img alt="" src="images/phone.jpg"  />
+	          </div>
+	     </div>
+	</div>
+</div>
+<div class="clear"></div>
+<div class="navbg">
+      <nav class="mainnav cl wp">
+          <ul class="cl">
+                <li class="current"><a href="#">首页</a></li>
+                <li><a href="#">二手房</a></li>
+                <li><a href="#">租房</a></li>
+                <li><a href="#">写字楼</a></li>
+                <li><a href="#">新房</a></li>
+                <li><a href="#">商铺</a></li>
+                <li><a href="#">房价查询</a></li>
+                <li><a href="#">房产快讯</a></li>
+                <li><a href="#">手机找房</a></li>
+          </ul>
+     </nav>
+</div>
+<div class="searchbg">
+	<div class="wp fluidgrid search">
+	     <div class="col-5 searchbox mt-10">
+	          <div class="searchBar">
+	              <form class="form-search" method="post" action="">
+	                <input id="searchKeyword" name="searchKeyword" value="请输入搜索关键词" class="searchTxt" autocomplete="off" onfocus="if(this.value=='请输入搜索关键词')this.value=''" onblur="if(this.value=='')this.value='请输入搜索关键词'">
+	                <input id="searchBtn" name="searchBtn" type="submit" value="搜索" class="searchBtn" onclick="b_onclick()">
+	              </form>
+	          </div>
+	     </div>
+	     <div class="col-7 mt-10 mb-10">
+	          <a>学区房</a>
+	          <a>二手房税表</a>
+	          <a>交房流程</a>
+	     </div>
+	</div>
+</div>
+<div class="clear"></div>
+
+
+<div class="main">
+    <div class="wp fluidgrid">
+	     <div class="row">
+	        <div class="col-12 tips mt-15">
+	              为了方便自己出租和他人求租，请真实填写房源信息，如果发现填写虚假房源信息，此手机号码将永远被冻结。
+	              <span class="icon-remove"></span>
+	        </div>
+	        <div class="clear"></div>
+	        <div class="col-12 submenu mt-15">
+	            <div class="hd">
+					<ul>
+	                    <li class="on"><span>按地区查询</span></li>
+	                    <li><span>按地铁查询</span></li>
+	                    <li><span>按学校查询</span></li>
+	               </ul>
+				</div>
+				<div class="clear"></div>
+				<div class="search-con">
+					<div id="list_38" class="quxian mt-20 ml-25" name="div_districtandcomarea">
+	       				<span class="type">区域：</span>
+						<div class="qxName" style="z-index: 2">
+						            <a onclick="qingkong('SH_esf_url','')">不限</a>
+									<a  class="org selected"  href="/house-a025/" onclick="writeFootPrintCookie(this,'1','house','25','浦东','','','','','','','')">浦东</a>
+						            <a href="/house-a018/" onclick="writeFootPrintCookie(this,'1','house','18','闵行','','','','','','','')">闵行</a>
+						            <a href="/house-a019/" onclick="writeFootPrintCookie(this,'1','house','19','徐汇','','','','','','','')">徐汇</a>
+						            <a href="/house-a030/" onclick="writeFootPrintCookie(this,'1','house','30','宝山','','','','','','','')">宝山</a>
+						            <a href="/house-a028/" onclick="writeFootPrintCookie(this,'1','house','28','普陀','','','','','','','')">普陀</a>
+						            <a href="/house-a020/" onclick="writeFootPrintCookie(this,'1','house','20','长宁','','','','','','','')">长宁</a>
+						            <a href="/house-a026/" onclick="writeFootPrintCookie(this,'1','house','26','杨浦','','','','','','','')">杨浦</a>
+						            <a href="/house-a0586/" onclick="writeFootPrintCookie(this,'1','house','586','松江','','','','','','','')">松江</a>
+						            <a href="/house-a029/" onclick="writeFootPrintCookie(this,'1','house','29','嘉定','','','','','','','')">嘉定</a>
+						</div>
+	        		</div>
+					<div id="div_shangQuan" class="shangQuan ml-25">
+					    <p class="top"></p>
+					    <p id="shangQuancontain" class="contain">
+					                <a href="/house-a018/" class="org bold" onclick="writeFootPrintCookie(this,'1','house','18','闵行','-1','不限','','','','','')">不限</a>
+					                <a href="/house-a018-b01609/" onclick="writeFootPrintCookie(this,'1','house','18','闵行','1609','春申','','','','','')">春申</a>
+					                <a href="/house-a018-b01601/" onclick="writeFootPrintCookie(this,'1','house','18','闵行','1601','古美','','','','','')">古美</a>
+					                <a href="/house-a018-b01608/" onclick="writeFootPrintCookie(this,'1','house','18','闵行','1608','航华','','','','','')">航华</a>
+					                <a href="/house-a018-b02078/" onclick="writeFootPrintCookie(this,'1','house','18','闵行','2078','华漕','','','','','')">华漕</a>
+					                <a href="/house-a018-b01607/" onclick="writeFootPrintCookie(this,'1','house','18','闵行','1607','金虹桥','','','','','')">金虹桥</a>
+					                <a href="/house-a018-b01606/" onclick="writeFootPrintCookie(this,'1','house','18','闵行','1606','金汇','','','','','')">金汇</a>   
+					    </p>
+					    <p class="bottom"></p>
+					</div>
+	                <div class="clear"></div>
+					<ul class="info ml-25">
+				        <li id="list_39" name="div_price">
+				            <p class="l">总价：<a href="/house-a018/g22-j270-k290/" style="cursor :pointer;" rel="nofollow">不限</a>
+				                <a href="#" class="org bold" rel="nofollow">100万以下</a>
+				                <a href="#" rel="nofollow">100-150万</a>
+				                <a href="#" rel="nofollow">150-200万</a>
+				                <a href="#" rel="nofollow">200-300万</a>
+				                <a href="#" rel="nofollow">300-500万</a>
+				                <a href="#" rel="nofollow">500-1000万</a>
+				                <a href="#" rel="nofollow">1000万以上</a>
+				            </p>
+				            <input id="cminPrice" type="text" maxlength="4" size="4" value="" title="请输入最低价格" onfocus="javascript:document.getElementById('pConfirmButton').style.display='inline-block';" class="inputSmall">-<input id="cmaxPrice" type="text" maxlength="4" size="4" value="" title="请输入最高价格" onfocus="javascript:document.getElementById('pConfirmButton').style.display='inline-block';" class="inputSmall">万
+				            <span class="tip-box">
+				                <input id="pConfirmButton" type="button" style="display: none;" class="btnSmall" value="确定">
+						        <div class="w_tip" id="MessagePrice">
+						            <div class="top"></div>
+						        	<div id="MessagePriceText" class="bottom"></div>
+						        </div>
+				            </span> 
+				        </li>
+				        <li id="list_40" name="div_room">户型：<a href="#" style="cursor :pointer;" rel="nofollow">不限</a>
+				            <a href="#" rel="nofollow">一居</a>
+				            <a href="#" class="org bold" rel="nofollow">二居</a>
+				            <a href="#" rel="nofollow">三居</a>
+				            <a href="#" rel="nofollow">四居</a>
+				            <a href="#" rel="nofollow">五居</a>
+				            <a href="#" rel="nofollow">五居以上</a>
+				        </li>
+				        <li id="list_41" name="div_area">
+				            <p class="l">面积：<a href="/house-a018/d2100-g22/" style="cursor :pointer;" rel="nofollow">不限</a>
+				                <a href="/house-a018/d2100-g22-k250/" rel="nofollow">50平米以下</a>
+				                <a href="/house-a018/d2100-g22-j250-k270/" rel="nofollow">50-70平米</a>
+				                <a href="/house-a018/d2100-g22-j270-k290/" class="org bold" rel="nofollow">70-90平米</a>
+				                <a href="/house-a018/d2100-g22-j290-k2110/" rel="nofollow">90-110平米</a>
+				                <a href="/house-a018/d2100-g22-j2110-k2130/" rel="nofollow">110-130平米</a>
+				                <a href="/house-a018/d2100-g22-j2130-k2150/" rel="nofollow">130-150平米</a>
+				                <a href="/house-a018/d2100-g22-j2150-k2200/" rel="nofollow">150-200平米</a>
+				                <a href="/house-a018/d2100-g22-j2200-k2300/" rel="nofollow">200-300平米</a>
+				                <a href="/house-a018/d2100-g22-j2300/" rel="nofollow">300平米以上</a>
+				            </p>
+				            <input id="cminArea" class="inputSmall" type="text" maxlength="4" size="4" value="" title="请输入最小面积" onfocus="javascript:document.getElementById('aConfirmButton').style.display='inline-block';">-
+				            <input id="cmaxArea" class="inputSmall" type="text" maxlength="4" size="4" value="" title="请输入最大面积" onfocus="javascript:document.getElementById('aConfirmButton').style.display='inline-block';">
+				            <span class="tip-box">
+				                <input id="aConfirmButton" type="button" class="btnSmall" style="display: none" value="确定">
+				                <div style="" class="w_tip" id="MessageArea">
+					                <div class="top"></div>
+					                <div id="MessageAreaText" class="bottom"></div>
+				                </div>
+				            </span>   
+				        </li>
+				        <li>
+				            <p class="l">环线：<a href="#" class="org bold" style="font-weight:700;" rel="nofollow">不限</a>
+				                <a href="#" rel="nofollow">内环以内</a>
+				                <a href="#" rel="nofollow">中内环间</a>
+				                <a href="#" rel="nofollow">中外环间</a>
+				                <a href="#" rel="nofollow">外环以外</a>
+				            </p>
+				        </li>
+	    			</ul>
+	    			<div class="moresearchinfo tese" name="div_feature">
+	        			<span>特色：  </span>
+				        <a class="org bold" href="/house-a018/d2100-g22-j270-k290/">不限</a>
+				        <a class="" href="/house-a018/d2100-g22-j270-k290-t085/">地铁房</a>
+				        <a class="" href="/house-a018/d2100-g22-j270-k290-t086/">精装修</a>
+				        <a class="" href="/house-a018/d2100-g22-j270-k290-t087/">学区房</a>
+				        <a class="" href="/house-a018/d2100-g22-j270-k290-t088/">随时看房</a>
+				        <a class="" href="/house-a018/d2100-g22-j270-k290-t089/">南北通透</a>
+				        <a class="" href="/house-a018/d2100-g22-j270-k290-t091/">景观房</a>
+				        <a class="" href="/house-a018/d2100-g22-j270-k290-t0121/">黄金楼层</a>
+				        <a class="" href="/house-a018/d2100-g22-j270-k290-t0166/">业主唯一住房</a>
+				        <a class="" href="/house-a018/d2100-g22-j270-k290-t0167/">满二唯一</a>
+				        <a class="" href="/house-a018/d2100-g22-j270-k290-t0168/">产证满两年</a>
+				        <div class="clear"></div>
+				    </div>
+					<div class="moresearchinfo tese" name="div_feature">
+	        			<span class="f-l mr-10 ">更多找房条件：</span>
+	        			<div class="formControls w96 mr-10 f-l"> 
+	        			    <span class="select-box index-selet">
+				            	<select class="select" size="1" name="demo1" datatype="*" nullmsg="请选择所在城市！">
+					                <option value="" selected="">请选择</option>
+					                <option value="1">北京</option>
+					                <option value="2">上海</option>
+					                <option value="3">广州</option>
+					            </select>
+			              	</span> 
+			            </div>
+				        <div class="formControls w96 mr-10 f-l"> 
+	        			    <span class="select-box index-selet">
+				            	<select class="select" size="1" name="demo1" datatype="*" nullmsg="请选择所在城市！">
+					                <option value="" selected="">请选择</option>
+					                <option value="1">北京</option>
+					                <option value="2">上海</option>
+					                <option value="3">广州</option>
+					            </select>
+			              	</span> 
+			            </div>
+			            <div class="formControls w96 mr-10 f-l"> 
+	        			    <span class="select-box index-selet">
+				            	<select class="select" size="1" name="demo1" datatype="*" nullmsg="请选择所在城市！">
+					                <option value="" selected="">请选择</option>
+					                <option value="1">北京</option>
+					                <option value="2">上海</option>
+					                <option value="3">广州</option>
+					            </select>
+			              	</span> 
+			            </div>
+			            <div class="formControls w96 mr-10 f-l"> 
+	        			    <span class="select-box index-selet">
+				            	<select class="select" size="1" name="demo1" datatype="*" nullmsg="请选择所在城市！">
+					                <option value="" selected="">请选择</option>
+					                <option value="1">北京</option>
+					                <option value="2">上海</option>
+					                <option value="3">广州</option>
+					            </select>
+			              	</span> 
+			            </div>
+			            <div class="formControls w96 mr-10 f-l"> 
+	        			    <span class="select-box index-selet">
+				            	<select class="select" size="1" name="demo1" datatype="*" nullmsg="请选择所在城市！">
+					                <option value="" selected="">请选择</option>
+					                <option value="1">北京</option>
+					                <option value="2">上海</option>
+					                <option value="3">广州</option>
+					            </select>
+			              	</span> 
+			            </div>
+				        <div class="clear"></div>
+				    </div>
+				</div>
+			</div>
+		 </div>
+    </div>
+    <div class="clear"></div>
+    <div class="wp fluidgrid">
+        <div class="content-top">
+             <h3 class="f-l">全部房源</h3>
+             <div class="top-pagebox f-l">
+             	<span>1/18</span>
+             	<a href="" class="toppage-next f-r"></a>
+             	<a href="" class="toppage-prev f-r"></a>
+             </div>
+        </div>
+    	<div class="col-9 mt-0 mr-0  main-l">
+    	     <div class="houseList">
+                    <dl id="list_1" class="list rel">
+		                <dt class="img rel l">
+		                        <a href="/chushou/3_188711087.htm" target="_blank">
+		                            <img width="200" height="150" src="images/content1.jpg"></a>
+						     <p class="txtBg"></p>
+							 <p class="txt"><span class="iconImg">10</span></p>
+						</dt>
+						<dd class="info rel r">
+						    <p class="title">
+						        <a href="/chushou/3_188711087.htm" target="_blank" title="首付20%普通住宅,板式两房,总价最低,对面十号地铁口">首付20%普通住宅,板式两房,总价最低,对面十号地铁口</a>
+						    </p>					
+		                    <p class="gray6 mt-12">
+		                        <a target="_blank" href="/house-xm1210012530/" title="西郊家园"><span>西郊家园</span></a>
+		                        <span class="iconAdress ml-10" title="西郊-虹桥路2328弄">西郊-虹桥路2328弄</span>
+		                    </p>
+							<p class="gray6 mt-10">8/12层<span class="hsline">|</span>南北向<span class="hsline">|</span>建筑年代：2000</p>
+							<p class="gray6 mt-10">
+							 	<a rel="nofollow" href="/agent/agtagent/37242290.htm" style="color:#333333;display:none;" title="访问[太平洋房屋]的网上店铺，查看更多房源" target="_blank">太平洋房屋</a> 
+							 	<a rel="nofollow" style="color:#333333" href="/a/tpyfwluoyuan" title="访问[罗远]的个人网上店铺，查看更多房源" target="_blank">罗远</a><span class="ml-10 gray9">1秒前更新</span>
+							</p>
+		                    <div class="mt-8 clearfix">
+		                            <div class="pt-5 l">
+		                            	<span class="colorGreen note">地铁房</span>
+		                            	<span class="colorRed note">学区房</span>
+		                            	<span class="colorBlue note">精装修</span>
+		                            </div>
+		                            <div class="l note-img"><span><img src="http://img.soufun.com/secondhouse/image/esfnew/search2014/images/iconAuthentichouse.png" alt="投诉房源为虚假，房天下确认属实后，最高可得100元奖励"></span></div>
+		                    </div>
+		                    <div class="ts YaHei">2室2厅</div>
+							<div class="area text-r YaHei">99㎡</div>
+							<div class="moreInfo">
+								  <p class="mt-5 text-r"><span class="price">250</span>
+								  <span class="YaHei ml-5">万</span></p>
+								  <p class="danjia text-r mt-5 gray6">25355元<span class="Arial">/</span>㎡</p>
+							 </div>
+						</dd>
+						<div class="clear"></div>
+			        </dl>
+			        <dl id="list_2" class="list rel">
+		                <dt class="img rel l">
+		                        <a href="/chushou/3_188711087.htm" target="_blank">
+		                            <img width="200" height="150" src="images/content1.jpg"></a>
+						     <p class="txtBg"></p>
+							 <p class="txt"><span class="iconImg">10</span></p>
+						</dt>
+						<dd class="info rel r">
+						    <p class="title">
+						        <a href="/chushou/3_188711087.htm" target="_blank" title="首付20%普通住宅,板式两房,总价最低,对面十号地铁口">首付20%普通住宅,板式两房,总价最低,对面十号地铁口</a>
+						    </p>					
+		                    <p class="gray6 mt-12">
+		                        <a target="_blank" href="/house-xm1210012530/" title="西郊家园"><span>西郊家园</span></a>
+		                        <span class="iconAdress ml-10" title="西郊-虹桥路2328弄">西郊-虹桥路2328弄</span>
+		                    </p>
+							<p class="gray6 mt-10">8/12层<span class="hsline">|</span>南北向<span class="hsline">|</span>建筑年代：2000</p>
+							<p class="gray6 mt-10">
+							 	<a rel="nofollow" href="/agent/agtagent/37242290.htm" style="color:#333333;display:none;" title="访问[太平洋房屋]的网上店铺，查看更多房源" target="_blank">太平洋房屋</a> 
+							 	<a rel="nofollow" style="color:#333333" href="/a/tpyfwluoyuan" title="访问[罗远]的个人网上店铺，查看更多房源" target="_blank">罗远</a><span class="ml-10 gray9">1秒前更新</span>
+							</p>
+		                    <div class="mt-8 clearfix">
+		                            <div class="pt-5 l">
+		                            	<span class="colorGreen note">地铁房</span>
+		                            	<span class="colorRed note">学区房</span>
+		                            	<span class="colorBlue note">精装修</span>
+		                            </div>
+		                            <div class="l note-img"><span><img src="http://img.soufun.com/secondhouse/image/esfnew/search2014/images/iconAuthentichouse.png" alt="投诉房源为虚假，房天下确认属实后，最高可得100元奖励"></span></div>
+		                    </div>
+		                    <div class="ts YaHei">2室2厅</div>
+							<div class="area text-r YaHei">99㎡</div>
+							<div class="moreInfo">
+								  <p class="mt-5 text-r"><span class="price">250</span>
+								  <span class="YaHei ml-5">万</span></p>
+								  <p class="danjia text-r mt-5 gray6">25355元<span class="Arial">/</span>㎡</p>
+							 </div>
+						</dd>
+						<div class="clear"></div>
+			        </dl>
+			        <dl id="list_3" class="list rel">
+		                <dt class="img rel l">
+		                        <a href="/chushou/3_188711087.htm" target="_blank">
+		                            <img width="200" height="150" src="images/content1.jpg"></a>
+						     <p class="txtBg"></p>
+							 <p class="txt"><span class="iconImg">10</span></p>
+						</dt>
+						<dd class="info rel r">
+						    <p class="title">
+						        <a href="/chushou/3_188711087.htm" target="_blank" title="首付20%普通住宅,板式两房,总价最低,对面十号地铁口">首付20%普通住宅,板式两房,总价最低,对面十号地铁口</a>
+						    </p>					
+		                    <p class="gray6 mt-12">
+		                        <a target="_blank" href="/house-xm1210012530/" title="西郊家园"><span>西郊家园</span></a>
+		                        <span class="iconAdress ml-10" title="西郊-虹桥路2328弄">西郊-虹桥路2328弄</span>
+		                    </p>
+							<p class="gray6 mt-10">8/12层<span class="hsline">|</span>南北向<span class="hsline">|</span>建筑年代：2000</p>
+							<p class="gray6 mt-10">
+							 	<a rel="nofollow" href="/agent/agtagent/37242290.htm" style="color:#333333;display:none;" title="访问[太平洋房屋]的网上店铺，查看更多房源" target="_blank">太平洋房屋</a> 
+							 	<a rel="nofollow" style="color:#333333" href="/a/tpyfwluoyuan" title="访问[罗远]的个人网上店铺，查看更多房源" target="_blank">罗远</a><span class="ml-10 gray9">1秒前更新</span>
+							</p>
+		                    <div class="mt-8 clearfix">
+		                            <div class="pt-5 l">
+		                            	<span class="colorGreen note">地铁房</span>
+		                            	<span class="colorRed note">学区房</span>
+		                            	<span class="colorBlue note">精装修</span>
+		                            </div>
+		                            <div class="l note-img"><span><img src="http://img.soufun.com/secondhouse/image/esfnew/search2014/images/iconAuthentichouse.png" alt="投诉房源为虚假，房天下确认属实后，最高可得100元奖励"></span></div>
+		                    </div>
+		                    <div class="ts YaHei">2室2厅</div>
+							<div class="area text-r YaHei">99㎡</div>
+							<div class="moreInfo">
+								  <p class="mt-5 text-r"><span class="price">250</span>
+								  <span class="YaHei ml-5">万</span></p>
+								  <p class="danjia text-r mt-5 gray6">25355元<span class="Arial">/</span>㎡</p>
+							 </div>
+						</dd>
+						<div class="clear"></div>
+			        </dl>
+			        <dl id="list_4" class="list rel">
+		                <dt class="img rel l">
+		                        <a href="/chushou/3_188711087.htm" target="_blank">
+		                            <img width="200" height="150" src="images/content1.jpg"></a>
+						     <p class="txtBg"></p>
+							 <p class="txt"><span class="iconImg">10</span></p>
+						</dt>
+						<dd class="info rel r">
+						    <p class="title">
+						        <a href="/chushou/3_188711087.htm" target="_blank" title="首付20%普通住宅,板式两房,总价最低,对面十号地铁口">首付20%普通住宅,板式两房,总价最低,对面十号地铁口</a>
+						    </p>					
+		                    <p class="gray6 mt-12">
+		                        <a target="_blank" href="/house-xm1210012530/" title="西郊家园"><span>西郊家园</span></a>
+		                        <span class="iconAdress ml-10" title="西郊-虹桥路2328弄">西郊-虹桥路2328弄</span>
+		                    </p>
+							<p class="gray6 mt-10">8/12层<span class="hsline">|</span>南北向<span class="hsline">|</span>建筑年代：2000</p>
+							<p class="gray6 mt-10">
+							 	<a rel="nofollow" href="/agent/agtagent/37242290.htm" style="color:#333333;display:none;" title="访问[太平洋房屋]的网上店铺，查看更多房源" target="_blank">太平洋房屋</a> 
+							 	<a rel="nofollow" style="color:#333333" href="/a/tpyfwluoyuan" title="访问[罗远]的个人网上店铺，查看更多房源" target="_blank">罗远</a><span class="ml-10 gray9">1秒前更新</span>
+							</p>
+		                    <div class="mt-8 clearfix">
+		                            <div class="pt-5 l">
+		                            	<span class="colorGreen note">地铁房</span>
+		                            	<span class="colorRed note">学区房</span>
+		                            	<span class="colorBlue note">精装修</span>
+		                            </div>
+		                            <div class="l note-img"><span><img src="http://img.soufun.com/secondhouse/image/esfnew/search2014/images/iconAuthentichouse.png" alt="投诉房源为虚假，房天下确认属实后，最高可得100元奖励"></span></div>
+		                    </div>
+		                    <div class="ts YaHei">2室2厅</div>
+							<div class="area text-r YaHei">99㎡</div>
+							<div class="moreInfo">
+								  <p class="mt-5 text-r"><span class="price">250</span>
+								  <span class="YaHei ml-5">万</span></p>
+								  <p class="danjia text-r mt-5 gray6">25355元<span class="Arial">/</span>㎡</p>
+							 </div>
+						</dd>
+						<div class="clear"></div>
+			        </dl>
+			        <dl id="list_5" class="list rel">
+		                <dt class="img rel l">
+		                        <a href="/chushou/3_188711087.htm" target="_blank">
+		                            <img width="200" height="150" src="images/content1.jpg"></a>
+						     <p class="txtBg"></p>
+							 <p class="txt"><span class="iconImg">10</span></p>
+						</dt>
+						<dd class="info rel r">
+						    <p class="title">
+						        <a href="/chushou/3_188711087.htm" target="_blank" title="首付20%普通住宅,板式两房,总价最低,对面十号地铁口">首付20%普通住宅,板式两房,总价最低,对面十号地铁口</a>
+						    </p>					
+		                    <p class="gray6 mt-12">
+		                        <a target="_blank" href="/house-xm1210012530/" title="西郊家园"><span>西郊家园</span></a>
+		                        <span class="iconAdress ml-10" title="西郊-虹桥路2328弄">西郊-虹桥路2328弄</span>
+		                    </p>
+							<p class="gray6 mt-10">8/12层<span class="hsline">|</span>南北向<span class="hsline">|</span>建筑年代：2000</p>
+							<p class="gray6 mt-10">
+							 	<a rel="nofollow" href="/agent/agtagent/37242290.htm" style="color:#333333;display:none;" title="访问[太平洋房屋]的网上店铺，查看更多房源" target="_blank">太平洋房屋</a> 
+							 	<a rel="nofollow" style="color:#333333" href="/a/tpyfwluoyuan" title="访问[罗远]的个人网上店铺，查看更多房源" target="_blank">罗远</a><span class="ml-10 gray9">1秒前更新</span>
+							</p>
+		                    <div class="mt-8 clearfix">
+		                            <div class="pt-5 l">
+		                            	<span class="colorGreen note">地铁房</span>
+		                            	<span class="colorRed note">学区房</span>
+		                            	<span class="colorBlue note">精装修</span>
+		                            </div>
+		                            <div class="l note-img"><span><img src="http://img.soufun.com/secondhouse/image/esfnew/search2014/images/iconAuthentichouse.png" alt="投诉房源为虚假，房天下确认属实后，最高可得100元奖励"></span></div>
+		                    </div>
+		                    <div class="ts YaHei">2室2厅</div>
+							<div class="area text-r YaHei">99㎡</div>
+							<div class="moreInfo">
+								  <p class="mt-5 text-r"><span class="price">250</span>
+								  <span class="YaHei ml-5">万</span></p>
+								  <p class="danjia text-r mt-5 gray6">25355元<span class="Arial">/</span>㎡</p>
+							 </div>
+						</dd>
+						<div class="clear"></div>
+			        </dl>
+			        <dl id="list_6" class="list rel">
+		                <dt class="img rel l">
+		                        <a href="/chushou/3_188711087.htm" target="_blank">
+		                            <img width="200" height="150" src="images/content1.jpg"></a>
+						     <p class="txtBg"></p>
+							 <p class="txt"><span class="iconImg">10</span></p>
+						</dt>
+						<dd class="info rel r">
+						    <p class="title">
+						        <a href="/chushou/3_188711087.htm" target="_blank" title="首付20%普通住宅,板式两房,总价最低,对面十号地铁口">首付20%普通住宅,板式两房,总价最低,对面十号地铁口</a>
+						    </p>					
+		                    <p class="gray6 mt-12">
+		                        <a target="_blank" href="/house-xm1210012530/" title="西郊家园"><span>西郊家园</span></a>
+		                        <span class="iconAdress ml-10" title="西郊-虹桥路2328弄">西郊-虹桥路2328弄</span>
+		                    </p>
+							<p class="gray6 mt-10">8/12层<span class="hsline">|</span>南北向<span class="hsline">|</span>建筑年代：2000</p>
+							<p class="gray6 mt-10">
+							 	<a rel="nofollow" href="/agent/agtagent/37242290.htm" style="color:#333333;display:none;" title="访问[太平洋房屋]的网上店铺，查看更多房源" target="_blank">太平洋房屋</a> 
+							 	<a rel="nofollow" style="color:#333333" href="/a/tpyfwluoyuan" title="访问[罗远]的个人网上店铺，查看更多房源" target="_blank">罗远</a><span class="ml-10 gray9">1秒前更新</span>
+							</p>
+		                    <div class="mt-8 clearfix">
+		                            <div class="pt-5 l">
+		                            	<span class="colorGreen note">地铁房</span>
+		                            	<span class="colorRed note">学区房</span>
+		                            	<span class="colorBlue note">精装修</span>
+		                            </div>
+		                            <div class="l note-img"><span><img src="http://img.soufun.com/secondhouse/image/esfnew/search2014/images/iconAuthentichouse.png" alt="投诉房源为虚假，房天下确认属实后，最高可得100元奖励"></span></div>
+		                    </div>
+		                    <div class="ts YaHei">2室2厅</div>
+							<div class="area text-r YaHei">99㎡</div>
+							<div class="moreInfo">
+								  <p class="mt-5 text-r"><span class="price">250</span>
+								  <span class="YaHei ml-5">万</span></p>
+								  <p class="danjia text-r mt-5 gray6">25355元<span class="Arial">/</span>㎡</p>
+							 </div>
+						</dd>
+						<div class="clear"></div>
+			        </dl>
+
+
+                    <div class="clearfix mt15">
+			            <span class="f-l mt-20 xy">每页显示：</span>
+						<select class="form-control w80 mr-10 mt-20 xy f-l">
+						  <option>20页</option>
+						  <option>30页</option>
+						  <option>40页</option>
+						</select>
+						<div class="fanye gray6 r">
+			                <a id="PageControl1_hlk_first" href="/house/">首页</a> <a id="PageControl1_hlk_pre" href="/house/i35/">上一页</a> <a href="/house/i32/">2</a> <a href="/house/i33/">3</a> <a href="/house/i34/">4</a> <a href="/house/i35/">5</a> <a class="pageNow">6</a> <a href="/house/i37/">7</a> <a href="/house/i38/">8</a> <a href="/house/i39/">9</a> <a href="/house/i310/">10</a> <a id="PageControl1_hlk_next" href="/house/i37/">下一页</a> <a id="PageControl1_hlk_last" href="/house/i3100/">末页</a><span class="txt">共100页</span>
+			            </div>
+					</div>
+
+                 
+    	     </div>
+        </div>
+    	<div class="col-3 btnbox f-r">
+    		     <a class="maifl f-l" href="">
+    		     	 <span>免费登记买房</span>
+    		     </a>
+    		     <a class="maifr f-r" href="">
+    		         <span>免费发房源</span>
+    		     </a>
+    	</div>
+    	<div class="col-3 mt-15 mr-0 main-r f-r">
+    		 <p class="phone bline">
+    		 	 <span>24小时房产热线：</span>
+    		 	 <strong>400-8800-8569</strong>
+    		 </p>
+    		 <p class="QQ">
+    		 	<span class="t">在线QQ：</span>
+    		 	<span class="d">
+    		 		  <a href="">销售一</a>
+    		 		  <a href="">销售二</a>
+    		 	</span>
+    		 	<span class="d">
+    		 		  <a href="">销售三</a>
+    		 		  <a href="">销售四</a>
+    		 	</span>
+    		 </p>
+    		 <p class="ewm">
+    		    <span class="t">微信扫一扫</span>
+    		    <img src="images/ewm.png" alt="" />
+    		 </p>
+    	</div>
+    </div>
+    <div class="clear"></div>
+    <div class="wp flinkbox">
+        <h1 class=" clear f-title"> 友情链接</h1>
+	    <div class="flink row-1180-24 mr-0 ml-0">
+	         <a class="col-2" href="">扬州二手房111</a>
+			 <a class="col-2" href="">扬州二手房1</a>
+			 <a class="col-2" href="">扬州二手房111</a>
+			 <a class="col-2" href="">扬州二手房1</a>
+			 <a class="col-2" href="">扬州二手房111</a>
+			 <a class="col-2" href="">扬州二手房1</a>
+			 <a class="col-2" href="">扬州二手房111</a>
+			 <a class="col-2" href="">扬州二手房1</a>
+			 <a class="col-2" href="">扬州二手房111</a>
+			 <a class="col-2" href="">扬州二手房1</a>
+			 <a class="col-2" href="">扬州二手房111</a>
+			 <a class="col-2" href="">扬州二手房1</a>
+			 <a class="col-2" href="">扬州二手房111</a>
+			 <a class="col-2" href="">扬州二手房1</a>
+			 <a class="col-2" href="">扬州二手房111</a>
+			 <a class="col-2" href="">扬州二手房1</a>
+	    </div>
+	</div>
+</div>
+<div class="footer">
+	<div class="foot">
+		<a href="#">关于我们</a>
+		<a href="#">网站合作</a>
+		<a href="#">联系我们</a>
+		<a href="#">招聘信息</a>
+		<a href="#">中介加盟</a>
+		<a href="#">网站地图</a>
+		<a href="#">意见反馈</a>
+		<a href="#" class="last">服务声明</a>
+	</div>
+	<p>Copyright &copy 2015 Soufun ******,All Rights Reserved 苏州忠业诚房产经纪有限公司 版权所有</p>
+</div>
+
+</body>
+</html>

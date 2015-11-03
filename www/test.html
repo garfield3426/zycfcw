@@ -1,0 +1,27 @@
+﻿<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="/js/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="/js/ckfinder/ckfinder.js"></script>
+<script type="text/javascript" src="/js/jquery-1.4a2.min.js"></script>
+<body>
+<script type="text/javascript">
+                
+                function BrowseServer(inputId)
+                {
+                var finder = new CKFinder() ;
+                finder.basePath = '/js/ckfinder/';  //导入CKFinder的路径
+                finder.selectActionFunction = SetFileField; //设置文件被选中时的函数
+                finder.selectActionData = inputId;  //接收地址的input ID
+                finder.popup() ;
+                }
+                
+                //文件选中时执行
+                function SetFileField(fileUrl,data)
+                {
+                    document.getElementById(data["selectActionData"]).value = fileUrl ;
+                }
+            </script>
+<input type="text" name="file" id="file" onclick="BrowseServer('file');" />
+ 
+</body>
+</html>
