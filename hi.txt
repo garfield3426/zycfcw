@@ -1,2 +1,3 @@
 i am git
 add git log aaaaaaaaaaaaaaaaa
+我修改了一个BUG
